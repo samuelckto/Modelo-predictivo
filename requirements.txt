@@ -1,0 +1,19 @@
+# Versiones fijadas: los modelos se serializan con joblib y una version distinta
+# de scikit-learn rompe la carga de los artefactos ya entrenados.
+fastapi==0.115.6
+uvicorn[standard]==0.34.0
+SQLAlchemy==2.0.36
+pandas==2.3.3
+numpy==2.2.6
+scipy==1.15.3
+scikit-learn==1.7.2
+joblib==1.6.0
+xgboost==3.2.0
+lightgbm==4.7.0
+statsmodels==0.14.4
+requests==2.32.3
+httpx==0.28.1
+python-dotenv==1.0.1
+pyarrow==18.1.0
+APScheduler==3.11.0
+pytest==8.3.4

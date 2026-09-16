@@ -1,0 +1,719 @@
+{
+ "moneyline": {
+  "modelo_usado": "p_home_elo",
+  "n": 9575,
+  "acierto_global": 0.5582,
+  "calibracion_buckets": [
+   {
+    "bucket": "50-55%",
+    "n": 4492,
+    "predicho": 0.5245,
+    "real": 0.526,
+    "dif_pp": 0.15
+   },
+   {
+    "bucket": "55-60%",
+    "n": 3006,
+    "predicho": 0.5724,
+    "real": 0.5542,
+    "dif_pp": -1.82
+   },
+   {
+    "bucket": "60-65%",
+    "n": 1458,
+    "predicho": 0.6213,
+    "real": 0.6145,
+    "dif_pp": -0.68
+   },
+   {
+    "bucket": "65-70%",
+    "n": 471,
+    "predicho": 0.6719,
+    "real": 0.6645,
+    "dif_pp": -0.73
+   },
+   {
+    "bucket": "70-75%",
+    "n": 134,
+    "predicho": 0.719,
+    "real": 0.7313,
+    "dif_pp": 1.24
+   },
+   {
+    "bucket": "75-80%",
+    "n": 14,
+    "predicho": 0.7582,
+    "real": 0.6429,
+    "dif_pp": -11.54
+   },
+   {
+    "bucket": "80-101%",
+    "n": 0,
+    "predicho": null,
+    "real": null,
+    "dif_pp": null
+   }
+  ],
+  "edge_vs_alternativas": {
+   "edge_sobre_base": {
+    "cuartiles": [
+     {
+      "q": 0,
+      "n": 2394,
+      "acierto": 0.523,
+      "valor_medio": -0.0071
+     },
+     {
+      "q": 1,
+      "n": 2394,
+      "acierto": 0.5459,
+      "valor_medio": 0.0342
+     },
+     {
+      "q": 2,
+      "n": 2393,
+      "acierto": 0.5541,
+      "valor_medio": 0.0657
+     },
+     {
+      "q": 3,
+      "n": 2394,
+      "acierto": 0.6099,
+      "valor_medio": 0.1258
+     }
+    ],
+    "separacion_pp": 8.69,
+    "monotono": true
+   },
+   "probabilidad_bruta": {
+    "cuartiles": [
+     {
+      "q": 0,
+      "n": 2394,
+      "acierto": 0.51,
+      "valor_medio": 0.5128
+     },
+     {
+      "q": 1,
+      "n": 2394,
+      "acierto": 0.5426,
+      "valor_medio": 0.5396
+     },
+     {
+      "q": 2,
+      "n": 2393,
+      "acierto": 0.5558,
+      "valor_medio": 0.5718
+     },
+     {
+      "q": 3,
+      "n": 2394,
+      "acierto": 0.6245,
+      "valor_medio": 0.6343
+     }
+    ],
+    "separacion_pp": 11.45,
+    "monotono": true
+   },
+   "confianza": {
+    "cuartiles": [
+     {
+      "q": 0,
+      "n": 2394,
+      "acierto": 0.51,
+      "valor_medio": 0.0257
+     },
+     {
+      "q": 1,
+      "n": 2394,
+      "acierto": 0.5426,
+      "valor_medio": 0.0792
+     },
+     {
+      "q": 2,
+      "n": 2393,
+      "acierto": 0.5558,
+      "valor_medio": 0.1436
+     },
+     {
+      "q": 3,
+      "n": 2394,
+      "acierto": 0.6245,
+      "valor_medio": 0.2685
+     }
+    ],
+    "separacion_pp": 11.45,
+    "monotono": true
+   }
+  },
+  "top_n": {
+   "20": {
+    "por_edge": 0.6,
+    "por_probabilidad": 0.75,
+    "dif_pp": -15.0
+   },
+   "50": {
+    "por_edge": 0.62,
+    "por_probabilidad": 0.76,
+    "dif_pp": -14.0
+   },
+   "100": {
+    "por_edge": 0.71,
+    "por_probabilidad": 0.73,
+    "dif_pp": -2.0
+   },
+   "200": {
+    "por_edge": 0.7,
+    "por_probabilidad": 0.7,
+    "dif_pp": 0.0
+   }
+  },
+  "riesgo": {
+   "buckets": [
+    {
+     "riesgo": "0-30%",
+     "n": 148,
+     "riesgo_declarado": 27.73,
+     "fallo_real": 27.7,
+     "dif_pp": -0.03
+    },
+    {
+     "riesgo": "30-35%",
+     "n": 471,
+     "riesgo_declarado": 32.81,
+     "fallo_real": 33.55,
+     "dif_pp": 0.73
+    },
+    {
+     "riesgo": "35-40%",
+     "n": 1458,
+     "riesgo_declarado": 37.87,
+     "fallo_real": 38.55,
+     "dif_pp": 0.68
+    },
+    {
+     "riesgo": "40-45%",
+     "n": 3006,
+     "riesgo_declarado": 42.76,
+     "fallo_real": 44.58,
+     "dif_pp": 1.82
+    },
+    {
+     "riesgo": "45-51%",
+     "n": 4492,
+     "riesgo_declarado": 47.55,
+     "fallo_real": 47.4,
+     "dif_pp": -0.15
+    }
+   ],
+   "monotono": true,
+   "error_medio_pp": 0.68,
+   "veredicto": "calibrado y monotono: el riesgo publicado significa lo que dice"
+  },
+  "resumen_metricas": {
+   "n": 9575,
+   "accuracy": 0.5582245430809399,
+   "log_loss": 0.6818687200678675,
+   "brier": 0.2444393754789268,
+   "ece": 0.006403447090635586,
+   "mean_predicted": 0.5646189755663727,
+   "base_rate": 0.5582245430809399
+  },
+  "comparacion_modelo_ml": {
+   "acierto": 0.5511,
+   "calibracion_buckets": [
+    {
+     "bucket": "50-55%",
+     "n": 4334,
+     "predicho": 0.5244,
+     "real": 0.5145,
+     "dif_pp": -0.99
+    },
+    {
+     "bucket": "55-60%",
+     "n": 3069,
+     "predicho": 0.5722,
+     "real": 0.5611,
+     "dif_pp": -1.11
+    },
+    {
+     "bucket": "60-65%",
+     "n": 1568,
+     "predicho": 0.6211,
+     "real": 0.5989,
+     "dif_pp": -2.23
+    },
+    {
+     "bucket": "65-70%",
+     "n": 529,
+     "predicho": 0.6696,
+     "real": 0.6314,
+     "dif_pp": -3.82
+    },
+    {
+     "bucket": "70-75%",
+     "n": 74,
+     "predicho": 0.7135,
+     "real": 0.6892,
+     "dif_pp": -2.43
+    },
+    {
+     "bucket": "75-80%",
+     "n": 1,
+     "predicho": 0.7522,
+     "real": 1.0,
+     "dif_pp": 24.78
+    },
+    {
+     "bucket": "80-101%",
+     "n": 0,
+     "predicho": null,
+     "real": null,
+     "dif_pp": null
+    }
+   ]
+  }
+ },
+ "f5_moneyline": {
+  "modelo_usado": "p_home_model",
+  "n": 9573,
+  "acierto_global": 0.5567,
+  "calibracion_buckets": [
+   {
+    "bucket": "50-55%",
+    "n": 4182,
+    "predicho": 0.5248,
+    "real": 0.5256,
+    "dif_pp": 0.08
+   },
+   {
+    "bucket": "55-60%",
+    "n": 3408,
+    "predicho": 0.5731,
+    "real": 0.5681,
+    "dif_pp": -0.5
+   },
+   {
+    "bucket": "60-65%",
+    "n": 1678,
+    "predicho": 0.6208,
+    "real": 0.587,
+    "dif_pp": -3.38
+   },
+   {
+    "bucket": "65-70%",
+    "n": 298,
+    "predicho": 0.6634,
+    "real": 0.6913,
+    "dif_pp": 2.79
+   },
+   {
+    "bucket": "70-75%",
+    "n": 7,
+    "predicho": 0.7065,
+    "real": 0.5714,
+    "dif_pp": -13.51
+   },
+   {
+    "bucket": "75-80%",
+    "n": 0,
+    "predicho": null,
+    "real": null,
+    "dif_pp": null
+   },
+   {
+    "bucket": "80-101%",
+    "n": 0,
+    "predicho": null,
+    "real": null,
+    "dif_pp": null
+   }
+  ],
+  "edge_vs_alternativas": {
+   "edge_sobre_base": {
+    "cuartiles": [
+     {
+      "q": 0,
+      "n": 2394,
+      "acierto": 0.5322,
+      "valor_medio": -0.0269
+     },
+     {
+      "q": 1,
+      "n": 2393,
+      "acierto": 0.56,
+      "valor_medio": 0.0118
+     },
+     {
+      "q": 2,
+      "n": 2393,
+      "acierto": 0.5637,
+      "valor_medio": 0.0491
+     },
+     {
+      "q": 3,
+      "n": 2393,
+      "acierto": 0.5708,
+      "valor_medio": 0.0897
+     }
+    ],
+    "separacion_pp": 3.87,
+    "monotono": true
+   },
+   "probabilidad_bruta": {
+    "cuartiles": [
+     {
+      "q": 0,
+      "n": 2394,
+      "acierto": 0.5058,
+      "valor_medio": 0.5141
+     },
+     {
+      "q": 1,
+      "n": 2393,
+      "acierto": 0.5587,
+      "valor_medio": 0.5428
+     },
+     {
+      "q": 2,
+      "n": 2393,
+      "acierto": 0.5667,
+      "valor_medio": 0.5741
+     },
+     {
+      "q": 3,
+      "n": 2393,
+      "acierto": 0.5955,
+      "valor_medio": 0.6221
+     }
+    ],
+    "separacion_pp": 8.96,
+    "monotono": true
+   },
+   "confianza": {
+    "cuartiles": [
+     {
+      "q": 0,
+      "n": 2394,
+      "acierto": 0.5058,
+      "valor_medio": 0.0281
+     },
+     {
+      "q": 1,
+      "n": 2393,
+      "acierto": 0.5587,
+      "valor_medio": 0.0856
+     },
+     {
+      "q": 2,
+      "n": 2393,
+      "acierto": 0.5667,
+      "valor_medio": 0.1481
+     },
+     {
+      "q": 3,
+      "n": 2393,
+      "acierto": 0.5955,
+      "valor_medio": 0.2443
+     }
+    ],
+    "separacion_pp": 8.96,
+    "monotono": true
+   }
+  },
+  "top_n": {
+   "20": {
+    "por_edge": 0.4,
+    "por_probabilidad": 0.75,
+    "dif_pp": -35.0
+   },
+   "50": {
+    "por_edge": 0.56,
+    "por_probabilidad": 0.78,
+    "dif_pp": -22.0
+   },
+   "100": {
+    "por_edge": 0.59,
+    "por_probabilidad": 0.72,
+    "dif_pp": -13.0
+   },
+   "200": {
+    "por_edge": 0.61,
+    "por_probabilidad": 0.67,
+    "dif_pp": -6.0
+   }
+  },
+  "riesgo": {
+   "buckets": [
+    {
+     "riesgo": "0-30%",
+     "n": 7,
+     "riesgo_declarado": 29.35,
+     "fallo_real": 42.86,
+     "dif_pp": 13.51
+    },
+    {
+     "riesgo": "30-35%",
+     "n": 298,
+     "riesgo_declarado": 33.66,
+     "fallo_real": 30.87,
+     "dif_pp": -2.79
+    },
+    {
+     "riesgo": "35-40%",
+     "n": 1678,
+     "riesgo_declarado": 37.92,
+     "fallo_real": 41.3,
+     "dif_pp": 3.38
+    },
+    {
+     "riesgo": "40-45%",
+     "n": 3408,
+     "riesgo_declarado": 42.69,
+     "fallo_real": 43.19,
+     "dif_pp": 0.5
+    },
+    {
+     "riesgo": "45-51%",
+     "n": 4182,
+     "riesgo_declarado": 47.52,
+     "fallo_real": 47.44,
+     "dif_pp": -0.08
+    }
+   ],
+   "monotono": true,
+   "error_medio_pp": 1.69,
+   "veredicto": "calibrado y monotono: el riesgo publicado significa lo que dice"
+  },
+  "resumen_metricas": {
+   "n": 9573,
+   "accuracy": 0.5566698004805182,
+   "log_loss": 0.684488595741717,
+   "brier": 0.24569659794684776,
+   "ece": 0.0065945232411756885,
+   "mean_predicted": 0.5632643237216937,
+   "base_rate": 0.5566698004805182
+  }
+ },
+ "run_line": {
+  "modelo_usado": "p_home_model",
+  "n": 9575,
+  "acierto_global": 0.6426,
+  "calibracion_buckets": [
+   {
+    "bucket": "50-55%",
+    "n": 1198,
+    "predicho": 0.5255,
+    "real": 0.5609,
+    "dif_pp": 3.54
+   },
+   {
+    "bucket": "55-60%",
+    "n": 1614,
+    "predicho": 0.5764,
+    "real": 0.5824,
+    "dif_pp": 0.6
+   },
+   {
+    "bucket": "60-65%",
+    "n": 2117,
+    "predicho": 0.626,
+    "real": 0.6297,
+    "dif_pp": 0.36
+   },
+   {
+    "bucket": "65-70%",
+    "n": 2487,
+    "predicho": 0.6744,
+    "real": 0.6655,
+    "dif_pp": -0.89
+   },
+   {
+    "bucket": "70-75%",
+    "n": 1707,
+    "predicho": 0.7225,
+    "real": 0.7106,
+    "dif_pp": -1.19
+   },
+   {
+    "bucket": "75-80%",
+    "n": 436,
+    "predicho": 0.7671,
+    "real": 0.75,
+    "dif_pp": -1.71
+   },
+   {
+    "bucket": "80-101%",
+    "n": 16,
+    "predicho": 0.8084,
+    "real": 0.8125,
+    "dif_pp": 0.41
+   }
+  ],
+  "edge_vs_alternativas": {
+   "edge_sobre_base": {
+    "cuartiles": [
+     {
+      "q": 0,
+      "n": 2394,
+      "acierto": 0.5894,
+      "valor_medio": -0.0779
+     },
+     {
+      "q": 1,
+      "n": 2394,
+      "acierto": 0.6316,
+      "valor_medio": -0.0078
+     },
+     {
+      "q": 2,
+      "n": 2393,
+      "acierto": 0.6753,
+      "valor_medio": 0.0419
+     },
+     {
+      "q": 3,
+      "n": 2394,
+      "acierto": 0.6742,
+      "valor_medio": 0.1127
+     }
+    ],
+    "separacion_pp": 8.48,
+    "monotono": false
+   },
+   "probabilidad_bruta": {
+    "cuartiles": [
+     {
+      "q": 0,
+      "n": 2394,
+      "acierto": 0.5673,
+      "valor_medio": 0.5478
+     },
+     {
+      "q": 1,
+      "n": 2394,
+      "acierto": 0.6241,
+      "valor_medio": 0.6192
+     },
+     {
+      "q": 2,
+      "n": 2393,
+      "acierto": 0.6578,
+      "valor_medio": 0.6706
+     },
+     {
+      "q": 3,
+      "n": 2394,
+      "acierto": 0.7214,
+      "valor_medio": 0.7287
+     }
+    ],
+    "separacion_pp": 15.41,
+    "monotono": true
+   },
+   "confianza": {
+    "cuartiles": [
+     {
+      "q": 0,
+      "n": 2394,
+      "acierto": 0.5673,
+      "valor_medio": 0.0956
+     },
+     {
+      "q": 1,
+      "n": 2394,
+      "acierto": 0.6241,
+      "valor_medio": 0.2384
+     },
+     {
+      "q": 2,
+      "n": 2393,
+      "acierto": 0.6578,
+      "valor_medio": 0.3412
+     },
+     {
+      "q": 3,
+      "n": 2394,
+      "acierto": 0.7214,
+      "valor_medio": 0.4574
+     }
+    ],
+    "separacion_pp": 15.41,
+    "monotono": true
+   }
+  },
+  "top_n": {
+   "20": {
+    "por_edge": 0.7,
+    "por_probabilidad": 0.85,
+    "dif_pp": -15.0
+   },
+   "50": {
+    "por_edge": 0.52,
+    "por_probabilidad": 0.78,
+    "dif_pp": -26.0
+   },
+   "100": {
+    "por_edge": 0.47,
+    "por_probabilidad": 0.79,
+    "dif_pp": -32.0
+   },
+   "200": {
+    "por_edge": 0.505,
+    "por_probabilidad": 0.79,
+    "dif_pp": -28.5
+   }
+  },
+  "riesgo": {
+   "buckets": [
+    {
+     "riesgo": "0-30%",
+     "n": 2159,
+     "riesgo_declarado": 26.79,
+     "fallo_real": 28.07,
+     "dif_pp": 1.28
+    },
+    {
+     "riesgo": "30-35%",
+     "n": 2487,
+     "riesgo_declarado": 32.56,
+     "fallo_real": 33.45,
+     "dif_pp": 0.89
+    },
+    {
+     "riesgo": "35-40%",
+     "n": 2117,
+     "riesgo_declarado": 37.4,
+     "fallo_real": 37.03,
+     "dif_pp": -0.36
+    },
+    {
+     "riesgo": "40-45%",
+     "n": 1614,
+     "riesgo_declarado": 42.36,
+     "fallo_real": 41.76,
+     "dif_pp": -0.6
+    },
+    {
+     "riesgo": "45-51%",
+     "n": 1198,
+     "riesgo_declarado": 47.45,
+     "fallo_real": 43.91,
+     "dif_pp": -3.54
+    }
+   ],
+   "monotono": true,
+   "error_medio_pp": 1.33,
+   "veredicto": "calibrado y monotono: el riesgo publicado significa lo que dice"
+  },
+  "resumen_metricas": {
+   "n": 9575,
+   "accuracy": 0.6426109660574413,
+   "log_loss": 0.6449733553851797,
+   "brier": 0.2265159240887881,
+   "ece": 0.009863135396408262,
+   "mean_predicted": 0.6415755549675777,
+   "base_rate": 0.6426109660574413
+  }
+ }
+}

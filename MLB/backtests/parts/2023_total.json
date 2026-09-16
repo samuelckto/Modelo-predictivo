@@ -1,0 +1,52 @@
+{
+ "row": {
+  "season": 2023,
+  "market": "total",
+  "n": 2471,
+  "rmse": 4.580959817877254,
+  "mae": 3.611556321996696,
+  "mean_pred": 8.769590418395657,
+  "mean_real": 9.21408336705787,
+  "baseline_rmse_media": 4.593881397214047,
+  "lines": {
+   "7.5": {
+    "n": 2471,
+    "accuracy": 0.5965196276811008,
+    "log_loss": 0.6734916595349877,
+    "brier": 0.24028199274225587,
+    "ece": 0.03594885436050079,
+    "mean_predicted": 0.5617848566876579,
+    "base_rate": 0.5977337110481586
+   },
+   "8.5": {
+    "n": 2471,
+    "accuracy": 0.5167948199109672,
+    "log_loss": 0.6949443001371512,
+    "brier": 0.25088219615357815,
+    "ece": 0.054228401155183,
+    "mean_predicted": 0.4694462245024456,
+    "base_rate": 0.5236746256576285
+   },
+   "9.5": {
+    "n": 2471,
+    "accuracy": 0.5746661270740591,
+    "log_loss": 0.6838445693058803,
+    "brier": 0.2452892356368961,
+    "ece": 0.044856477767713225,
+    "mean_predicted": 0.3808820896139136,
+    "base_rate": 0.42573856738162685
+   }
+  }
+ },
+ "elo": {
+  "k": 4.0,
+  "home_adv": 24.0,
+  "regress": 0.5,
+  "mov": true,
+  "base": 1500.0,
+  "rationale": "rejilla de 60 combinaciones validada en 2022 (log loss 0.6739); las temporadas de prueba nunca se tocaron",
+  "fitted_on": [
+   2021
+  ]
+ }
+}

@@ -1,0 +1,868 @@
+{
+ "season": 2024,
+ "market": "run_line",
+ "variant": "sin_abridor",
+ "n": 2472,
+ "base_rate": 0.35436893203883496,
+ "n_features": 86,
+ "train_seasons": [
+  2021,
+  2022,
+  2023
+ ],
+ "elo_cfg": {
+  "k": 3.0,
+  "home_adv": 12.0,
+  "regress": 0.5
+ },
+ "oof_train": {
+  "logistic": {
+   "log_loss": 0.64674,
+   "accuracy": 0.636560010800594
+  },
+  "forest": {
+   "log_loss": 0.64317,
+   "accuracy": 0.6366950182260024
+  },
+  "xgboost": {
+   "log_loss": 0.64904,
+   "accuracy": 0.6384501147563116
+  },
+  "lightgbm": {
+   "log_loss": 0.64881,
+   "accuracy": 0.6383151073309032
+  },
+  "ensemble": {
+   "log_loss": 0.64498,
+   "accuracy": 0.6398001890103956
+  }
+ },
+ "weights": {
+  "logistic": 0.24773390842888637,
+  "forest": 0.354020641323973,
+  "xgboost": 0.19683291472623474,
+  "lightgbm": 0.20141253552090582
+ },
+ "mean_dispersion": 0.019533972980793967,
+ "strategies": {
+  "logistic": {
+   "n": 2472,
+   "accuracy": 0.6444174757281553,
+   "log_loss": 0.6407424485990478,
+   "brier": 0.22453042759356498,
+   "ece": 0.01999850312760636,
+   "mean_predicted": 0.35995479567508215,
+   "base_rate": 0.35436893203883496,
+   "reliability": [
+    {
+     "bucket": "0%-10%",
+     "lo": 0.0,
+     "hi": 0.1,
+     "n": 0,
+     "predicted": null,
+     "observed": null
+    },
+    {
+     "bucket": "10%-20%",
+     "lo": 0.1,
+     "hi": 0.2,
+     "n": 1,
+     "predicted": 0.18540889527151896,
+     "observed": 0.0
+    },
+    {
+     "bucket": "20%-30%",
+     "lo": 0.2,
+     "hi": 0.30000000000000004,
+     "n": 304,
+     "predicted": 0.2758832408422429,
+     "observed": 0.25
+    },
+    {
+     "bucket": "30%-40%",
+     "lo": 0.30000000000000004,
+     "hi": 0.4,
+     "n": 1641,
+     "predicted": 0.35150135386007886,
+     "observed": 0.3382084095063985
+    },
+    {
+     "bucket": "40%-50%",
+     "lo": 0.4,
+     "hi": 0.5,
+     "n": 507,
+     "predicted": 0.432319482423432,
+     "observed": 0.46745562130177515
+    },
+    {
+     "bucket": "50%-60%",
+     "lo": 0.5,
+     "hi": 0.6000000000000001,
+     "n": 19,
+     "predicted": 0.5134021854957969,
+     "observed": 0.42105263157894735
+    },
+    {
+     "bucket": "60%-70%",
+     "lo": 0.6000000000000001,
+     "hi": 0.7000000000000001,
+     "n": 0,
+     "predicted": null,
+     "observed": null
+    },
+    {
+     "bucket": "70%-80%",
+     "lo": 0.7000000000000001,
+     "hi": 0.8,
+     "n": 0,
+     "predicted": null,
+     "observed": null
+    },
+    {
+     "bucket": "80%-90%",
+     "lo": 0.8,
+     "hi": 0.9,
+     "n": 0,
+     "predicted": null,
+     "observed": null
+    },
+    {
+     "bucket": "90%-100%",
+     "lo": 0.9,
+     "hi": 1.0,
+     "n": 0,
+     "predicted": null,
+     "observed": null
+    }
+   ]
+  },
+  "forest": {
+   "n": 2472,
+   "accuracy": 0.6484627831715211,
+   "log_loss": 0.6397353058263032,
+   "brier": 0.22402222511048814,
+   "ece": 0.00792805869222093,
+   "mean_predicted": 0.3578210166079276,
+   "base_rate": 0.35436893203883496,
+   "reliability": [
+    {
+     "bucket": "0%-10%",
+     "lo": 0.0,
+     "hi": 0.1,
+     "n": 0,
+     "predicted": null,
+     "observed": null
+    },
+    {
+     "bucket": "10%-20%",
+     "lo": 0.1,
+     "hi": 0.2,
+     "n": 0,
+     "predicted": null,
+     "observed": null
+    },
+    {
+     "bucket": "20%-30%",
+     "lo": 0.2,
+     "hi": 0.30000000000000004,
+     "n": 495,
+     "predicted": 0.2776213687249912,
+     "observed": 0.26262626262626265
+    },
+    {
+     "bucket": "30%-40%",
+     "lo": 0.30000000000000004,
+     "hi": 0.4,
+     "n": 1357,
+     "predicted": 0.34608937328821887,
+     "observed": 0.34119380987472364
+    },
+    {
+     "bucket": "40%-50%",
+     "lo": 0.4,
+     "hi": 0.5,
+     "n": 561,
+     "predicted": 0.44012545485556875,
+     "observed": 0.44563279857397503
+    },
+    {
+     "bucket": "50%-60%",
+     "lo": 0.5,
+     "hi": 0.6000000000000001,
+     "n": 59,
+     "predicted": 0.5179206069464313,
+     "observed": 0.559322033898305
+    },
+    {
+     "bucket": "60%-70%",
+     "lo": 0.6000000000000001,
+     "hi": 0.7000000000000001,
+     "n": 0,
+     "predicted": null,
+     "observed": null
+    },
+    {
+     "bucket": "70%-80%",
+     "lo": 0.7000000000000001,
+     "hi": 0.8,
+     "n": 0,
+     "predicted": null,
+     "observed": null
+    },
+    {
+     "bucket": "80%-90%",
+     "lo": 0.8,
+     "hi": 0.9,
+     "n": 0,
+     "predicted": null,
+     "observed": null
+    },
+    {
+     "bucket": "90%-100%",
+     "lo": 0.9,
+     "hi": 1.0,
+     "n": 0,
+     "predicted": null,
+     "observed": null
+    }
+   ]
+  },
+  "xgboost": {
+   "n": 2472,
+   "accuracy": 0.6460355987055016,
+   "log_loss": 0.6432687302107883,
+   "brier": 0.22562278164155533,
+   "ece": 0.01618870407507346,
+   "mean_predicted": 0.3602487679211668,
+   "base_rate": 0.35436893203883496,
+   "reliability": [
+    {
+     "bucket": "0%-10%",
+     "lo": 0.0,
+     "hi": 0.1,
+     "n": 0,
+     "predicted": null,
+     "observed": null
+    },
+    {
+     "bucket": "10%-20%",
+     "lo": 0.1,
+     "hi": 0.2,
+     "n": 0,
+     "predicted": null,
+     "observed": null
+    },
+    {
+     "bucket": "20%-30%",
+     "lo": 0.2,
+     "hi": 0.30000000000000004,
+     "n": 125,
+     "predicted": 0.28917028016726537,
+     "observed": 0.224
+    },
+    {
+     "bucket": "30%-40%",
+     "lo": 0.30000000000000004,
+     "hi": 0.4,
+     "n": 1942,
+     "predicted": 0.35022164282515184,
+     "observed": 0.3403707518022657
+    },
+    {
+     "bucket": "40%-50%",
+     "lo": 0.4,
+     "hi": 0.5,
+     "n": 402,
+     "predicted": 0.42963069028609774,
+     "observed": 0.4601990049751244
+    },
+    {
+     "bucket": "50%-60%",
+     "lo": 0.5,
+     "hi": 0.6000000000000001,
+     "n": 3,
+     "predicted": 0.5155671395867086,
+     "observed": 0.6666666666666666
+    },
+    {
+     "bucket": "60%-70%",
+     "lo": 0.6000000000000001,
+     "hi": 0.7000000000000001,
+     "n": 0,
+     "predicted": null,
+     "observed": null
+    },
+    {
+     "bucket": "70%-80%",
+     "lo": 0.7000000000000001,
+     "hi": 0.8,
+     "n": 0,
+     "predicted": null,
+     "observed": null
+    },
+    {
+     "bucket": "80%-90%",
+     "lo": 0.8,
+     "hi": 0.9,
+     "n": 0,
+     "predicted": null,
+     "observed": null
+    },
+    {
+     "bucket": "90%-100%",
+     "lo": 0.9,
+     "hi": 1.0,
+     "n": 0,
+     "predicted": null,
+     "observed": null
+    }
+   ]
+  },
+  "lightgbm": {
+   "n": 2472,
+   "accuracy": 0.6460355987055016,
+   "log_loss": 0.6432394337025115,
+   "brier": 0.2256313081745542,
+   "ece": 0.019744146954572474,
+   "mean_predicted": 0.35904743607146444,
+   "base_rate": 0.35436893203883496,
+   "reliability": [
+    {
+     "bucket": "0%-10%",
+     "lo": 0.0,
+     "hi": 0.1,
+     "n": 0,
+     "predicted": null,
+     "observed": null
+    },
+    {
+     "bucket": "10%-20%",
+     "lo": 0.1,
+     "hi": 0.2,
+     "n": 0,
+     "predicted": null,
+     "observed": null
+    },
+    {
+     "bucket": "20%-30%",
+     "lo": 0.2,
+     "hi": 0.30000000000000004,
+     "n": 179,
+     "predicted": 0.2856097360504041,
+     "observed": 0.2346368715083799
+    },
+    {
+     "bucket": "30%-40%",
+     "lo": 0.30000000000000004,
+     "hi": 0.4,
+     "n": 1928,
+     "predicted": 0.3532480569850412,
+     "observed": 0.34232365145228216
+    },
+    {
+     "bucket": "40%-50%",
+     "lo": 0.4,
+     "hi": 0.5,
+     "n": 364,
+     "predicted": 0.42546760249046267,
+     "observed": 0.47527472527472525
+    },
+    {
+     "bucket": "50%-60%",
+     "lo": 0.5,
+     "hi": 0.6000000000000001,
+     "n": 1,
+     "predicted": 0.5086580419501546,
+     "observed": 1.0
+    },
+    {
+     "bucket": "60%-70%",
+     "lo": 0.6000000000000001,
+     "hi": 0.7000000000000001,
+     "n": 0,
+     "predicted": null,
+     "observed": null
+    },
+    {
+     "bucket": "70%-80%",
+     "lo": 0.7000000000000001,
+     "hi": 0.8,
+     "n": 0,
+     "predicted": null,
+     "observed": null
+    },
+    {
+     "bucket": "80%-90%",
+     "lo": 0.8,
+     "hi": 0.9,
+     "n": 0,
+     "predicted": null,
+     "observed": null
+    },
+    {
+     "bucket": "90%-100%",
+     "lo": 0.9,
+     "hi": 1.0,
+     "n": 0,
+     "predicted": null,
+     "observed": null
+    }
+   ]
+  },
+  "ensemble": {
+   "n": 2472,
+   "accuracy": 0.6496763754045307,
+   "log_loss": 0.6392729189853675,
+   "brier": 0.2238126641598485,
+   "ece": 0.006960860535434604,
+   "mean_predicted": 0.35776003935304707,
+   "base_rate": 0.35436893203883496,
+   "reliability": [
+    {
+     "bucket": "0%-10%",
+     "lo": 0.0,
+     "hi": 0.1,
+     "n": 0,
+     "predicted": null,
+     "observed": null
+    },
+    {
+     "bucket": "10%-20%",
+     "lo": 0.1,
+     "hi": 0.2,
+     "n": 0,
+     "predicted": null,
+     "observed": null
+    },
+    {
+     "bucket": "20%-30%",
+     "lo": 0.2,
+     "hi": 0.30000000000000004,
+     "n": 491,
+     "predicted": 0.27299256304824454,
+     "observed": 0.27494908350305497
+    },
+    {
+     "bucket": "30%-40%",
+     "lo": 0.30000000000000004,
+     "hi": 0.4,
+     "n": 1362,
+     "predicted": 0.3470383460763036,
+     "observed": 0.342143906020558
+    },
+    {
+     "bucket": "40%-50%",
+     "lo": 0.4,
+     "hi": 0.5,
+     "n": 549,
+     "predicted": 0.4392145808856791,
+     "observed": 0.42805100182149364
+    },
+    {
+     "bucket": "50%-60%",
+     "lo": 0.5,
+     "hi": 0.6000000000000001,
+     "n": 70,
+     "predicted": 0.522120522312585,
+     "observed": 0.5714285714285714
+    },
+    {
+     "bucket": "60%-70%",
+     "lo": 0.6000000000000001,
+     "hi": 0.7000000000000001,
+     "n": 0,
+     "predicted": null,
+     "observed": null
+    },
+    {
+     "bucket": "70%-80%",
+     "lo": 0.7000000000000001,
+     "hi": 0.8,
+     "n": 0,
+     "predicted": null,
+     "observed": null
+    },
+    {
+     "bucket": "80%-90%",
+     "lo": 0.8,
+     "hi": 0.9,
+     "n": 0,
+     "predicted": null,
+     "observed": null
+    },
+    {
+     "bucket": "90%-100%",
+     "lo": 0.9,
+     "hi": 1.0,
+     "n": 0,
+     "predicted": null,
+     "observed": null
+    }
+   ]
+  },
+  "elo": {
+   "n": 2472,
+   "accuracy": 0.5279126213592233,
+   "log_loss": 0.6920383530016831,
+   "brier": 0.2493955936202159,
+   "ece": 0.16258269635447917,
+   "mean_predicted": 0.516951628393314,
+   "base_rate": 0.35436893203883496,
+   "reliability": [
+    {
+     "bucket": "0%-10%",
+     "lo": 0.0,
+     "hi": 0.1,
+     "n": 0,
+     "predicted": null,
+     "observed": null
+    },
+    {
+     "bucket": "10%-20%",
+     "lo": 0.1,
+     "hi": 0.2,
+     "n": 0,
+     "predicted": null,
+     "observed": null
+    },
+    {
+     "bucket": "20%-30%",
+     "lo": 0.2,
+     "hi": 0.30000000000000004,
+     "n": 0,
+     "predicted": null,
+     "observed": null
+    },
+    {
+     "bucket": "30%-40%",
+     "lo": 0.30000000000000004,
+     "hi": 0.4,
+     "n": 141,
+     "predicted": 0.3649850266978581,
+     "observed": 0.23404255319148937
+    },
+    {
+     "bucket": "40%-50%",
+     "lo": 0.4,
+     "hi": 0.5,
+     "n": 834,
+     "predicted": 0.4591436570342729,
+     "observed": 0.28776978417266186
+    },
+    {
+     "bucket": "50%-60%",
+     "lo": 0.5,
+     "hi": 0.6000000000000001,
+     "n": 1203,
+     "predicted": 0.5452176710897095,
+     "observed": 0.38237738985868663
+    },
+    {
+     "bucket": "60%-70%",
+     "lo": 0.6000000000000001,
+     "hi": 0.7000000000000001,
+     "n": 277,
+     "predicted": 0.6330549305318136,
+     "observed": 0.48014440433212996
+    },
+    {
+     "bucket": "70%-80%",
+     "lo": 0.7000000000000001,
+     "hi": 0.8,
+     "n": 17,
+     "predicted": 0.7213325046504644,
+     "observed": 0.5882352941176471
+    },
+    {
+     "bucket": "80%-90%",
+     "lo": 0.8,
+     "hi": 0.9,
+     "n": 0,
+     "predicted": null,
+     "observed": null
+    },
+    {
+     "bucket": "90%-100%",
+     "lo": 0.9,
+     "hi": 1.0,
+     "n": 0,
+     "predicted": null,
+     "observed": null
+    }
+   ]
+  },
+  "siempre_local": {
+   "n": 2472,
+   "accuracy": 0.35436893203883496,
+   "log_loss": 0.6931477630862174,
+   "brier": 0.25000029126313594,
+   "ece": 0.14563206796116507,
+   "mean_predicted": 0.500001,
+   "base_rate": 0.35436893203883496,
+   "reliability": [
+    {
+     "bucket": "0%-10%",
+     "lo": 0.0,
+     "hi": 0.1,
+     "n": 0,
+     "predicted": null,
+     "observed": null
+    },
+    {
+     "bucket": "10%-20%",
+     "lo": 0.1,
+     "hi": 0.2,
+     "n": 0,
+     "predicted": null,
+     "observed": null
+    },
+    {
+     "bucket": "20%-30%",
+     "lo": 0.2,
+     "hi": 0.30000000000000004,
+     "n": 0,
+     "predicted": null,
+     "observed": null
+    },
+    {
+     "bucket": "30%-40%",
+     "lo": 0.30000000000000004,
+     "hi": 0.4,
+     "n": 0,
+     "predicted": null,
+     "observed": null
+    },
+    {
+     "bucket": "40%-50%",
+     "lo": 0.4,
+     "hi": 0.5,
+     "n": 0,
+     "predicted": null,
+     "observed": null
+    },
+    {
+     "bucket": "50%-60%",
+     "lo": 0.5,
+     "hi": 0.6000000000000001,
+     "n": 2472,
+     "predicted": 0.500001,
+     "observed": 0.35436893203883496
+    },
+    {
+     "bucket": "60%-70%",
+     "lo": 0.6000000000000001,
+     "hi": 0.7000000000000001,
+     "n": 0,
+     "predicted": null,
+     "observed": null
+    },
+    {
+     "bucket": "70%-80%",
+     "lo": 0.7000000000000001,
+     "hi": 0.8,
+     "n": 0,
+     "predicted": null,
+     "observed": null
+    },
+    {
+     "bucket": "80%-90%",
+     "lo": 0.8,
+     "hi": 0.9,
+     "n": 0,
+     "predicted": null,
+     "observed": null
+    },
+    {
+     "bucket": "90%-100%",
+     "lo": 0.9,
+     "hi": 1.0,
+     "n": 0,
+     "predicted": null,
+     "observed": null
+    }
+   ]
+  },
+  "siempre_visitante": {
+   "n": 2472,
+   "accuracy": 0.645631067961165,
+   "log_loss": 0.6931465980376735,
+   "brier": 0.24999970873886404,
+   "ece": 0.145630067961165,
+   "mean_predicted": 0.49999899999999997,
+   "base_rate": 0.35436893203883496,
+   "reliability": [
+    {
+     "bucket": "0%-10%",
+     "lo": 0.0,
+     "hi": 0.1,
+     "n": 0,
+     "predicted": null,
+     "observed": null
+    },
+    {
+     "bucket": "10%-20%",
+     "lo": 0.1,
+     "hi": 0.2,
+     "n": 0,
+     "predicted": null,
+     "observed": null
+    },
+    {
+     "bucket": "20%-30%",
+     "lo": 0.2,
+     "hi": 0.30000000000000004,
+     "n": 0,
+     "predicted": null,
+     "observed": null
+    },
+    {
+     "bucket": "30%-40%",
+     "lo": 0.30000000000000004,
+     "hi": 0.4,
+     "n": 0,
+     "predicted": null,
+     "observed": null
+    },
+    {
+     "bucket": "40%-50%",
+     "lo": 0.4,
+     "hi": 0.5,
+     "n": 2472,
+     "predicted": 0.49999899999999997,
+     "observed": 0.35436893203883496
+    },
+    {
+     "bucket": "50%-60%",
+     "lo": 0.5,
+     "hi": 0.6000000000000001,
+     "n": 0,
+     "predicted": null,
+     "observed": null
+    },
+    {
+     "bucket": "60%-70%",
+     "lo": 0.6000000000000001,
+     "hi": 0.7000000000000001,
+     "n": 0,
+     "predicted": null,
+     "observed": null
+    },
+    {
+     "bucket": "70%-80%",
+     "lo": 0.7000000000000001,
+     "hi": 0.8,
+     "n": 0,
+     "predicted": null,
+     "observed": null
+    },
+    {
+     "bucket": "80%-90%",
+     "lo": 0.8,
+     "hi": 0.9,
+     "n": 0,
+     "predicted": null,
+     "observed": null
+    },
+    {
+     "bucket": "90%-100%",
+     "lo": 0.9,
+     "hi": 1.0,
+     "n": 0,
+     "predicted": null,
+     "observed": null
+    }
+   ]
+  },
+  "aleatorio": {
+   "n": 2472,
+   "accuracy": 0.49029126213592233,
+   "log_loss": 0.9918646186282521,
+   "brier": 0.33571675240461607,
+   "ece": 0.27590062285238803,
+   "mean_predicted": 0.5025655130534248,
+   "base_rate": 0.35436893203883496,
+   "reliability": [
+    {
+     "bucket": "0%-10%",
+     "lo": 0.0,
+     "hi": 0.1,
+     "n": 240,
+     "predicted": 0.05125209648925189,
+     "observed": 0.3125
+    },
+    {
+     "bucket": "10%-20%",
+     "lo": 0.1,
+     "hi": 0.2,
+     "n": 246,
+     "predicted": 0.15116553574198,
+     "observed": 0.4105691056910569
+    },
+    {
+     "bucket": "20%-30%",
+     "lo": 0.2,
+     "hi": 0.30000000000000004,
+     "n": 260,
+     "predicted": 0.2531319220962273,
+     "observed": 0.3346153846153846
+    },
+    {
+     "bucket": "30%-40%",
+     "lo": 0.30000000000000004,
+     "hi": 0.4,
+     "n": 251,
+     "predicted": 0.3500250183008563,
+     "observed": 0.3904382470119522
+    },
+    {
+     "bucket": "40%-50%",
+     "lo": 0.4,
+     "hi": 0.5,
+     "n": 239,
+     "predicted": 0.45227617146034443,
+     "observed": 0.3723849372384937
+    },
+    {
+     "bucket": "50%-60%",
+     "lo": 0.5,
+     "hi": 0.6000000000000001,
+     "n": 231,
+     "predicted": 0.5472926926411681,
+     "observed": 0.38095238095238093
+    },
+    {
+     "bucket": "60%-70%",
+     "lo": 0.6000000000000001,
+     "hi": 0.7000000000000001,
+     "n": 240,
+     "predicted": 0.6519460871859751,
+     "observed": 0.2833333333333333
+    },
+    {
+     "bucket": "70%-80%",
+     "lo": 0.7000000000000001,
+     "hi": 0.8,
+     "n": 262,
+     "predicted": 0.749740944817086,
+     "observed": 0.3053435114503817
+    },
+    {
+     "bucket": "80%-90%",
+     "lo": 0.8,
+     "hi": 0.9,
+     "n": 262,
+     "predicted": 0.8505856935691763,
+     "observed": 0.38549618320610685
+    },
+    {
+     "bucket": "90%-100%",
+     "lo": 0.9,
+     "hi": 1.0,
+     "n": 241,
+     "predicted": 0.9498460033967543,
+     "observed": 0.36929460580912865
+    }
+   ]
+  }
+ }
+}

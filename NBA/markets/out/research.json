@@ -1,0 +1,930 @@
+{
+ "targets": {
+  "moneyline": {
+   "algoritmos": {
+    "logistic": {
+     "n": 4599,
+     "accuracy": 0.644705370732768,
+     "log_loss": 0.634964509952478,
+     "brier": 0.22198140375651237,
+     "ece": 0.034589587582868016,
+     "auc": 0.6881886532683166
+    },
+    "rf": {
+     "n": 4599,
+     "accuracy": 0.6453576864535768,
+     "log_loss": 0.6328927305972467,
+     "brier": 0.22109836816228867,
+     "ece": 0.015103930654890579,
+     "auc": 0.6879616189236194
+    },
+    "hgb": {
+     "n": 4599,
+     "accuracy": 0.6420961078495325,
+     "log_loss": 0.6379338103926903,
+     "brier": 0.22332790669170177,
+     "ece": 0.024929039226008632,
+     "auc": 0.6819300603826985
+    },
+    "xgb": {
+     "n": 4599,
+     "accuracy": 0.6429658621439444,
+     "log_loss": 0.6368692434289102,
+     "brier": 0.22280486773940317,
+     "ece": 0.026827535408752132,
+     "auc": 0.6842471913128684
+    },
+    "tasa_local_historica": {
+     "n": 4599,
+     "accuracy": 0.558599695585997,
+     "log_loss": 0.6871210017995842,
+     "brier": 0.24698549454018096,
+     "ece": 0.022220459343607613,
+     "auc": 0.5099562421980912
+    },
+    "elo": {
+     "n": 4599,
+     "accuracy": 0.6442704935855621,
+     "log_loss": 0.641540372622727,
+     "brier": 0.2240411618786545,
+     "ece": 0.04633852643452048,
+     "auc": 0.6866812909510323
+    },
+    "siempre_favorito_elo": {
+     "accuracy": 0.6442704935855621
+    }
+   },
+   "algoritmo_elegido": "rf",
+   "familias_finales": [
+    "elo",
+    "strength",
+    "pace",
+    "shooting",
+    "turnovers",
+    "rebounding",
+    "free_throws",
+    "defense_misc",
+    "rest",
+    "context"
+   ],
+   "familias_descartadas": [],
+   "ablacion": [
+    {
+     "quitando": "defense_misc",
+     "sin": 0.63198,
+     "con": 0.63289
+    }
+   ],
+   "features": [
+    "a_b2b",
+    "a_games_last7",
+    "a_games_played",
+    "a_rest_days",
+    "d_b2b",
+    "d_games_last7",
+    "d_games_played",
+    "d_l10_assists",
+    "d_l10_blocks",
+    "d_l10_drb_pct",
+    "d_l10_drtg",
+    "d_l10_efg",
+    "d_l10_fg3_pct",
+    "d_l10_fg3_rate",
+    "d_l10_fouls",
+    "d_l10_ft_rate",
+    "d_l10_margin",
+    "d_l10_opp_efg",
+    "d_l10_opp_pts",
+    "d_l10_opp_rim_rate",
+    "d_l10_opp_tov_rate",
+    "d_l10_orb_pct",
+    "d_l10_ortg",
+    "d_l10_pace",
+    "d_l10_pts",
+    "d_l10_rim_acc",
+    "d_l10_rim_rate",
+    "d_l10_shot_quality",
+    "d_l10_steals",
+    "d_l10_tov_rate",
+    "d_l10_ts",
+    "d_l10_won",
+    "d_rest_days",
+    "d_s_assists",
+    "d_s_blocks",
+    "d_s_drb_pct",
+    "d_s_drtg",
+    "d_s_efg",
+    "d_s_fg3_pct",
+    "d_s_fg3_rate",
+    "d_s_fouls",
+    "d_s_ft_rate",
+    "d_s_margin",
+    "d_s_opp_efg",
+    "d_s_opp_pts",
+    "d_s_opp_rim_rate",
+    "d_s_opp_tov_rate",
+    "d_s_orb_pct",
+    "d_s_ortg",
+    "d_s_pace",
+    "d_s_pts",
+    "d_s_rim_acc",
+    "d_s_rim_rate",
+    "d_s_shot_quality",
+    "d_s_steals",
+    "d_s_tov_rate",
+    "d_s_ts",
+    "d_s_won",
+    "elo_away",
+    "elo_diff",
+    "elo_home",
+    "elo_prob_home",
+    "elo_sum",
+    "h_b2b",
+    "h_games_last7",
+    "h_games_played",
+    "h_rest_days",
+    "is_playoff",
+    "month",
+    "sum_l10_assists",
+    "sum_l10_blocks",
+    "sum_l10_drb_pct",
+    "sum_l10_drtg",
+    "sum_l10_efg",
+    "sum_l10_fg3_pct",
+    "sum_l10_fg3_rate",
+    "sum_l10_fouls",
+    "sum_l10_ft_rate",
+    "sum_l10_margin",
+    "sum_l10_opp_efg",
+    "sum_l10_opp_pts",
+    "sum_l10_opp_rim_rate",
+    "sum_l10_opp_tov_rate",
+    "sum_l10_orb_pct",
+    "sum_l10_ortg",
+    "sum_l10_pace",
+    "sum_l10_pts",
+    "sum_l10_rim_acc",
+    "sum_l10_rim_rate",
+    "sum_l10_shot_quality",
+    "sum_l10_steals",
+    "sum_l10_tov_rate",
+    "sum_l10_ts",
+    "sum_l10_won",
+    "sum_s_assists",
+    "sum_s_blocks",
+    "sum_s_drb_pct",
+    "sum_s_drtg",
+    "sum_s_efg",
+    "sum_s_fg3_pct",
+    "sum_s_fg3_rate",
+    "sum_s_fouls",
+    "sum_s_ft_rate",
+    "sum_s_margin",
+    "sum_s_opp_efg",
+    "sum_s_opp_pts",
+    "sum_s_opp_rim_rate",
+    "sum_s_opp_tov_rate",
+    "sum_s_orb_pct",
+    "sum_s_ortg",
+    "sum_s_pace",
+    "sum_s_pts",
+    "sum_s_rim_acc",
+    "sum_s_rim_rate",
+    "sum_s_shot_quality",
+    "sum_s_steals",
+    "sum_s_tov_rate",
+    "sum_s_ts",
+    "sum_s_won"
+   ],
+   "n_features": 119,
+   "por_temporada": {
+    "2019": {
+     "modelo": {
+      "n": 1230,
+      "accuracy": 0.6617886178861788,
+      "log_loss": 0.6135481247055393,
+      "brier": 0.21237115598651066,
+      "ece": 0.04131751268727485,
+      "auc": 0.7062527893458623
+     },
+     "tasa_local": 0.5926829268292683,
+     "elo": {
+      "n": 1230,
+      "accuracy": 0.6552845528455284,
+      "log_loss": 0.6272150845038907,
+      "brier": 0.21805086698815912,
+      "ece": 0.05110452989939379,
+      "auc": 0.691776939947266
+     },
+     "siempre_favorito_elo": 0.6552845528455284
+    },
+    "2020": {
+     "modelo": {
+      "n": 1059,
+      "accuracy": 0.6496694995278565,
+      "log_loss": 0.6284283907826063,
+      "brier": 0.21922840867667961,
+      "ece": 0.03267820826907064,
+      "auc": 0.696802451333814
+     },
+     "tasa_local": 0.5514636449480642,
+     "elo": {
+      "n": 1059,
+      "accuracy": 0.6553352219074599,
+      "log_loss": 0.6327443198900844,
+      "brier": 0.22084337764076345,
+      "ece": 0.059744367239348395,
+      "auc": 0.6965068493150686
+     },
+     "siempre_favorito_elo": 0.6553352219074599
+    },
+    "2021": {
+     "modelo": {
+      "n": 1080,
+      "accuracy": 0.6240740740740741,
+      "log_loss": 0.6500449594790167,
+      "brier": 0.2290211993422463,
+      "ece": 0.036219173654413676,
+      "auc": 0.667228766616792
+     },
+     "tasa_local": 0.5435185185185185,
+     "elo": {
+      "n": 1080,
+      "accuracy": 0.6222222222222222,
+      "log_loss": 0.6574208761833824,
+      "brier": 0.23135921318473235,
+      "ece": 0.06984487684371975,
+      "auc": 0.6721425338037464
+     },
+     "siempre_favorito_elo": 0.6222222222222222
+    },
+    "2022": {
+     "modelo": {
+      "n": 1230,
+      "accuracy": 0.6439024390243903,
+      "log_loss": 0.6410205305307369,
+      "brier": 0.22447893759083556,
+      "ece": 0.03605186794366167,
+      "auc": 0.6828719801550189
+     },
+     "tasa_local": 0.5439024390243903,
+     "elo": {
+      "n": 1230,
+      "accuracy": 0.6430894308943089,
+      "log_loss": 0.6494949908215314,
+      "brier": 0.2263590649783876,
+      "ece": 0.06345930153296787,
+      "auc": 0.6881396396036333
+     },
+     "siempre_favorito_elo": 0.6430894308943089
+    },
+    "2023": {
+     "modelo": {
+      "n": 1230,
+      "accuracy": 0.6195121951219512,
+      "log_loss": 0.6474355241454267,
+      "brier": 0.2279091566425241,
+      "ece": 0.03908290243214935,
+      "auc": 0.6550577595379237
+     },
+     "tasa_local": 0.5804878048780487,
+     "elo": {
+      "n": 1230,
+      "accuracy": 0.6292682926829268,
+      "log_loss": 0.6624932443144453,
+      "brier": 0.23342392345659274,
+      "ece": 0.0507095236035428,
+      "auc": 0.6388101752328839
+     },
+     "siempre_favorito_elo": 0.6292682926829268
+    },
+    "2024": {
+     "modelo": {
+      "n": 1230,
+      "accuracy": 0.6487804878048781,
+      "log_loss": 0.6171062726681199,
+      "brier": 0.21425223230551865,
+      "ece": 0.035128198103096676,
+      "auc": 0.7162054893771177
+     },
+     "tasa_local": 0.5430894308943089,
+     "elo": {
+      "n": 1230,
+      "accuracy": 0.6455284552845528,
+      "log_loss": 0.6212717329713174,
+      "brier": 0.2166651007722036,
+      "ece": 0.05615894321933662,
+      "auc": 0.7124097001726086
+     },
+     "siempre_favorito_elo": 0.6455284552845528
+    },
+    "2025": {
+     "modelo": {
+      "n": 1230,
+      "accuracy": 0.6528455284552845,
+      "log_loss": 0.6115866612234159,
+      "brier": 0.2118410435175808,
+      "ece": 0.0389274310988302,
+      "auc": 0.7225399786780384
+     },
+     "tasa_local": 0.5447154471544715,
+     "elo": {
+      "n": 1230,
+      "accuracy": 0.6626016260162602,
+      "log_loss": 0.6182300673297725,
+      "brier": 0.21461142749352713,
+      "ece": 0.05142670108835722,
+      "auc": 0.7195868869936034
+     },
+     "siempre_favorito_elo": 0.6626016260162602
+    },
+    "2026": {
+     "modelo": {
+      "n": 1230,
+      "accuracy": 0.6813008130081301,
+      "log_loss": 0.5983405369219424,
+      "brier": 0.2056843992706612,
+      "ece": 0.03630939621638133,
+      "auc": 0.7394996643209252
+     },
+     "tasa_local": 0.5536585365853659,
+     "elo": {
+      "n": 1230,
+      "accuracy": 0.6804878048780488,
+      "log_loss": 0.6038022024852576,
+      "brier": 0.20767100620185808,
+      "ece": 0.037397046044599334,
+      "auc": 0.7331017013980833
+     },
+     "siempre_favorito_elo": 0.6804878048780488
+    }
+   },
+   "holdout_2023_2026": {
+    "modelo": {
+     "n": 4920,
+     "accuracy": 0.650609756097561,
+     "log_loss": 0.6186172487397262,
+     "brier": 0.21492170793407123,
+     "ece": 0.01888713300039106,
+     "auc": 0.708364849606103
+    },
+    "elo": {
+     "n": 4920,
+     "accuracy": 0.6544715447154471,
+     "log_loss": 0.6264493117751982,
+     "brier": 0.21809286448104537,
+     "ece": 0.043189196780536426,
+     "auc": 0.7025181731988797
+    },
+    "tasa_local": 0.5554878048780488
+   }
+  },
+  "spread": {
+   "algoritmos": {
+    "ridge": {
+     "n": 4599,
+     "mae": 10.687119257355029,
+     "rmse": 13.636271154636614
+    },
+    "rf": {
+     "n": 4599,
+     "mae": 10.720481269370529,
+     "rmse": 13.694243190304482
+    },
+    "hgb": {
+     "n": 4599,
+     "mae": 10.750945189853839,
+     "rmse": 13.73032404042543
+    },
+    "xgb": {
+     "n": 4599,
+     "mae": 10.760513383127865,
+     "rmse": 13.727979342501136
+    },
+    "media_historica": {
+     "n": 4599,
+     "mae": 11.727643263541232,
+     "rmse": 14.78859804512005
+    }
+   },
+   "algoritmo_elegido": "ridge",
+   "familias_finales": [
+    "elo",
+    "strength",
+    "pace",
+    "shooting",
+    "turnovers",
+    "rebounding",
+    "free_throws",
+    "defense_misc",
+    "rest",
+    "context"
+   ],
+   "familias_descartadas": [],
+   "ablacion": [
+    {
+     "quitando": "context",
+     "sin": 10.68293,
+     "con": 10.68712
+    }
+   ],
+   "features": [
+    "a_b2b",
+    "a_games_last7",
+    "a_games_played",
+    "a_rest_days",
+    "d_b2b",
+    "d_games_last7",
+    "d_games_played",
+    "d_l10_assists",
+    "d_l10_blocks",
+    "d_l10_drb_pct",
+    "d_l10_drtg",
+    "d_l10_efg",
+    "d_l10_fg3_pct",
+    "d_l10_fg3_rate",
+    "d_l10_fouls",
+    "d_l10_ft_rate",
+    "d_l10_margin",
+    "d_l10_opp_efg",
+    "d_l10_opp_pts",
+    "d_l10_opp_rim_rate",
+    "d_l10_opp_tov_rate",
+    "d_l10_orb_pct",
+    "d_l10_ortg",
+    "d_l10_pace",
+    "d_l10_pts",
+    "d_l10_rim_acc",
+    "d_l10_rim_rate",
+    "d_l10_shot_quality",
+    "d_l10_steals",
+    "d_l10_tov_rate",
+    "d_l10_ts",
+    "d_l10_won",
+    "d_rest_days",
+    "d_s_assists",
+    "d_s_blocks",
+    "d_s_drb_pct",
+    "d_s_drtg",
+    "d_s_efg",
+    "d_s_fg3_pct",
+    "d_s_fg3_rate",
+    "d_s_fouls",
+    "d_s_ft_rate",
+    "d_s_margin",
+    "d_s_opp_efg",
+    "d_s_opp_pts",
+    "d_s_opp_rim_rate",
+    "d_s_opp_tov_rate",
+    "d_s_orb_pct",
+    "d_s_ortg",
+    "d_s_pace",
+    "d_s_pts",
+    "d_s_rim_acc",
+    "d_s_rim_rate",
+    "d_s_shot_quality",
+    "d_s_steals",
+    "d_s_tov_rate",
+    "d_s_ts",
+    "d_s_won",
+    "elo_away",
+    "elo_diff",
+    "elo_home",
+    "elo_prob_home",
+    "elo_sum",
+    "h_b2b",
+    "h_games_last7",
+    "h_games_played",
+    "h_rest_days",
+    "is_playoff",
+    "month",
+    "sum_l10_assists",
+    "sum_l10_blocks",
+    "sum_l10_drb_pct",
+    "sum_l10_drtg",
+    "sum_l10_efg",
+    "sum_l10_fg3_pct",
+    "sum_l10_fg3_rate",
+    "sum_l10_fouls",
+    "sum_l10_ft_rate",
+    "sum_l10_margin",
+    "sum_l10_opp_efg",
+    "sum_l10_opp_pts",
+    "sum_l10_opp_rim_rate",
+    "sum_l10_opp_tov_rate",
+    "sum_l10_orb_pct",
+    "sum_l10_ortg",
+    "sum_l10_pace",
+    "sum_l10_pts",
+    "sum_l10_rim_acc",
+    "sum_l10_rim_rate",
+    "sum_l10_shot_quality",
+    "sum_l10_steals",
+    "sum_l10_tov_rate",
+    "sum_l10_ts",
+    "sum_l10_won",
+    "sum_s_assists",
+    "sum_s_blocks",
+    "sum_s_drb_pct",
+    "sum_s_drtg",
+    "sum_s_efg",
+    "sum_s_fg3_pct",
+    "sum_s_fg3_rate",
+    "sum_s_fouls",
+    "sum_s_ft_rate",
+    "sum_s_margin",
+    "sum_s_opp_efg",
+    "sum_s_opp_pts",
+    "sum_s_opp_rim_rate",
+    "sum_s_opp_tov_rate",
+    "sum_s_orb_pct",
+    "sum_s_ortg",
+    "sum_s_pace",
+    "sum_s_pts",
+    "sum_s_rim_acc",
+    "sum_s_rim_rate",
+    "sum_s_shot_quality",
+    "sum_s_steals",
+    "sum_s_tov_rate",
+    "sum_s_ts",
+    "sum_s_won"
+   ],
+   "n_features": 119,
+   "por_temporada": {
+    "2019": {
+     "modelo": {
+      "n": 1230,
+      "mae": 10.175217465757482,
+      "rmse": 13.113086537058726
+     },
+     "media": {
+      "n": 1230,
+      "mae": 11.368972172648556,
+      "rmse": 14.401041583095145
+     }
+    },
+    "2020": {
+     "modelo": {
+      "n": 1059,
+      "mae": 10.186252034166138,
+      "rmse": 12.921037102612724
+     },
+     "media": {
+      "n": 1059,
+      "mae": 11.236444874363759,
+      "rmse": 14.098901421765703
+     }
+    },
+    "2021": {
+     "modelo": {
+      "n": 1080,
+      "mae": 11.213314946043624,
+      "rmse": 14.252851857819154
+     },
+     "media": {
+      "n": 1080,
+      "mae": 12.060153593131515,
+      "rmse": 15.264127940644046
+     }
+    },
+    "2022": {
+     "modelo": {
+      "n": 1230,
+      "mae": 11.16823002909351,
+      "rmse": 14.184423661492533
+     },
+     "media": {
+      "n": 1230,
+      "mae": 12.217263897670849,
+      "rmse": 15.317337892782184
+     }
+    },
+    "2023": {
+     "modelo": {
+      "n": 1230,
+      "mae": 10.132745041251603,
+      "rmse": 12.881437185190144
+     },
+     "media": {
+      "n": 1230,
+      "mae": 10.896950410329293,
+      "rmse": 13.666173482503789
+     }
+    },
+    "2024": {
+     "modelo": {
+      "n": 1230,
+      "mae": 10.985801588495075,
+      "rmse": 14.131451481549835
+     },
+     "media": {
+      "n": 1230,
+      "mae": 12.448886565764491,
+      "rmse": 15.636245185288836
+     }
+    },
+    "2025": {
+     "modelo": {
+      "n": 1230,
+      "mae": 10.940540750193136,
+      "rmse": 13.99679546036699
+     },
+     "media": {
+      "n": 1230,
+      "mae": 12.591056910569106,
+      "rmse": 15.877761519106878
+     }
+    },
+    "2026": {
+     "modelo": {
+      "n": 1230,
+      "mae": 11.357994065720424,
+      "rmse": 14.544565422928445
+     },
+     "media": {
+      "n": 1230,
+      "mae": 13.10055931212956,
+      "rmse": 16.416969176513568
+     }
+    }
+   },
+   "holdout_2023_2026": {
+    "modelo": {
+     "n": 4920,
+     "mae": 10.85427036141506,
+     "rmse": 13.90219417423552
+    },
+    "media": {
+     "n": 4920,
+     "mae": 12.259363299698112,
+     "rmse": 15.434350074983607
+    }
+   }
+  },
+  "total": {
+   "algoritmos": {
+    "ridge": {
+     "n": 4599,
+     "mae": 15.131850765060486,
+     "rmse": 19.17788556314263
+    },
+    "rf": {
+     "n": 4599,
+     "mae": 15.21592648784244,
+     "rmse": 19.322413563734788
+    },
+    "hgb": {
+     "n": 4599,
+     "mae": 15.22859737709408,
+     "rmse": 19.34518274681757
+    },
+    "xgb": {
+     "n": 4599,
+     "mae": 15.190299501728042,
+     "rmse": 19.29630557574428
+    },
+    "media_historica": {
+     "n": 4599,
+     "mae": 17.691381411224416,
+     "rmse": 22.484173713069033
+    }
+   },
+   "algoritmo_elegido": "ridge",
+   "familias_finales": [
+    "elo",
+    "strength",
+    "pace",
+    "turnovers",
+    "rebounding",
+    "free_throws",
+    "defense_misc",
+    "rest",
+    "context"
+   ],
+   "familias_descartadas": [
+    "shooting"
+   ],
+   "ablacion": [
+    {
+     "quitando": "shooting",
+     "sin": 15.041,
+     "con": 15.13185
+    },
+    {
+     "quitando": "defense_misc",
+     "sin": 15.03975,
+     "con": 15.041
+    }
+   ],
+   "features": [
+    "a_b2b",
+    "a_games_last7",
+    "a_games_played",
+    "a_rest_days",
+    "d_b2b",
+    "d_games_last7",
+    "d_games_played",
+    "d_l10_assists",
+    "d_l10_blocks",
+    "d_l10_drb_pct",
+    "d_l10_drtg",
+    "d_l10_fouls",
+    "d_l10_ft_rate",
+    "d_l10_margin",
+    "d_l10_opp_pts",
+    "d_l10_opp_tov_rate",
+    "d_l10_orb_pct",
+    "d_l10_ortg",
+    "d_l10_pace",
+    "d_l10_pts",
+    "d_l10_steals",
+    "d_l10_tov_rate",
+    "d_l10_won",
+    "d_rest_days",
+    "d_s_assists",
+    "d_s_blocks",
+    "d_s_drb_pct",
+    "d_s_drtg",
+    "d_s_fouls",
+    "d_s_ft_rate",
+    "d_s_margin",
+    "d_s_opp_pts",
+    "d_s_opp_tov_rate",
+    "d_s_orb_pct",
+    "d_s_ortg",
+    "d_s_pace",
+    "d_s_pts",
+    "d_s_steals",
+    "d_s_tov_rate",
+    "d_s_won",
+    "elo_away",
+    "elo_diff",
+    "elo_home",
+    "elo_prob_home",
+    "elo_sum",
+    "h_b2b",
+    "h_games_last7",
+    "h_games_played",
+    "h_rest_days",
+    "is_playoff",
+    "month",
+    "sum_l10_assists",
+    "sum_l10_blocks",
+    "sum_l10_drb_pct",
+    "sum_l10_drtg",
+    "sum_l10_fouls",
+    "sum_l10_ft_rate",
+    "sum_l10_margin",
+    "sum_l10_opp_pts",
+    "sum_l10_opp_tov_rate",
+    "sum_l10_orb_pct",
+    "sum_l10_ortg",
+    "sum_l10_pace",
+    "sum_l10_pts",
+    "sum_l10_steals",
+    "sum_l10_tov_rate",
+    "sum_l10_won",
+    "sum_s_assists",
+    "sum_s_blocks",
+    "sum_s_drb_pct",
+    "sum_s_drtg",
+    "sum_s_fouls",
+    "sum_s_ft_rate",
+    "sum_s_margin",
+    "sum_s_opp_pts",
+    "sum_s_opp_tov_rate",
+    "sum_s_orb_pct",
+    "sum_s_ortg",
+    "sum_s_pace",
+    "sum_s_pts",
+    "sum_s_steals",
+    "sum_s_tov_rate",
+    "sum_s_won"
+   ],
+   "n_features": 83,
+   "por_temporada": {
+    "2019": {
+     "modelo": {
+      "n": 1230,
+      "mae": 15.206586345615465,
+      "rmse": 19.420601901886965
+     },
+     "media": {
+      "n": 1230,
+      "mae": 19.021523784343536,
+      "rmse": 24.209873207494656
+     }
+    },
+    "2020": {
+     "modelo": {
+      "n": 1059,
+      "mae": 15.291807794176766,
+      "rmse": 19.326884123506122
+     },
+     "media": {
+      "n": 1059,
+      "mae": 18.008710088517315,
+      "rmse": 23.014872845865614
+     }
+    },
+    "2021": {
+     "modelo": {
+      "n": 1080,
+      "mae": 14.913075947026131,
+      "rmse": 18.907545176712365
+     },
+     "media": {
+      "n": 1080,
+      "mae": 17.401266314817903,
+      "rmse": 21.960563419485215
+     }
+    },
+    "2022": {
+     "modelo": {
+      "n": 1230,
+      "mae": 14.771787767213993,
+      "rmse": 18.62945724274593
+     },
+     "media": {
+      "n": 1230,
+      "mae": 16.342761993280792,
+      "rmse": 20.605885132857228
+     }
+    },
+    "2023": {
+     "modelo": {
+      "n": 1230,
+      "mae": 14.611053763965872,
+      "rmse": 18.785660396828572
+     },
+     "media": {
+      "n": 1230,
+      "mae": 18.247991608037683,
+      "rmse": 23.095370040871835
+     }
+    },
+    "2024": {
+     "modelo": {
+      "n": 1230,
+      "mae": 15.159938683763365,
+      "rmse": 18.762484640876117
+     },
+     "media": {
+      "n": 1230,
+      "mae": 17.638098727662353,
+      "rmse": 22.53159122727489
+     }
+    },
+    "2025": {
+     "modelo": {
+      "n": 1230,
+      "mae": 14.61171046775029,
+      "rmse": 18.323039610376874
+     },
+     "media": {
+      "n": 1230,
+      "mae": 17.08609331781289,
+      "rmse": 21.30696639180358
+     }
+    },
+    "2026": {
+     "modelo": {
+      "n": 1230,
+      "mae": 15.50604326713074,
+      "rmse": 19.402054786486943
+     },
+     "media": {
+      "n": 1230,
+      "mae": 17.758176945155373,
+      "rmse": 22.56511777219435
+     }
+    }
+   },
+   "holdout_2023_2026": {
+    "modelo": {
+     "n": 4920,
+     "mae": 14.972186545652567,
+     "rmse": 18.822230054813954
+    },
+    "media": {
+     "n": 4920,
+     "mae": 17.68259014966707,
+     "rmse": 22.38436997914091
+    }
+   }
+  }
+ },
+ "protocol": "Walk-forward NBA: moneyline (clasificacion), spread (margen) y total (puntos).\n\n  * Temporadas de prueba 2019..2026 (2019 = 2018-19). Para T se entrena con < T.\n  * SELECCION (algoritmo, familias, calibracion): 2019-2022. HOLDOUT: 2023-2026,\n    que no se mira hasta cerrar la configuracion.\n  * Sin lineas historicas: spread y total se evaluan como distribuciones\n    (MAE/RMSE vs media historica y calibracion de P(margen > k), P(total > k)),\n    no contra el mercado.\nSalida: NBA/markets/out/research.json y preds_*.parquet (OOS, reproducibles).\n",
+ "select": [
+  2019,
+  2020,
+  2021,
+  2022
+ ],
+ "holdout": [
+  2023,
+  2024,
+  2025,
+  2026
+ ]
+}

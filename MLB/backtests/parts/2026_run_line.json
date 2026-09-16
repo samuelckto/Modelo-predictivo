@@ -1,0 +1,182 @@
+{
+ "row": {
+  "season": 2026,
+  "market": "run_line",
+  "n": 2154,
+  "base_rate": 0.36118848653667596,
+  "strategies": {
+   "ensemble": {
+    "n": 2154,
+    "accuracy": 0.628133704735376,
+    "log_loss": 0.6565864981414828,
+    "brier": 0.2320214536756351,
+    "ece": 0.05341894736798641,
+    "mean_predicted": 0.35751179070568356,
+    "base_rate": 0.36118848653667596
+   },
+   "modelo_forest": {
+    "n": 2154,
+    "accuracy": 0.6360259981429898,
+    "log_loss": 0.6533576127594797,
+    "brier": 0.23050855838541606,
+    "ece": 0.03759018688747535,
+    "mean_predicted": 0.3577317282493467,
+    "base_rate": 0.36118848653667596
+   },
+   "elo": {
+    "n": 2154,
+    "accuracy": 0.46657381615598886,
+    "log_loss": 0.7178222460964918,
+    "brier": 0.2620077833014328,
+    "ece": 0.180879843683913,
+    "mean_predicted": 0.542068330220589,
+    "base_rate": 0.36118848653667596
+   },
+   "siempre_local": {
+    "n": 2154,
+    "accuracy": 0.36118848653667596,
+    "log_loss": 0.6932027251660714,
+    "brier": 0.2500277723026927,
+    "ece": 0.13891151346332392,
+    "mean_predicted": 0.5000999999999999,
+    "base_rate": 0.36118848653667596
+   },
+   "aleatorio": {
+    "n": 2154,
+    "accuracy": 0.4986072423398329,
+    "log_loss": 0.9925231504000817,
+    "brier": 0.33278656886093805,
+    "ece": 0.2666315117186276,
+    "mean_predicted": 0.49916103302619547,
+    "base_rate": 0.36118848653667596
+   }
+  },
+  "market_available": false,
+  "market_note": "sin historico gratuito de cuotas MLB: no se compara",
+  "ensemble_calibration": [
+   {
+    "bucket": "0%-10%",
+    "lo": 0.0,
+    "hi": 0.1,
+    "n": 0,
+    "predicted": null,
+    "observed": null
+   },
+   {
+    "bucket": "10%-20%",
+    "lo": 0.1,
+    "hi": 0.2,
+    "n": 9,
+    "predicted": 0.18860938143486716,
+    "observed": 0.3333333333333333
+   },
+   {
+    "bucket": "20%-30%",
+    "lo": 0.2,
+    "hi": 0.30000000000000004,
+    "n": 563,
+    "predicted": 0.2661248934892735,
+    "observed": 0.29307282415630553
+   },
+   {
+    "bucket": "30%-40%",
+    "lo": 0.30000000000000004,
+    "hi": 0.4,
+    "n": 993,
+    "predicted": 0.3487073366378538,
+    "observed": 0.39375629405840884
+   },
+   {
+    "bucket": "40%-50%",
+    "lo": 0.4,
+    "hi": 0.5,
+    "n": 470,
+    "predicted": 0.4404548884767342,
+    "observed": 0.3638297872340426
+   },
+   {
+    "bucket": "50%-60%",
+    "lo": 0.5,
+    "hi": 0.6000000000000001,
+    "n": 105,
+    "predicted": 0.538103711621041,
+    "observed": 0.37142857142857144
+   },
+   {
+    "bucket": "60%-70%",
+    "lo": 0.6000000000000001,
+    "hi": 0.7000000000000001,
+    "n": 13,
+    "predicted": 0.6198244308514033,
+    "observed": 0.6153846153846154
+   },
+   {
+    "bucket": "70%-80%",
+    "lo": 0.7000000000000001,
+    "hi": 0.8,
+    "n": 1,
+    "predicted": 0.7158075259362668,
+    "observed": 1.0
+   },
+   {
+    "bucket": "80%-90%",
+    "lo": 0.8,
+    "hi": 0.9,
+    "n": 0,
+    "predicted": null,
+    "observed": null
+   },
+   {
+    "bucket": "90%-100%",
+    "lo": 0.9,
+    "hi": 1.0,
+    "n": 0,
+    "predicted": null,
+    "observed": null
+   }
+  ],
+  "mean_dispersion": 0.019109559391016717,
+  "oof_train": {
+   "logistic": {
+    "log_loss": 0.64311,
+    "accuracy": 0.640822272580123
+   },
+   "forest": {
+    "log_loss": 0.64045,
+    "accuracy": 0.6457591453544836
+   },
+   "xgboost": {
+    "log_loss": 0.64398,
+    "accuracy": 0.6417934606668825
+   },
+   "lightgbm": {
+    "log_loss": 0.64547,
+    "accuracy": 0.6418743930074458
+   },
+   "ensemble": {
+    "log_loss": 0.64175,
+    "accuracy": 0.6430074457753319
+   }
+  },
+  "weights": {
+   "logistic": 0.2493024002627074,
+   "forest": 0.3252735818375554,
+   "xgboost": 0.22852980020719138,
+   "lightgbm": 0.1968942176925458
+  }
+ },
+ "elo": {
+  "k": 2.0,
+  "home_adv": 30.0,
+  "regress": 0.25,
+  "mov": true,
+  "base": 1500.0,
+  "rationale": "rejilla de 60 combinaciones validada en 2025 (log loss 0.6781); las temporadas de prueba nunca se tocaron",
+  "fitted_on": [
+   2021,
+   2022,
+   2023,
+   2024
+  ]
+ }
+}

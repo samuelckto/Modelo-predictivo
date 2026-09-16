@@ -1,0 +1,73 @@
+{
+ "n": 4631,
+ "seasons_test": [
+  2025,
+  2026
+ ],
+ "pesos_por_defecto": {
+  "buckets": [
+   {
+    "range": "0-39",
+    "n": 3331,
+    "error_rate": 0.4437,
+    "accuracy": 0.5563
+   },
+   {
+    "range": "40-64",
+    "n": 1300,
+    "error_rate": 0.44,
+    "accuracy": 0.56
+   },
+   {
+    "range": "65-100",
+    "n": 0,
+    "error_rate": null
+   }
+  ],
+  "monotonic": false,
+  "n": 4631,
+  "spread_pp": -0.37,
+  "useful": false
+ },
+ "pesos_ajustados": {
+  "weights": {
+   "closeness": 6.4941,
+   "dispersion": 1.7217,
+   "elo_gap": -2.7413,
+   "missing_data": -0.5482,
+   "starter_unknown": 0.1744,
+   "lineup_unconfirmed": 0.0,
+   "market_gap": 0.0
+  },
+  "ajustados_con": "2021-2024 (en muestra de entrenamiento)",
+  "evaluados_en": "2025-2026",
+  "buckets": [
+   {
+    "range": "0-39",
+    "n": 852,
+    "error_rate": 0.4261,
+    "accuracy": 0.5739
+   },
+   {
+    "range": "40-64",
+    "n": 3777,
+    "error_rate": 0.4467,
+    "accuracy": 0.5533
+   },
+   {
+    "range": "65-100",
+    "n": 2,
+    "error_rate": 0.0,
+    "accuracy": 1.0
+   }
+  ],
+  "monotonic": false,
+  "n": 4631,
+  "spread_pp": 2.06,
+  "useful": false
+ },
+ "correlacion_riesgo_error": {
+  "default": 0.008,
+  "fitted": 0.0285
+ }
+}

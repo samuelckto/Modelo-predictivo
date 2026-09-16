@@ -1,0 +1,126 @@
+{
+ "inventario": {
+  "log": [
+   {
+    "source": "baseball_savant",
+    "domain": "statcast",
+    "status": "empty",
+    "calls": 8,
+    "first": "2026-09-07 18:56:10.000000",
+    "last": "2026-09-07 18:56:11.000000",
+    "records": 0,
+    "with_checksum": 8
+   },
+   {
+    "source": "baseball_savant",
+    "domain": "statcast",
+    "status": "ok",
+    "calls": 412,
+    "first": "2026-09-07 18:11:32.000000",
+    "last": "2026-09-07 18:56:28.000000",
+    "records": 4381637,
+    "with_checksum": 412
+   },
+   {
+    "source": "mlb_stats_api",
+    "domain": "boxscore",
+    "status": "ok",
+    "calls": 14541,
+    "first": "2026-09-07 16:29:32.000000",
+    "last": "2026-09-07 19:54:33.000000",
+    "records": 14541,
+    "with_checksum": 14541
+   },
+   {
+    "source": "mlb_stats_api",
+    "domain": "injuries",
+    "status": "ok",
+    "calls": 60,
+    "first": "2026-09-07 18:56:41.000000",
+    "last": "2026-09-07 19:54:20.000000",
+    "records": 16850,
+    "with_checksum": 60
+   },
+   {
+    "source": "mlb_stats_api",
+    "domain": "lineups",
+    "status": "ok",
+    "calls": 25,
+    "first": "2026-09-07 19:54:34.000000",
+    "last": "2026-09-07 19:54:51.000000",
+    "records": 25,
+    "with_checksum": 25
+   },
+   {
+    "source": "mlb_stats_api",
+    "domain": "schedule",
+    "status": "ok",
+    "calls": 15,
+    "first": "2026-09-07 16:28:26.000000",
+    "last": "2026-09-07 19:54:00.000000",
+    "records": 1473,
+    "with_checksum": 15
+   },
+   {
+    "source": "the_odds_api",
+    "domain": "odds",
+    "status": "skipped",
+    "calls": 2,
+    "first": "2026-09-07 19:45:36.000000",
+    "last": "2026-09-07 19:54:20.000000",
+    "records": 0,
+    "with_checksum": 0
+   }
+  ],
+  "hosts": {
+   "mlb_stats_api": [
+    "statsapi.mlb.com"
+   ],
+   "baseball_savant": [
+    "baseballsavant.mlb.com"
+   ],
+   "the_odds_api": [
+    "api.the-odds-api.com"
+   ]
+  },
+  "sample_urls": {
+   "baseball_savant": "https://baseballsavant.mlb.com/statcast_search/csv?all=true&hfSea=2021%7C&player_type=pitcher&game_date_gt=2021-04-01&game_date_lt=2021-04-03&type=details&min_pitches=0&min_results=0&group_by=name&sort_col=pitches&player_event_sort=api_p_release_speed&sort_order=desc",
+   "mlb_stats_api": "https://statsapi.mlb.com/api/v1/teams?sportId=1&season=2024&hydrate=venue",
+   "the_odds_api": "https://api.the-odds-api.com/v4/sports/baseball_mlb/odds"
+  }
+ },
+ "calendario": {
+  "checked_dates": [
+   "2025-07-05",
+   "2023-05-16",
+   "2025-06-13"
+  ],
+  "games": 45,
+  "match": 45,
+  "mismatch": []
+ },
+ "boxscores": {
+  "checked_games": [
+   662994,
+   634553,
+   718273,
+   778540,
+   718706
+  ],
+  "lines": 34,
+  "match": 34,
+  "mismatch": []
+ },
+ "statcast": {
+  "date": "2024-09-04",
+  "pitches_downloaded": 4593,
+  "checked": 3,
+  "match": 3,
+  "mismatch": [],
+  "truncated": false
+ },
+ "secretos": {
+  "urls_con_clave": 0,
+  "ok": true
+ }
+}

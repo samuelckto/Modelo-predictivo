@@ -1,0 +1,181 @@
+{
+ "row": {
+  "season": 2025,
+  "market": "run_line",
+  "n": 2477,
+  "base_rate": 0.3572870407751312,
+  "strategies": {
+   "ensemble": {
+    "n": 2477,
+    "accuracy": 0.6435203875656036,
+    "log_loss": 0.6477289759700943,
+    "brier": 0.2277312810021646,
+    "ece": 0.02573163971570295,
+    "mean_predicted": 0.3605273669944261,
+    "base_rate": 0.3572870407751312
+   },
+   "modelo_forest": {
+    "n": 2477,
+    "accuracy": 0.6463463867581752,
+    "log_loss": 0.6468029699237698,
+    "brier": 0.22724018035513505,
+    "ece": 0.019255314473580996,
+    "mean_predicted": 0.3586295777990535,
+    "base_rate": 0.3572870407751312
+   },
+   "elo": {
+    "n": 2477,
+    "accuracy": 0.49939442874444895,
+    "log_loss": 0.7020610986452234,
+    "brier": 0.25438447062025554,
+    "ece": 0.16810221684453494,
+    "mean_predicted": 0.5253892576196662,
+    "base_rate": 0.3572870407751312
+   },
+   "siempre_local": {
+    "n": 2477,
+    "accuracy": 0.3572870407751312,
+    "log_loss": 0.6932042857443967,
+    "brier": 0.250028552591845,
+    "ece": 0.14281295922486859,
+    "mean_predicted": 0.5000999999999998,
+    "base_rate": 0.3572870407751312
+   },
+   "aleatorio": {
+    "n": 2477,
+    "accuracy": 0.5026241421073879,
+    "log_loss": 0.9884483846317765,
+    "brier": 0.3329449481593896,
+    "ece": 0.27226327979420856,
+    "mean_predicted": 0.5025340397870669,
+    "base_rate": 0.3572870407751312
+   }
+  },
+  "market_available": false,
+  "market_note": "sin historico gratuito de cuotas MLB: no se compara",
+  "ensemble_calibration": [
+   {
+    "bucket": "0%-10%",
+    "lo": 0.0,
+    "hi": 0.1,
+    "n": 0,
+    "predicted": null,
+    "observed": null
+   },
+   {
+    "bucket": "10%-20%",
+    "lo": 0.1,
+    "hi": 0.2,
+    "n": 5,
+    "predicted": 0.1912722359142,
+    "observed": 0.0
+   },
+   {
+    "bucket": "20%-30%",
+    "lo": 0.2,
+    "hi": 0.30000000000000004,
+    "n": 689,
+    "predicted": 0.2653412924904409,
+    "observed": 0.29898403483309144
+   },
+   {
+    "bucket": "30%-40%",
+    "lo": 0.30000000000000004,
+    "hi": 0.4,
+    "n": 1053,
+    "predicted": 0.34788637959048896,
+    "observed": 0.352326685660019
+   },
+   {
+    "bucket": "40%-50%",
+    "lo": 0.4,
+    "hi": 0.5,
+    "n": 530,
+    "predicted": 0.4406398375201127,
+    "observed": 0.3905660377358491
+   },
+   {
+    "bucket": "50%-60%",
+    "lo": 0.5,
+    "hi": 0.6000000000000001,
+    "n": 179,
+    "predicted": 0.5383517040224195,
+    "observed": 0.5027932960893855
+   },
+   {
+    "bucket": "60%-70%",
+    "lo": 0.6000000000000001,
+    "hi": 0.7000000000000001,
+    "n": 21,
+    "predicted": 0.6200642726310021,
+    "observed": 0.5238095238095238
+   },
+   {
+    "bucket": "70%-80%",
+    "lo": 0.7000000000000001,
+    "hi": 0.8,
+    "n": 0,
+    "predicted": null,
+    "observed": null
+   },
+   {
+    "bucket": "80%-90%",
+    "lo": 0.8,
+    "hi": 0.9,
+    "n": 0,
+    "predicted": null,
+    "observed": null
+   },
+   {
+    "bucket": "90%-100%",
+    "lo": 0.9,
+    "hi": 1.0,
+    "n": 0,
+    "predicted": null,
+    "observed": null
+   }
+  ],
+  "mean_dispersion": 0.021340166311040177,
+  "oof_train": {
+   "logistic": {
+    "log_loss": 0.643,
+    "accuracy": 0.6403482133819213
+   },
+   "forest": {
+    "log_loss": 0.63865,
+    "accuracy": 0.6449033302965888
+   },
+   "xgboost": {
+    "log_loss": 0.6429,
+    "accuracy": 0.6433849579916996
+   },
+   "lightgbm": {
+    "log_loss": 0.6438,
+    "accuracy": 0.6418665856868104
+   },
+   "ensemble": {
+    "log_loss": 0.64024,
+    "accuracy": 0.6433849579916996
+   }
+  },
+  "weights": {
+   "logistic": 0.22330751797767193,
+   "forest": 0.3450018660616138,
+   "xgboost": 0.22555179584449814,
+   "lightgbm": 0.20613882011621604
+  }
+ },
+ "elo": {
+  "k": 3.0,
+  "home_adv": 18.0,
+  "regress": 0.5,
+  "mov": true,
+  "base": 1500.0,
+  "rationale": "rejilla de 60 combinaciones validada en 2024 (log loss 0.6809); las temporadas de prueba nunca se tocaron",
+  "fitted_on": [
+   2021,
+   2022,
+   2023
+  ]
+ }
+}

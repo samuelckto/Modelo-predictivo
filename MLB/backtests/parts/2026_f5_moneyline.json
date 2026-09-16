@@ -1,0 +1,182 @@
+{
+ "row": {
+  "season": 2026,
+  "market": "f5_moneyline",
+  "n": 2154,
+  "base_rate": 0.45264623955431754,
+  "strategies": {
+   "ensemble": {
+    "n": 2154,
+    "accuracy": 0.5468895078922934,
+    "log_loss": 0.6873101308888943,
+    "brier": 0.2471165811323166,
+    "ece": 0.024330241859628725,
+    "mean_predicted": 0.44780277347234987,
+    "base_rate": 0.45264623955431754
+   },
+   "modelo_forest": {
+    "n": 2154,
+    "accuracy": 0.5552460538532962,
+    "log_loss": 0.6863811974815303,
+    "brier": 0.24665128375391554,
+    "ece": 0.013993967009671185,
+    "mean_predicted": 0.4477153212725723,
+    "base_rate": 0.45264623955431754
+   },
+   "elo": {
+    "n": 2154,
+    "accuracy": 0.4883936861652739,
+    "log_loss": 0.7064374421100239,
+    "brier": 0.2564636612563574,
+    "ece": 0.0899287338816299,
+    "mean_predicted": 0.542068330220589,
+    "base_rate": 0.45264623955431754
+   },
+   "siempre_local": {
+    "n": 2154,
+    "accuracy": 0.45264623955431754,
+    "log_loss": 0.6931661420643765,
+    "brier": 0.2500094807520892,
+    "ece": 0.047453760445682336,
+    "mean_predicted": 0.5000999999999999,
+    "base_rate": 0.45264623955431754
+   },
+   "aleatorio": {
+    "n": 2154,
+    "accuracy": 0.5092850510677809,
+    "log_loss": 0.9719537305239256,
+    "brier": 0.32545597974525153,
+    "ece": 0.2390930499507784,
+    "mean_predicted": 0.49916103302619547,
+    "base_rate": 0.45264623955431754
+   }
+  },
+  "market_available": false,
+  "market_note": "sin historico gratuito de cuotas MLB: no se compara",
+  "ensemble_calibration": [
+   {
+    "bucket": "0%-10%",
+    "lo": 0.0,
+    "hi": 0.1,
+    "n": 0,
+    "predicted": null,
+    "observed": null
+   },
+   {
+    "bucket": "10%-20%",
+    "lo": 0.1,
+    "hi": 0.2,
+    "n": 0,
+    "predicted": null,
+    "observed": null
+   },
+   {
+    "bucket": "20%-30%",
+    "lo": 0.2,
+    "hi": 0.30000000000000004,
+    "n": 18,
+    "predicted": 0.2828456036567315,
+    "observed": 0.2777777777777778
+   },
+   {
+    "bucket": "30%-40%",
+    "lo": 0.30000000000000004,
+    "hi": 0.4,
+    "n": 537,
+    "predicted": 0.36676438348039625,
+    "observed": 0.38361266294227186
+   },
+   {
+    "bucket": "40%-50%",
+    "lo": 0.4,
+    "hi": 0.5,
+    "n": 1122,
+    "predicted": 0.44886581338496245,
+    "observed": 0.46880570409982175
+   },
+   {
+    "bucket": "50%-60%",
+    "lo": 0.5,
+    "hi": 0.6000000000000001,
+    "n": 435,
+    "predicted": 0.5350533260658146,
+    "observed": 0.5057471264367817
+   },
+   {
+    "bucket": "60%-70%",
+    "lo": 0.6000000000000001,
+    "hi": 0.7000000000000001,
+    "n": 42,
+    "predicted": 0.6225676144783441,
+    "observed": 0.42857142857142855
+   },
+   {
+    "bucket": "70%-80%",
+    "lo": 0.7000000000000001,
+    "hi": 0.8,
+    "n": 0,
+    "predicted": null,
+    "observed": null
+   },
+   {
+    "bucket": "80%-90%",
+    "lo": 0.8,
+    "hi": 0.9,
+    "n": 0,
+    "predicted": null,
+    "observed": null
+   },
+   {
+    "bucket": "90%-100%",
+    "lo": 0.9,
+    "hi": 1.0,
+    "n": 0,
+    "predicted": null,
+    "observed": null
+   }
+  ],
+  "mean_dispersion": 0.01691771329799339,
+  "oof_train": {
+   "logistic": {
+    "log_loss": 0.68191,
+    "accuracy": 0.5598186822081916
+   },
+   "forest": {
+    "log_loss": 0.67945,
+    "accuracy": 0.5718795531811559
+   },
+   "xgboost": {
+    "log_loss": 0.68276,
+    "accuracy": 0.5649991905455722
+   },
+   "lightgbm": {
+    "log_loss": 0.68301,
+    "accuracy": 0.5611138092925368
+   },
+   "ensemble": {
+    "log_loss": 0.68074,
+    "accuracy": 0.56694188117209
+   }
+  },
+  "weights": {
+   "logistic": 0.2443048870386896,
+   "forest": 0.3124414158479432,
+   "xgboost": 0.22439703988434637,
+   "lightgbm": 0.21885665722902076
+  }
+ },
+ "elo": {
+  "k": 2.0,
+  "home_adv": 30.0,
+  "regress": 0.25,
+  "mov": true,
+  "base": 1500.0,
+  "rationale": "rejilla de 60 combinaciones validada en 2025 (log loss 0.6781); las temporadas de prueba nunca se tocaron",
+  "fitted_on": [
+   2021,
+   2022,
+   2023,
+   2024
+  ]
+ }
+}

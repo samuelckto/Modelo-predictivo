@@ -1,0 +1,624 @@
+{
+ "protocol": "Investigacion walk-forward de totals y spread NFL. Genera NFL/markets/out/research.json.\n\nProtocolo:\n  * Walk-forward temporal: para la temporada de prueba T se entrena con 2015..T-1.\n  * Seleccion de algoritmo y familias de features SOLO con las temporadas\n    2020-2022 (bloque de seleccion). 2023-2025 es confirmacion: no se toca hasta\n    que la configuracion esta cerrada.\n  * Baselines: media historica de entrenamiento; linea de cierre del mercado\n    (referencia fuerte, NO disponible antes del kickoff; nunca es feature).\n",
+ "algorithms": [
+  "ridge",
+  "rf",
+  "hgb",
+  "xgb"
+ ],
+ "targets": {
+  "total": {
+   "families_tested": [
+    "sum_epa",
+    "sum_eff",
+    "sum_pressure",
+    "sum_scoring",
+    "level_epa",
+    "level_scoring",
+    "qb",
+    "injuries",
+    "context",
+    "elo",
+    "history"
+   ],
+   "seleccion_algoritmo_2020_2022": {
+    "ridge": {
+     "mae": 10.776562175228742,
+     "rmse": 13.546882116463598,
+     "n": 838
+    },
+    "rf": {
+     "mae": 10.891118319682594,
+     "rmse": 13.611568591790453,
+     "n": 838
+    },
+    "hgb": {
+     "mae": 11.073308660631746,
+     "rmse": 13.801372847190441,
+     "n": 838
+    },
+    "xgb": {
+     "mae": 11.033225630803438,
+     "rmse": 13.726178582922728,
+     "n": 838
+    },
+    "media_historica": {
+     "mae": 11.224794202648816,
+     "rmse": 13.991771014733109,
+     "n": 838
+    },
+    "linea_cierre_mercado": {
+     "mae": 10.506563245823388,
+     "rmse": 13.200390082469367
+    }
+   },
+   "algoritmo_elegido": "ridge",
+   "familias_finales": [
+    "sum_epa",
+    "sum_eff",
+    "sum_pressure",
+    "sum_scoring",
+    "level_scoring",
+    "qb",
+    "injuries",
+    "context",
+    "elo",
+    "history"
+   ],
+   "familias_descartadas": [
+    "level_epa"
+   ],
+   "ablacion": [
+    {
+     "quitando": "level_epa",
+     "mae_sin": 10.7505,
+     "mae_con": 10.7766
+    },
+    {
+     "quitando": "sum_eff",
+     "mae_sin": 10.7396,
+     "mae_con": 10.7505
+    }
+   ],
+   "n_features": 113,
+   "features": [
+    "away_games_played_season",
+    "away_has_history",
+    "away_inj_data_available",
+    "away_inj_out_count",
+    "away_inj_out_weighted",
+    "away_inj_q_count",
+    "away_l5_points_against",
+    "away_l5_points_for",
+    "away_points_against",
+    "away_points_for",
+    "away_qb_change",
+    "away_qb_experience",
+    "away_qb_listed_out",
+    "away_qb_quality",
+    "away_qb_questionable",
+    "away_rest",
+    "away_short_rest",
+    "cold",
+    "diff_inj_data_available",
+    "diff_inj_out_count",
+    "diff_inj_out_weighted",
+    "diff_inj_q_count",
+    "diff_qb_change",
+    "diff_qb_experience",
+    "diff_qb_listed_out",
+    "diff_qb_quality",
+    "diff_qb_questionable",
+    "div_game",
+    "elo_away",
+    "elo_diff",
+    "elo_home",
+    "elo_prob_home",
+    "elo_sum",
+    "home_games_played_season",
+    "home_has_history",
+    "home_inj_data_available",
+    "home_inj_out_count",
+    "home_inj_out_weighted",
+    "home_inj_q_count",
+    "home_l5_points_against",
+    "home_l5_points_for",
+    "home_points_against",
+    "home_points_for",
+    "home_qb_change",
+    "home_qb_experience",
+    "home_qb_listed_out",
+    "home_qb_quality",
+    "home_qb_questionable",
+    "home_rest",
+    "home_short_rest",
+    "is_dome",
+    "is_grass",
+    "is_monday",
+    "is_playoff",
+    "is_thursday",
+    "pace_l5_proxy",
+    "pace_proxy",
+    "primetime",
+    "rest_diff",
+    "sum_cpoe_off",
+    "sum_epa_def",
+    "sum_epa_off",
+    "sum_explosive_def",
+    "sum_explosive_off",
+    "sum_l5_cpoe_off",
+    "sum_l5_epa_def",
+    "sum_l5_epa_off",
+    "sum_l5_explosive_def",
+    "sum_l5_explosive_off",
+    "sum_l5_pass_epa_def",
+    "sum_l5_pass_epa_off",
+    "sum_l5_points_against",
+    "sum_l5_points_for",
+    "sum_l5_pressure_rate_def",
+    "sum_l5_redzone_td_def",
+    "sum_l5_redzone_td_off",
+    "sum_l5_rush_epa_def",
+    "sum_l5_rush_epa_off",
+    "sum_l5_sack_rate_def",
+    "sum_l5_sack_rate_off",
+    "sum_l5_success_def",
+    "sum_l5_success_off",
+    "sum_l5_third_down_def",
+    "sum_l5_third_down_off",
+    "sum_l5_turnover_margin",
+    "sum_l5_turnovers_def",
+    "sum_l5_turnovers_off",
+    "sum_l5_yards_def",
+    "sum_l5_yards_off",
+    "sum_pass_epa_def",
+    "sum_pass_epa_off",
+    "sum_points_against",
+    "sum_points_for",
+    "sum_pressure_rate_def",
+    "sum_redzone_td_def",
+    "sum_redzone_td_off",
+    "sum_rush_epa_def",
+    "sum_rush_epa_off",
+    "sum_sack_rate_def",
+    "sum_sack_rate_off",
+    "sum_success_def",
+    "sum_success_off",
+    "sum_third_down_def",
+    "sum_third_down_off",
+    "sum_turnover_margin",
+    "sum_turnovers_def",
+    "sum_turnovers_off",
+    "sum_yards_def",
+    "sum_yards_off",
+    "temp_f",
+    "week_num",
+    "wind_mph",
+    "windy"
+   ],
+   "por_temporada": {
+    "2020": {
+     "modelo": {
+      "mae": 10.76532227597177,
+      "rmse": 13.748102149837113,
+      "n": 269
+     },
+     "media": {
+      "mae": 11.34038121493115,
+      "rmse": 14.339588718299071,
+      "n": 269
+     },
+     "mercado_cierre": {
+      "mae": 10.302973977695167,
+      "rmse": 13.083624374224417
+     }
+    },
+    "2021": {
+     "modelo": {
+      "mae": 10.854249126057502,
+      "rmse": 13.391260972466515,
+      "n": 285
+     },
+     "media": {
+      "mae": 11.076867042919018,
+      "rmse": 13.718479935628693,
+      "n": 285
+     },
+     "mercado_cierre": {
+      "mae": 10.807017543859649,
+      "rmse": 13.297473708097485
+     }
+    },
+    "2022": {
+     "modelo": {
+      "mae": 10.632412063416384,
+      "rmse": 13.412290211018865,
+      "n": 284
+     },
+     "media": {
+      "mae": 11.26376016820883,
+      "rmse": 13.929666291347715,
+      "n": 284
+     },
+     "mercado_cierre": {
+      "mae": 10.397887323943662,
+      "rmse": 13.212709950095482
+     }
+    },
+    "2023": {
+     "modelo": {
+      "mae": 10.417567274280787,
+      "rmse": 13.236050845138776,
+      "n": 285
+     },
+     "media": {
+      "mae": 10.97580675111617,
+      "rmse": 13.829152461654255,
+      "n": 285
+     },
+     "mercado_cierre": {
+      "mae": 10.16842105263158,
+      "rmse": 13.0569602330066
+     }
+    },
+    "2024": {
+     "modelo": {
+      "mae": 9.978704333240373,
+      "rmse": 12.93639682087905,
+      "n": 285
+     },
+     "media": {
+      "mae": 10.121370961985926,
+      "rmse": 13.190218620776726,
+      "n": 285
+     },
+     "mercado_cierre": {
+      "mae": 9.76842105263158,
+      "rmse": 12.586612213679416
+     }
+    },
+    "2025": {
+     "modelo": {
+      "mae": 10.56788951208742,
+      "rmse": 13.320784284278124,
+      "n": 285
+     },
+     "media": {
+      "mae": 10.999667414982955,
+      "rmse": 13.827914310682171,
+      "n": 285
+     },
+     "mercado_cierre": {
+      "mae": 10.42280701754386,
+      "rmse": 13.237274590960604
+     }
+    }
+   },
+   "confirmacion_2023_2025": {
+    "modelo": {
+     "mae": 10.321387039869526,
+     "rmse": 13.165443385755752,
+     "n": 855
+    },
+    "media": {
+     "mae": 10.69894837602835,
+     "rmse": 13.619086352800762,
+     "n": 855
+    },
+    "mercado_cierre": {
+     "mae": 10.119883040935672,
+     "rmse": 12.963184487107466
+    }
+   },
+   "total_2020_2025": {
+    "modelo": {
+     "mae": 10.53380014073331,
+     "rmse": 13.339062418788082,
+     "n": 1693
+    },
+    "media": {
+     "mae": 10.959231189204932,
+     "rmse": 13.804815143993256,
+     "n": 1693
+    },
+    "mercado_cierre": {
+     "mae": 10.311281748375665,
+     "rmse": 13.081133978166987
+    }
+   }
+  },
+  "spread": {
+   "families_tested": [
+    "elo",
+    "diff_epa",
+    "diff_eff",
+    "diff_pressure",
+    "diff_results",
+    "qb",
+    "injuries",
+    "context",
+    "h2h",
+    "history"
+   ],
+   "seleccion_algoritmo_2020_2022": {
+    "ridge": {
+     "mae": 10.104092270167019,
+     "rmse": 13.003998763504317,
+     "n": 838
+    },
+    "rf": {
+     "mae": 10.1417980971756,
+     "rmse": 13.054506667950395,
+     "n": 838
+    },
+    "hgb": {
+     "mae": 10.338034350364067,
+     "rmse": 13.24576333732338,
+     "n": 838
+    },
+    "xgb": {
+     "mae": 10.42444890771319,
+     "rmse": 13.34737015514671,
+     "n": 838
+    },
+    "media_historica": {
+     "mae": 10.906894112887622,
+     "rmse": 14.009294234060562,
+     "n": 838
+    },
+    "linea_cierre_mercado": {
+     "mae": 9.747016706443913,
+     "rmse": 12.605521198181545
+    }
+   },
+   "algoritmo_elegido": "ridge",
+   "familias_finales": [
+    "elo",
+    "diff_epa",
+    "diff_eff",
+    "diff_results",
+    "qb",
+    "injuries",
+    "history"
+   ],
+   "familias_descartadas": [
+    "diff_pressure",
+    "context",
+    "h2h"
+   ],
+   "ablacion": [
+    {
+     "quitando": "context",
+     "mae_sin": 10.0681,
+     "mae_con": 10.1041
+    },
+    {
+     "quitando": "diff_pressure",
+     "mae_sin": 10.0301,
+     "mae_con": 10.0681
+    },
+    {
+     "quitando": "h2h",
+     "mae_sin": 10.0072,
+     "mae_con": 10.0301
+    },
+    {
+     "quitando": "diff_epa",
+     "mae_sin": 9.9886,
+     "mae_con": 10.0072
+    }
+   ],
+   "n_features": 78,
+   "features": [
+    "away_games_played_season",
+    "away_has_history",
+    "away_inj_data_available",
+    "away_inj_out_count",
+    "away_inj_out_weighted",
+    "away_inj_q_count",
+    "away_qb_change",
+    "away_qb_experience",
+    "away_qb_listed_out",
+    "away_qb_quality",
+    "away_qb_questionable",
+    "diff_cpoe_off",
+    "diff_epa_def",
+    "diff_epa_off",
+    "diff_explosive_def",
+    "diff_explosive_off",
+    "diff_inj_data_available",
+    "diff_inj_out_count",
+    "diff_inj_out_weighted",
+    "diff_inj_q_count",
+    "diff_l5_cpoe_off",
+    "diff_l5_epa_def",
+    "diff_l5_epa_off",
+    "diff_l5_explosive_def",
+    "diff_l5_explosive_off",
+    "diff_l5_pass_epa_def",
+    "diff_l5_pass_epa_off",
+    "diff_l5_point_diff",
+    "diff_l5_points_against",
+    "diff_l5_points_for",
+    "diff_l5_redzone_td_def",
+    "diff_l5_redzone_td_off",
+    "diff_l5_rush_epa_def",
+    "diff_l5_rush_epa_off",
+    "diff_l5_success_def",
+    "diff_l5_success_off",
+    "diff_l5_third_down_def",
+    "diff_l5_third_down_off",
+    "diff_l5_won",
+    "diff_l5_yards_def",
+    "diff_l5_yards_off",
+    "diff_pass_epa_def",
+    "diff_pass_epa_off",
+    "diff_point_diff",
+    "diff_points_against",
+    "diff_points_for",
+    "diff_qb_change",
+    "diff_qb_experience",
+    "diff_qb_listed_out",
+    "diff_qb_quality",
+    "diff_qb_questionable",
+    "diff_redzone_td_def",
+    "diff_redzone_td_off",
+    "diff_rush_epa_def",
+    "diff_rush_epa_off",
+    "diff_success_def",
+    "diff_success_off",
+    "diff_third_down_def",
+    "diff_third_down_off",
+    "diff_won",
+    "diff_yards_def",
+    "diff_yards_off",
+    "elo_away",
+    "elo_diff",
+    "elo_home",
+    "elo_prob_home",
+    "elo_sum",
+    "home_games_played_season",
+    "home_has_history",
+    "home_inj_data_available",
+    "home_inj_out_count",
+    "home_inj_out_weighted",
+    "home_inj_q_count",
+    "home_qb_change",
+    "home_qb_experience",
+    "home_qb_listed_out",
+    "home_qb_quality",
+    "home_qb_questionable"
+   ],
+   "por_temporada": {
+    "2020": {
+     "modelo": {
+      "mae": 10.069588482830106,
+      "rmse": 12.939055407182956,
+      "n": 269
+     },
+     "media": {
+      "mae": 11.089386408253622,
+      "rmse": 14.1877452086776,
+      "n": 269
+     },
+     "mercado_cierre": {
+      "mae": 9.78996282527881,
+      "rmse": 12.696595275841197
+     }
+    },
+    "2021": {
+     "modelo": {
+      "mae": 10.964623366304567,
+      "rmse": 13.894300763315886,
+      "n": 285
+     },
+     "media": {
+      "mae": 12.033033643960273,
+      "rmse": 15.287907441816587,
+      "n": 285
+     },
+     "mercado_cierre": {
+      "mae": 10.666666666666666,
+      "rmse": 13.548871902286235
+     }
+    },
+    "2022": {
+     "modelo": {
+      "mae": 8.987308646782463,
+      "rmse": 11.707019095782524,
+      "n": 284
+     },
+     "media": {
+      "mae": 9.603935683982135,
+      "rmse": 12.405749054389927,
+      "n": 284
+     },
+     "mercado_cierre": {
+      "mae": 8.783450704225352,
+      "rmse": 11.487247981878998
+     }
+    },
+    "2023": {
+     "modelo": {
+      "mae": 10.343543584964829,
+      "rmse": 13.585468931579369,
+      "n": 285
+     },
+     "media": {
+      "mae": 11.108684735308128,
+      "rmse": 14.431049663476449,
+      "n": 285
+     },
+     "mercado_cierre": {
+      "mae": 9.98421052631579,
+      "rmse": 13.173970880942838
+     }
+    },
+    "2024": {
+     "modelo": {
+      "mae": 9.743764137371347,
+      "rmse": 12.700683911882189,
+      "n": 285
+     },
+     "media": {
+      "mae": 11.151091316574593,
+      "rmse": 14.44868137143818,
+      "n": 285
+     },
+     "mercado_cierre": {
+      "mae": 9.703508771929824,
+      "rmse": 12.72051113394316
+     }
+    },
+    "2025": {
+     "modelo": {
+      "mae": 10.076812007778054,
+      "rmse": 12.832250050100342,
+      "n": 285
+     },
+     "media": {
+      "mae": 10.999329713273342,
+      "rmse": 14.133654677795928,
+      "n": 285
+     },
+     "mercado_cierre": {
+      "mae": 9.670175438596491,
+      "rmse": 12.24479839439173
+     }
+    }
+   },
+   "confirmacion_2023_2025": {
+    "modelo": {
+     "mae": 10.054706576704744,
+     "rmse": 13.045292628233776,
+     "n": 855
+    },
+    "media": {
+     "mae": 11.086368588385353,
+     "rmse": 14.338523660803332,
+     "n": 855
+    },
+    "mercado_cierre": {
+     "mae": 9.785964912280702,
+     "rmse": 12.718752559377302
+    }
+   },
+   "total_2020_2025": {
+    "modelo": {
+     "mae": 10.031191222709317,
+     "rmse": 12.962813961513891,
+     "n": 1693
+    },
+    "media": {
+     "mae": 10.99753243335458,
+     "rmse": 14.176517572248665,
+     "n": 1693
+    },
+    "mercado_cierre": {
+     "mae": 9.766686355581808,
+     "rmse": 12.662831929038752
+    }
+   }
+  }
+ }
+}

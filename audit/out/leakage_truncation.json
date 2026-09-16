@@ -1,0 +1,140 @@
+{
+ "games_tested": 4,
+ "features_compared": 359,
+ "total_diferencias": 412,
+ "detalle": [
+  {
+   "game_id": 717806,
+   "start_utc": "2023-06-11 17:35:00",
+   "features_comparadas": 359,
+   "features_diferentes": 80,
+   "ejemplos": [
+    {
+     "feature": "h_sp_player_id",
+     "completo": 592836.0,
+     "truncado": null
+    },
+    {
+     "feature": "h_sp_starts_s",
+     "completo": 13.0,
+     "truncado": null
+    },
+    {
+     "feature": "h_sp_era_s",
+     "completo": 5.036269430051814,
+     "truncado": null
+    },
+    {
+     "feature": "h_sp_whip_s",
+     "completo": 1.367875647668394,
+     "truncado": null
+    },
+    {
+     "feature": "h_sp_k_s",
+     "completo": 0.1948529411764706,
+     "truncado": null
+    }
+   ]
+  },
+  {
+   "game_id": 717307,
+   "start_utc": "2023-07-22 23:05:00",
+   "features_comparadas": 359,
+   "features_diferentes": 116,
+   "ejemplos": [
+    {
+     "feature": "h_sp_player_id",
+     "completo": 680686.0,
+     "truncado": null
+    },
+    {
+     "feature": "h_sp_starts_s",
+     "completo": 19.0,
+     "truncado": null
+    },
+    {
+     "feature": "h_sp_era_s",
+     "completo": 3.588607594936709,
+     "truncado": null
+    },
+    {
+     "feature": "h_sp_whip_s",
+     "completo": 1.4715189873417722,
+     "truncado": null
+    },
+    {
+     "feature": "h_sp_k_s",
+     "completo": 0.20302375809935205,
+     "truncado": null
+    }
+   ]
+  },
+  {
+   "game_id": 777547,
+   "start_utc": "2025-06-12 00:40:00",
+   "features_comparadas": 359,
+   "features_diferentes": 116,
+   "ejemplos": [
+    {
+     "feature": "h_sp_player_id",
+     "completo": 607536.0,
+     "truncado": null
+    },
+    {
+     "feature": "h_sp_starts_s",
+     "completo": 13.0,
+     "truncado": null
+    },
+    {
+     "feature": "h_sp_era_s",
+     "completo": 5.1871921182266005,
+     "truncado": null
+    },
+    {
+     "feature": "h_sp_whip_s",
+     "completo": 1.5369458128078817,
+     "truncado": null
+    },
+    {
+     "feature": "h_sp_k_s",
+     "completo": 0.1716171617161716,
+     "truncado": null
+    }
+   ]
+  },
+  {
+   "game_id": 777713,
+   "start_utc": "2025-05-31 02:10:00",
+   "features_comparadas": 359,
+   "features_diferentes": 100,
+   "ejemplos": [
+    {
+     "feature": "h_sp_player_id",
+     "completo": 693433.0,
+     "truncado": null
+    },
+    {
+     "feature": "h_sp_starts_s",
+     "completo": 10.0,
+     "truncado": null
+    },
+    {
+     "feature": "h_sp_era_s",
+     "completo": 2.6858638743455496,
+     "truncado": null
+    },
+    {
+     "feature": "h_sp_whip_s",
+     "completo": 0.9424083769633508,
+     "truncado": null
+    },
+    {
+     "feature": "h_sp_k_s",
+     "completo": 0.24096385542168675,
+     "truncado": null
+    }
+   ]
+  }
+ ],
+ "veredicto": "LEAKAGE DETECTADO"
+}

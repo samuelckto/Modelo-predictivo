@@ -1,0 +1,47 @@
+# Secretos locales
+.env
+.env.local
+
+# Entornos virtuales Python
+.venv/
+venv/
+env/
+ENV/
+
+# Python cache y compilados
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.pytest_cache/
+
+# Bases de datos sqlite en vivo (se gestionan empaquetadas en data_bundle/)
+*.sqlite3
+*.sqlite
+*.db
+
+# Logs
+logs/
+*.log
+
+# Node.js
+node_modules/
+dist/
+!dashboard/frontend/dist/**
+
+# Archivos de features sin comprimir y temporales (empaquetados en data_bundle/)
+TENIS/markets/out/features.parquet*
+TENIS/markets/out/.*
+.*.parquet*
+*.tmp
+
+# Datos crudos de scrapeo temporales
+MLB/data/raw/
+MLB/data/snapshots/
+SOCCER/data/
+
+# Archivos de sistema / IDE
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

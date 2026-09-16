@@ -1,0 +1,2968 @@
+{
+ "inventario": {
+  "features_total": 367,
+  "features_fed_to_model": 124,
+  "sin_clasificar": [
+   "h_season",
+   "a_season",
+   "d_season"
+  ],
+  "prohibidas_usadas": [],
+  "por_riesgo": {
+   "BAJO": 357,
+   "NULO": 7,
+   "REVISAR": 3
+  },
+  "tabla": [
+   {
+    "feature": "game_number",
+    "source_table": "games.gameNumber",
+    "available_at": "calendario",
+    "used_before_game": true,
+    "leakage_risk": "NULO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "h_season",
+    "source_table": "SIN CLASIFICAR",
+    "available_at": "UNKNOWN",
+    "used_before_game": null,
+    "leakage_risk": "REVISAR",
+    "fed_to_model": false
+   },
+   {
+    "feature": "h_off_obp_s",
+    "source_table": "batter_game_logs",
+    "available_at": "fin del partido correspondiente",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "h_off_slg_s",
+    "source_table": "batter_game_logs",
+    "available_at": "fin del partido correspondiente",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "h_off_iso_s",
+    "source_table": "batter_game_logs",
+    "available_at": "fin del partido correspondiente",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "h_off_k_s",
+    "source_table": "batter_game_logs",
+    "available_at": "fin del partido correspondiente",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "h_off_bb_s",
+    "source_table": "batter_game_logs",
+    "available_at": "fin del partido correspondiente",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "h_off_hr_s",
+    "source_table": "batter_game_logs",
+    "available_at": "fin del partido correspondiente",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "h_off_rpg_s",
+    "source_table": "batter_game_logs",
+    "available_at": "fin del partido correspondiente",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "h_def_rpg_s",
+    "source_table": "games (carreras recibidas)",
+    "available_at": "fin del partido correspondiente",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "h_off_games_s",
+    "source_table": "batter_game_logs",
+    "available_at": "fin del partido correspondiente",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "h_off_obp_d30",
+    "source_table": "batter_game_logs",
+    "available_at": "fin del partido correspondiente",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "h_off_slg_d30",
+    "source_table": "batter_game_logs",
+    "available_at": "fin del partido correspondiente",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "h_off_iso_d30",
+    "source_table": "batter_game_logs",
+    "available_at": "fin del partido correspondiente",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "h_off_k_d30",
+    "source_table": "batter_game_logs",
+    "available_at": "fin del partido correspondiente",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "h_off_bb_d30",
+    "source_table": "batter_game_logs",
+    "available_at": "fin del partido correspondiente",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "h_off_hr_d30",
+    "source_table": "batter_game_logs",
+    "available_at": "fin del partido correspondiente",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "h_off_rpg_d30",
+    "source_table": "batter_game_logs",
+    "available_at": "fin del partido correspondiente",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "h_def_rpg_d30",
+    "source_table": "games (carreras recibidas)",
+    "available_at": "fin del partido correspondiente",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "h_off_games_d30",
+    "source_table": "batter_game_logs",
+    "available_at": "fin del partido correspondiente",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "h_off_obp_d14",
+    "source_table": "batter_game_logs",
+    "available_at": "fin del partido correspondiente",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "h_off_slg_d14",
+    "source_table": "batter_game_logs",
+    "available_at": "fin del partido correspondiente",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "h_off_iso_d14",
+    "source_table": "batter_game_logs",
+    "available_at": "fin del partido correspondiente",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "h_off_k_d14",
+    "source_table": "batter_game_logs",
+    "available_at": "fin del partido correspondiente",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "h_off_bb_d14",
+    "source_table": "batter_game_logs",
+    "available_at": "fin del partido correspondiente",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "h_off_hr_d14",
+    "source_table": "batter_game_logs",
+    "available_at": "fin del partido correspondiente",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "h_off_rpg_d14",
+    "source_table": "batter_game_logs",
+    "available_at": "fin del partido correspondiente",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "h_def_rpg_d14",
+    "source_table": "games (carreras recibidas)",
+    "available_at": "fin del partido correspondiente",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "h_off_games_d14",
+    "source_table": "batter_game_logs",
+    "available_at": "fin del partido correspondiente",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "h_off_obp_d7",
+    "source_table": "batter_game_logs",
+    "available_at": "fin del partido correspondiente",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "h_off_slg_d7",
+    "source_table": "batter_game_logs",
+    "available_at": "fin del partido correspondiente",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "h_off_iso_d7",
+    "source_table": "batter_game_logs",
+    "available_at": "fin del partido correspondiente",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "h_off_k_d7",
+    "source_table": "batter_game_logs",
+    "available_at": "fin del partido correspondiente",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "h_off_bb_d7",
+    "source_table": "batter_game_logs",
+    "available_at": "fin del partido correspondiente",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "h_off_hr_d7",
+    "source_table": "batter_game_logs",
+    "available_at": "fin del partido correspondiente",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "h_off_rpg_d7",
+    "source_table": "batter_game_logs",
+    "available_at": "fin del partido correspondiente",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "h_def_rpg_d7",
+    "source_table": "games (carreras recibidas)",
+    "available_at": "fin del partido correspondiente",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "h_off_games_d7",
+    "source_table": "batter_game_logs",
+    "available_at": "fin del partido correspondiente",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "h_stf_era_s",
+    "source_table": "pitcher_game_logs (staff completo)",
+    "available_at": "fin del partido",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "h_stf_whip_s",
+    "source_table": "pitcher_game_logs (staff completo)",
+    "available_at": "fin del partido",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "h_stf_k_s",
+    "source_table": "pitcher_game_logs (staff completo)",
+    "available_at": "fin del partido",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "h_stf_bb_s",
+    "source_table": "pitcher_game_logs (staff completo)",
+    "available_at": "fin del partido",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "h_stf_hr9_s",
+    "source_table": "pitcher_game_logs (staff completo)",
+    "available_at": "fin del partido",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "h_stf_gb_s",
+    "source_table": "pitcher_game_logs (staff completo)",
+    "available_at": "fin del partido",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "h_stf_era_d30",
+    "source_table": "pitcher_game_logs (staff completo)",
+    "available_at": "fin del partido",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "h_stf_whip_d30",
+    "source_table": "pitcher_game_logs (staff completo)",
+    "available_at": "fin del partido",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "h_stf_k_d30",
+    "source_table": "pitcher_game_logs (staff completo)",
+    "available_at": "fin del partido",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "h_stf_bb_d30",
+    "source_table": "pitcher_game_logs (staff completo)",
+    "available_at": "fin del partido",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "h_stf_hr9_d30",
+    "source_table": "pitcher_game_logs (staff completo)",
+    "available_at": "fin del partido",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "h_stf_gb_d30",
+    "source_table": "pitcher_game_logs (staff completo)",
+    "available_at": "fin del partido",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "h_stf_era_d14",
+    "source_table": "pitcher_game_logs (staff completo)",
+    "available_at": "fin del partido",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "h_stf_whip_d14",
+    "source_table": "pitcher_game_logs (staff completo)",
+    "available_at": "fin del partido",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "h_stf_k_d14",
+    "source_table": "pitcher_game_logs (staff completo)",
+    "available_at": "fin del partido",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "h_stf_bb_d14",
+    "source_table": "pitcher_game_logs (staff completo)",
+    "available_at": "fin del partido",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "h_stf_hr9_d14",
+    "source_table": "pitcher_game_logs (staff completo)",
+    "available_at": "fin del partido",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "h_stf_gb_d14",
+    "source_table": "pitcher_game_logs (staff completo)",
+    "available_at": "fin del partido",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "h_stf_era_d7",
+    "source_table": "pitcher_game_logs (staff completo)",
+    "available_at": "fin del partido",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "h_stf_whip_d7",
+    "source_table": "pitcher_game_logs (staff completo)",
+    "available_at": "fin del partido",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "h_stf_k_d7",
+    "source_table": "pitcher_game_logs (staff completo)",
+    "available_at": "fin del partido",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "h_stf_bb_d7",
+    "source_table": "pitcher_game_logs (staff completo)",
+    "available_at": "fin del partido",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "h_stf_hr9_d7",
+    "source_table": "pitcher_game_logs (staff completo)",
+    "available_at": "fin del partido",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "h_stf_gb_d7",
+    "source_table": "pitcher_game_logs (staff completo)",
+    "available_at": "fin del partido",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "h_bp_outs_d1",
+    "source_table": "bullpen_usage (derivado de boxscores)",
+    "available_at": "fin del partido",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "h_bp_pitches_d1",
+    "source_table": "bullpen_usage (derivado de boxscores)",
+    "available_at": "fin del partido",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "h_bp_outs_d2",
+    "source_table": "bullpen_usage (derivado de boxscores)",
+    "available_at": "fin del partido",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "h_bp_pitches_d2",
+    "source_table": "bullpen_usage (derivado de boxscores)",
+    "available_at": "fin del partido",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "h_bp_outs_d3",
+    "source_table": "bullpen_usage (derivado de boxscores)",
+    "available_at": "fin del partido",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "h_bp_pitches_d3",
+    "source_table": "bullpen_usage (derivado de boxscores)",
+    "available_at": "fin del partido",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "h_bp_outs_d5",
+    "source_table": "bullpen_usage (derivado de boxscores)",
+    "available_at": "fin del partido",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "h_bp_pitches_d5",
+    "source_table": "bullpen_usage (derivado de boxscores)",
+    "available_at": "fin del partido",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "h_bp_outs_s",
+    "source_table": "bullpen_usage (derivado de boxscores)",
+    "available_at": "fin del partido",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "h_bp_pitches_s",
+    "source_table": "bullpen_usage (derivado de boxscores)",
+    "available_at": "fin del partido",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "h_bp_relievers_d1",
+    "source_table": "bullpen_usage (derivado de boxscores)",
+    "available_at": "fin del partido",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "h_bp_b2b_d1",
+    "source_table": "bullpen_usage (derivado de boxscores)",
+    "available_at": "fin del partido",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "h_bp_relievers_d2",
+    "source_table": "bullpen_usage (derivado de boxscores)",
+    "available_at": "fin del partido",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "h_bp_b2b_d2",
+    "source_table": "bullpen_usage (derivado de boxscores)",
+    "available_at": "fin del partido",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "h_bp_relievers_d3",
+    "source_table": "bullpen_usage (derivado de boxscores)",
+    "available_at": "fin del partido",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "h_bp_b2b_d3",
+    "source_table": "bullpen_usage (derivado de boxscores)",
+    "available_at": "fin del partido",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "h_bp_relievers_d5",
+    "source_table": "bullpen_usage (derivado de boxscores)",
+    "available_at": "fin del partido",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "h_bp_b2b_d5",
+    "source_table": "bullpen_usage (derivado de boxscores)",
+    "available_at": "fin del partido",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "h_bp_pitches_per_game_s",
+    "source_table": "bullpen_usage (derivado de boxscores)",
+    "available_at": "fin del partido",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "h_sp_player_id",
+    "source_table": "probable_pitchers + pitcher_game_logs",
+    "available_at": "aperturas anteriores del abridor; fin de partido = inicio + 3h15",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "h_sp_source",
+    "source_table": "probable_pitchers + pitcher_game_logs",
+    "available_at": "aperturas anteriores del abridor; fin de partido = inicio + 3h15",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "h_sp_starts_s",
+    "source_table": "probable_pitchers + pitcher_game_logs",
+    "available_at": "aperturas anteriores del abridor; fin de partido = inicio + 3h15",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "h_sp_era_s",
+    "source_table": "probable_pitchers + pitcher_game_logs",
+    "available_at": "aperturas anteriores del abridor; fin de partido = inicio + 3h15",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "h_sp_whip_s",
+    "source_table": "probable_pitchers + pitcher_game_logs",
+    "available_at": "aperturas anteriores del abridor; fin de partido = inicio + 3h15",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "h_sp_k_s",
+    "source_table": "probable_pitchers + pitcher_game_logs",
+    "available_at": "aperturas anteriores del abridor; fin de partido = inicio + 3h15",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "h_sp_bb_s",
+    "source_table": "probable_pitchers + pitcher_game_logs",
+    "available_at": "aperturas anteriores del abridor; fin de partido = inicio + 3h15",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "h_sp_kbb_s",
+    "source_table": "probable_pitchers + pitcher_game_logs",
+    "available_at": "aperturas anteriores del abridor; fin de partido = inicio + 3h15",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "h_sp_hr9_s",
+    "source_table": "probable_pitchers + pitcher_game_logs",
+    "available_at": "aperturas anteriores del abridor; fin de partido = inicio + 3h15",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "h_sp_ip_start_s",
+    "source_table": "probable_pitchers + pitcher_game_logs",
+    "available_at": "aperturas anteriores del abridor; fin de partido = inicio + 3h15",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "h_sp_pitches_start_s",
+    "source_table": "probable_pitchers + pitcher_game_logs",
+    "available_at": "aperturas anteriores del abridor; fin de partido = inicio + 3h15",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "h_sp_fip_s",
+    "source_table": "probable_pitchers + pitcher_game_logs",
+    "available_at": "aperturas anteriores del abridor; fin de partido = inicio + 3h15",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "h_sp_starts_d45",
+    "source_table": "probable_pitchers + pitcher_game_logs",
+    "available_at": "aperturas anteriores del abridor; fin de partido = inicio + 3h15",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "h_sp_era_d45",
+    "source_table": "probable_pitchers + pitcher_game_logs",
+    "available_at": "aperturas anteriores del abridor; fin de partido = inicio + 3h15",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "h_sp_whip_d45",
+    "source_table": "probable_pitchers + pitcher_game_logs",
+    "available_at": "aperturas anteriores del abridor; fin de partido = inicio + 3h15",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "h_sp_k_d45",
+    "source_table": "probable_pitchers + pitcher_game_logs",
+    "available_at": "aperturas anteriores del abridor; fin de partido = inicio + 3h15",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "h_sp_bb_d45",
+    "source_table": "probable_pitchers + pitcher_game_logs",
+    "available_at": "aperturas anteriores del abridor; fin de partido = inicio + 3h15",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "h_sp_kbb_d45",
+    "source_table": "probable_pitchers + pitcher_game_logs",
+    "available_at": "aperturas anteriores del abridor; fin de partido = inicio + 3h15",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "h_sp_hr9_d45",
+    "source_table": "probable_pitchers + pitcher_game_logs",
+    "available_at": "aperturas anteriores del abridor; fin de partido = inicio + 3h15",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "h_sp_ip_start_d45",
+    "source_table": "probable_pitchers + pitcher_game_logs",
+    "available_at": "aperturas anteriores del abridor; fin de partido = inicio + 3h15",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "h_sp_pitches_start_d45",
+    "source_table": "probable_pitchers + pitcher_game_logs",
+    "available_at": "aperturas anteriores del abridor; fin de partido = inicio + 3h15",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "h_sp_fip_d45",
+    "source_table": "probable_pitchers + pitcher_game_logs",
+    "available_at": "aperturas anteriores del abridor; fin de partido = inicio + 3h15",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "h_sp_xwoba_s",
+    "source_table": "probable_pitchers + pitcher_game_logs",
+    "available_at": "aperturas anteriores del abridor; fin de partido = inicio + 3h15",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "h_sp_ev_s",
+    "source_table": "probable_pitchers + pitcher_game_logs",
+    "available_at": "aperturas anteriores del abridor; fin de partido = inicio + 3h15",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "h_sp_hard_s",
+    "source_table": "probable_pitchers + pitcher_game_logs",
+    "available_at": "aperturas anteriores del abridor; fin de partido = inicio + 3h15",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "h_sp_barrel_s",
+    "source_table": "probable_pitchers + pitcher_game_logs",
+    "available_at": "aperturas anteriores del abridor; fin de partido = inicio + 3h15",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "h_sp_velo_s",
+    "source_table": "probable_pitchers + pitcher_game_logs",
+    "available_at": "aperturas anteriores del abridor; fin de partido = inicio + 3h15",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "h_sp_spin_s",
+    "source_table": "probable_pitchers + pitcher_game_logs",
+    "available_at": "aperturas anteriores del abridor; fin de partido = inicio + 3h15",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "h_sp_csw_s",
+    "source_table": "probable_pitchers + pitcher_game_logs",
+    "available_at": "aperturas anteriores del abridor; fin de partido = inicio + 3h15",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "h_sp_swstr_s",
+    "source_table": "probable_pitchers + pitcher_game_logs",
+    "available_at": "aperturas anteriores del abridor; fin de partido = inicio + 3h15",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "h_sp_xwoba_d45",
+    "source_table": "probable_pitchers + pitcher_game_logs",
+    "available_at": "aperturas anteriores del abridor; fin de partido = inicio + 3h15",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "h_sp_ev_d45",
+    "source_table": "probable_pitchers + pitcher_game_logs",
+    "available_at": "aperturas anteriores del abridor; fin de partido = inicio + 3h15",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "h_sp_hard_d45",
+    "source_table": "probable_pitchers + pitcher_game_logs",
+    "available_at": "aperturas anteriores del abridor; fin de partido = inicio + 3h15",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "h_sp_barrel_d45",
+    "source_table": "probable_pitchers + pitcher_game_logs",
+    "available_at": "aperturas anteriores del abridor; fin de partido = inicio + 3h15",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "h_sp_velo_d45",
+    "source_table": "probable_pitchers + pitcher_game_logs",
+    "available_at": "aperturas anteriores del abridor; fin de partido = inicio + 3h15",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "h_sp_spin_d45",
+    "source_table": "probable_pitchers + pitcher_game_logs",
+    "available_at": "aperturas anteriores del abridor; fin de partido = inicio + 3h15",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "h_sp_csw_d45",
+    "source_table": "probable_pitchers + pitcher_game_logs",
+    "available_at": "aperturas anteriores del abridor; fin de partido = inicio + 3h15",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "h_sp_swstr_d45",
+    "source_table": "probable_pitchers + pitcher_game_logs",
+    "available_at": "aperturas anteriores del abridor; fin de partido = inicio + 3h15",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "h_sp_rest_days",
+    "source_table": "probable_pitchers + pitcher_game_logs",
+    "available_at": "aperturas anteriores del abridor; fin de partido = inicio + 3h15",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "h_sp_known",
+    "source_table": "probable_pitchers + pitcher_game_logs",
+    "available_at": "aperturas anteriores del abridor; fin de partido = inicio + 3h15",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "a_season",
+    "source_table": "SIN CLASIFICAR",
+    "available_at": "UNKNOWN",
+    "used_before_game": null,
+    "leakage_risk": "REVISAR",
+    "fed_to_model": false
+   },
+   {
+    "feature": "a_off_obp_s",
+    "source_table": "batter_game_logs",
+    "available_at": "fin del partido correspondiente",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "a_off_slg_s",
+    "source_table": "batter_game_logs",
+    "available_at": "fin del partido correspondiente",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "a_off_iso_s",
+    "source_table": "batter_game_logs",
+    "available_at": "fin del partido correspondiente",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "a_off_k_s",
+    "source_table": "batter_game_logs",
+    "available_at": "fin del partido correspondiente",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "a_off_bb_s",
+    "source_table": "batter_game_logs",
+    "available_at": "fin del partido correspondiente",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "a_off_hr_s",
+    "source_table": "batter_game_logs",
+    "available_at": "fin del partido correspondiente",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "a_off_rpg_s",
+    "source_table": "batter_game_logs",
+    "available_at": "fin del partido correspondiente",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "a_def_rpg_s",
+    "source_table": "games (carreras recibidas)",
+    "available_at": "fin del partido correspondiente",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "a_off_games_s",
+    "source_table": "batter_game_logs",
+    "available_at": "fin del partido correspondiente",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "a_off_obp_d30",
+    "source_table": "batter_game_logs",
+    "available_at": "fin del partido correspondiente",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "a_off_slg_d30",
+    "source_table": "batter_game_logs",
+    "available_at": "fin del partido correspondiente",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "a_off_iso_d30",
+    "source_table": "batter_game_logs",
+    "available_at": "fin del partido correspondiente",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "a_off_k_d30",
+    "source_table": "batter_game_logs",
+    "available_at": "fin del partido correspondiente",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "a_off_bb_d30",
+    "source_table": "batter_game_logs",
+    "available_at": "fin del partido correspondiente",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "a_off_hr_d30",
+    "source_table": "batter_game_logs",
+    "available_at": "fin del partido correspondiente",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "a_off_rpg_d30",
+    "source_table": "batter_game_logs",
+    "available_at": "fin del partido correspondiente",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "a_def_rpg_d30",
+    "source_table": "games (carreras recibidas)",
+    "available_at": "fin del partido correspondiente",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "a_off_games_d30",
+    "source_table": "batter_game_logs",
+    "available_at": "fin del partido correspondiente",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "a_off_obp_d14",
+    "source_table": "batter_game_logs",
+    "available_at": "fin del partido correspondiente",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "a_off_slg_d14",
+    "source_table": "batter_game_logs",
+    "available_at": "fin del partido correspondiente",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "a_off_iso_d14",
+    "source_table": "batter_game_logs",
+    "available_at": "fin del partido correspondiente",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "a_off_k_d14",
+    "source_table": "batter_game_logs",
+    "available_at": "fin del partido correspondiente",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "a_off_bb_d14",
+    "source_table": "batter_game_logs",
+    "available_at": "fin del partido correspondiente",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "a_off_hr_d14",
+    "source_table": "batter_game_logs",
+    "available_at": "fin del partido correspondiente",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "a_off_rpg_d14",
+    "source_table": "batter_game_logs",
+    "available_at": "fin del partido correspondiente",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "a_def_rpg_d14",
+    "source_table": "games (carreras recibidas)",
+    "available_at": "fin del partido correspondiente",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "a_off_games_d14",
+    "source_table": "batter_game_logs",
+    "available_at": "fin del partido correspondiente",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "a_off_obp_d7",
+    "source_table": "batter_game_logs",
+    "available_at": "fin del partido correspondiente",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "a_off_slg_d7",
+    "source_table": "batter_game_logs",
+    "available_at": "fin del partido correspondiente",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "a_off_iso_d7",
+    "source_table": "batter_game_logs",
+    "available_at": "fin del partido correspondiente",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "a_off_k_d7",
+    "source_table": "batter_game_logs",
+    "available_at": "fin del partido correspondiente",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "a_off_bb_d7",
+    "source_table": "batter_game_logs",
+    "available_at": "fin del partido correspondiente",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "a_off_hr_d7",
+    "source_table": "batter_game_logs",
+    "available_at": "fin del partido correspondiente",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "a_off_rpg_d7",
+    "source_table": "batter_game_logs",
+    "available_at": "fin del partido correspondiente",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "a_def_rpg_d7",
+    "source_table": "games (carreras recibidas)",
+    "available_at": "fin del partido correspondiente",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "a_off_games_d7",
+    "source_table": "batter_game_logs",
+    "available_at": "fin del partido correspondiente",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "a_stf_era_s",
+    "source_table": "pitcher_game_logs (staff completo)",
+    "available_at": "fin del partido",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "a_stf_whip_s",
+    "source_table": "pitcher_game_logs (staff completo)",
+    "available_at": "fin del partido",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "a_stf_k_s",
+    "source_table": "pitcher_game_logs (staff completo)",
+    "available_at": "fin del partido",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "a_stf_bb_s",
+    "source_table": "pitcher_game_logs (staff completo)",
+    "available_at": "fin del partido",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "a_stf_hr9_s",
+    "source_table": "pitcher_game_logs (staff completo)",
+    "available_at": "fin del partido",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "a_stf_gb_s",
+    "source_table": "pitcher_game_logs (staff completo)",
+    "available_at": "fin del partido",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "a_stf_era_d30",
+    "source_table": "pitcher_game_logs (staff completo)",
+    "available_at": "fin del partido",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "a_stf_whip_d30",
+    "source_table": "pitcher_game_logs (staff completo)",
+    "available_at": "fin del partido",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "a_stf_k_d30",
+    "source_table": "pitcher_game_logs (staff completo)",
+    "available_at": "fin del partido",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "a_stf_bb_d30",
+    "source_table": "pitcher_game_logs (staff completo)",
+    "available_at": "fin del partido",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "a_stf_hr9_d30",
+    "source_table": "pitcher_game_logs (staff completo)",
+    "available_at": "fin del partido",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "a_stf_gb_d30",
+    "source_table": "pitcher_game_logs (staff completo)",
+    "available_at": "fin del partido",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "a_stf_era_d14",
+    "source_table": "pitcher_game_logs (staff completo)",
+    "available_at": "fin del partido",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "a_stf_whip_d14",
+    "source_table": "pitcher_game_logs (staff completo)",
+    "available_at": "fin del partido",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "a_stf_k_d14",
+    "source_table": "pitcher_game_logs (staff completo)",
+    "available_at": "fin del partido",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "a_stf_bb_d14",
+    "source_table": "pitcher_game_logs (staff completo)",
+    "available_at": "fin del partido",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "a_stf_hr9_d14",
+    "source_table": "pitcher_game_logs (staff completo)",
+    "available_at": "fin del partido",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "a_stf_gb_d14",
+    "source_table": "pitcher_game_logs (staff completo)",
+    "available_at": "fin del partido",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "a_stf_era_d7",
+    "source_table": "pitcher_game_logs (staff completo)",
+    "available_at": "fin del partido",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "a_stf_whip_d7",
+    "source_table": "pitcher_game_logs (staff completo)",
+    "available_at": "fin del partido",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "a_stf_k_d7",
+    "source_table": "pitcher_game_logs (staff completo)",
+    "available_at": "fin del partido",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "a_stf_bb_d7",
+    "source_table": "pitcher_game_logs (staff completo)",
+    "available_at": "fin del partido",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "a_stf_hr9_d7",
+    "source_table": "pitcher_game_logs (staff completo)",
+    "available_at": "fin del partido",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "a_stf_gb_d7",
+    "source_table": "pitcher_game_logs (staff completo)",
+    "available_at": "fin del partido",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "a_bp_outs_d1",
+    "source_table": "bullpen_usage (derivado de boxscores)",
+    "available_at": "fin del partido",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "a_bp_pitches_d1",
+    "source_table": "bullpen_usage (derivado de boxscores)",
+    "available_at": "fin del partido",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "a_bp_outs_d2",
+    "source_table": "bullpen_usage (derivado de boxscores)",
+    "available_at": "fin del partido",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "a_bp_pitches_d2",
+    "source_table": "bullpen_usage (derivado de boxscores)",
+    "available_at": "fin del partido",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "a_bp_outs_d3",
+    "source_table": "bullpen_usage (derivado de boxscores)",
+    "available_at": "fin del partido",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "a_bp_pitches_d3",
+    "source_table": "bullpen_usage (derivado de boxscores)",
+    "available_at": "fin del partido",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "a_bp_outs_d5",
+    "source_table": "bullpen_usage (derivado de boxscores)",
+    "available_at": "fin del partido",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "a_bp_pitches_d5",
+    "source_table": "bullpen_usage (derivado de boxscores)",
+    "available_at": "fin del partido",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "a_bp_outs_s",
+    "source_table": "bullpen_usage (derivado de boxscores)",
+    "available_at": "fin del partido",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "a_bp_pitches_s",
+    "source_table": "bullpen_usage (derivado de boxscores)",
+    "available_at": "fin del partido",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "a_bp_relievers_d1",
+    "source_table": "bullpen_usage (derivado de boxscores)",
+    "available_at": "fin del partido",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "a_bp_b2b_d1",
+    "source_table": "bullpen_usage (derivado de boxscores)",
+    "available_at": "fin del partido",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "a_bp_relievers_d2",
+    "source_table": "bullpen_usage (derivado de boxscores)",
+    "available_at": "fin del partido",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "a_bp_b2b_d2",
+    "source_table": "bullpen_usage (derivado de boxscores)",
+    "available_at": "fin del partido",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "a_bp_relievers_d3",
+    "source_table": "bullpen_usage (derivado de boxscores)",
+    "available_at": "fin del partido",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "a_bp_b2b_d3",
+    "source_table": "bullpen_usage (derivado de boxscores)",
+    "available_at": "fin del partido",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "a_bp_relievers_d5",
+    "source_table": "bullpen_usage (derivado de boxscores)",
+    "available_at": "fin del partido",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "a_bp_b2b_d5",
+    "source_table": "bullpen_usage (derivado de boxscores)",
+    "available_at": "fin del partido",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "a_bp_pitches_per_game_s",
+    "source_table": "bullpen_usage (derivado de boxscores)",
+    "available_at": "fin del partido",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "a_sp_player_id",
+    "source_table": "probable_pitchers + pitcher_game_logs",
+    "available_at": "aperturas anteriores del abridor; fin de partido = inicio + 3h15",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "a_sp_source",
+    "source_table": "probable_pitchers + pitcher_game_logs",
+    "available_at": "aperturas anteriores del abridor; fin de partido = inicio + 3h15",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "a_sp_starts_s",
+    "source_table": "probable_pitchers + pitcher_game_logs",
+    "available_at": "aperturas anteriores del abridor; fin de partido = inicio + 3h15",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "a_sp_era_s",
+    "source_table": "probable_pitchers + pitcher_game_logs",
+    "available_at": "aperturas anteriores del abridor; fin de partido = inicio + 3h15",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "a_sp_whip_s",
+    "source_table": "probable_pitchers + pitcher_game_logs",
+    "available_at": "aperturas anteriores del abridor; fin de partido = inicio + 3h15",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "a_sp_k_s",
+    "source_table": "probable_pitchers + pitcher_game_logs",
+    "available_at": "aperturas anteriores del abridor; fin de partido = inicio + 3h15",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "a_sp_bb_s",
+    "source_table": "probable_pitchers + pitcher_game_logs",
+    "available_at": "aperturas anteriores del abridor; fin de partido = inicio + 3h15",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "a_sp_kbb_s",
+    "source_table": "probable_pitchers + pitcher_game_logs",
+    "available_at": "aperturas anteriores del abridor; fin de partido = inicio + 3h15",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "a_sp_hr9_s",
+    "source_table": "probable_pitchers + pitcher_game_logs",
+    "available_at": "aperturas anteriores del abridor; fin de partido = inicio + 3h15",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "a_sp_ip_start_s",
+    "source_table": "probable_pitchers + pitcher_game_logs",
+    "available_at": "aperturas anteriores del abridor; fin de partido = inicio + 3h15",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "a_sp_pitches_start_s",
+    "source_table": "probable_pitchers + pitcher_game_logs",
+    "available_at": "aperturas anteriores del abridor; fin de partido = inicio + 3h15",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "a_sp_fip_s",
+    "source_table": "probable_pitchers + pitcher_game_logs",
+    "available_at": "aperturas anteriores del abridor; fin de partido = inicio + 3h15",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "a_sp_starts_d45",
+    "source_table": "probable_pitchers + pitcher_game_logs",
+    "available_at": "aperturas anteriores del abridor; fin de partido = inicio + 3h15",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "a_sp_era_d45",
+    "source_table": "probable_pitchers + pitcher_game_logs",
+    "available_at": "aperturas anteriores del abridor; fin de partido = inicio + 3h15",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "a_sp_whip_d45",
+    "source_table": "probable_pitchers + pitcher_game_logs",
+    "available_at": "aperturas anteriores del abridor; fin de partido = inicio + 3h15",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "a_sp_k_d45",
+    "source_table": "probable_pitchers + pitcher_game_logs",
+    "available_at": "aperturas anteriores del abridor; fin de partido = inicio + 3h15",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "a_sp_bb_d45",
+    "source_table": "probable_pitchers + pitcher_game_logs",
+    "available_at": "aperturas anteriores del abridor; fin de partido = inicio + 3h15",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "a_sp_kbb_d45",
+    "source_table": "probable_pitchers + pitcher_game_logs",
+    "available_at": "aperturas anteriores del abridor; fin de partido = inicio + 3h15",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "a_sp_hr9_d45",
+    "source_table": "probable_pitchers + pitcher_game_logs",
+    "available_at": "aperturas anteriores del abridor; fin de partido = inicio + 3h15",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "a_sp_ip_start_d45",
+    "source_table": "probable_pitchers + pitcher_game_logs",
+    "available_at": "aperturas anteriores del abridor; fin de partido = inicio + 3h15",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "a_sp_pitches_start_d45",
+    "source_table": "probable_pitchers + pitcher_game_logs",
+    "available_at": "aperturas anteriores del abridor; fin de partido = inicio + 3h15",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "a_sp_fip_d45",
+    "source_table": "probable_pitchers + pitcher_game_logs",
+    "available_at": "aperturas anteriores del abridor; fin de partido = inicio + 3h15",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "a_sp_xwoba_s",
+    "source_table": "probable_pitchers + pitcher_game_logs",
+    "available_at": "aperturas anteriores del abridor; fin de partido = inicio + 3h15",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "a_sp_ev_s",
+    "source_table": "probable_pitchers + pitcher_game_logs",
+    "available_at": "aperturas anteriores del abridor; fin de partido = inicio + 3h15",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "a_sp_hard_s",
+    "source_table": "probable_pitchers + pitcher_game_logs",
+    "available_at": "aperturas anteriores del abridor; fin de partido = inicio + 3h15",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "a_sp_barrel_s",
+    "source_table": "probable_pitchers + pitcher_game_logs",
+    "available_at": "aperturas anteriores del abridor; fin de partido = inicio + 3h15",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "a_sp_velo_s",
+    "source_table": "probable_pitchers + pitcher_game_logs",
+    "available_at": "aperturas anteriores del abridor; fin de partido = inicio + 3h15",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "a_sp_spin_s",
+    "source_table": "probable_pitchers + pitcher_game_logs",
+    "available_at": "aperturas anteriores del abridor; fin de partido = inicio + 3h15",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "a_sp_csw_s",
+    "source_table": "probable_pitchers + pitcher_game_logs",
+    "available_at": "aperturas anteriores del abridor; fin de partido = inicio + 3h15",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "a_sp_swstr_s",
+    "source_table": "probable_pitchers + pitcher_game_logs",
+    "available_at": "aperturas anteriores del abridor; fin de partido = inicio + 3h15",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "a_sp_xwoba_d45",
+    "source_table": "probable_pitchers + pitcher_game_logs",
+    "available_at": "aperturas anteriores del abridor; fin de partido = inicio + 3h15",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "a_sp_ev_d45",
+    "source_table": "probable_pitchers + pitcher_game_logs",
+    "available_at": "aperturas anteriores del abridor; fin de partido = inicio + 3h15",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "a_sp_hard_d45",
+    "source_table": "probable_pitchers + pitcher_game_logs",
+    "available_at": "aperturas anteriores del abridor; fin de partido = inicio + 3h15",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "a_sp_barrel_d45",
+    "source_table": "probable_pitchers + pitcher_game_logs",
+    "available_at": "aperturas anteriores del abridor; fin de partido = inicio + 3h15",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "a_sp_velo_d45",
+    "source_table": "probable_pitchers + pitcher_game_logs",
+    "available_at": "aperturas anteriores del abridor; fin de partido = inicio + 3h15",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "a_sp_spin_d45",
+    "source_table": "probable_pitchers + pitcher_game_logs",
+    "available_at": "aperturas anteriores del abridor; fin de partido = inicio + 3h15",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "a_sp_csw_d45",
+    "source_table": "probable_pitchers + pitcher_game_logs",
+    "available_at": "aperturas anteriores del abridor; fin de partido = inicio + 3h15",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "a_sp_swstr_d45",
+    "source_table": "probable_pitchers + pitcher_game_logs",
+    "available_at": "aperturas anteriores del abridor; fin de partido = inicio + 3h15",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "a_sp_rest_days",
+    "source_table": "probable_pitchers + pitcher_game_logs",
+    "available_at": "aperturas anteriores del abridor; fin de partido = inicio + 3h15",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "a_sp_known",
+    "source_table": "probable_pitchers + pitcher_game_logs",
+    "available_at": "aperturas anteriores del abridor; fin de partido = inicio + 3h15",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "d_season",
+    "source_table": "SIN CLASIFICAR",
+    "available_at": "UNKNOWN",
+    "used_before_game": null,
+    "leakage_risk": "REVISAR",
+    "fed_to_model": true
+   },
+   {
+    "feature": "d_off_obp_s",
+    "source_table": "batter_game_logs",
+    "available_at": "fin del partido correspondiente",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": true
+   },
+   {
+    "feature": "d_off_slg_s",
+    "source_table": "batter_game_logs",
+    "available_at": "fin del partido correspondiente",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": true
+   },
+   {
+    "feature": "d_off_iso_s",
+    "source_table": "batter_game_logs",
+    "available_at": "fin del partido correspondiente",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": true
+   },
+   {
+    "feature": "d_off_k_s",
+    "source_table": "batter_game_logs",
+    "available_at": "fin del partido correspondiente",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": true
+   },
+   {
+    "feature": "d_off_bb_s",
+    "source_table": "batter_game_logs",
+    "available_at": "fin del partido correspondiente",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": true
+   },
+   {
+    "feature": "d_off_hr_s",
+    "source_table": "batter_game_logs",
+    "available_at": "fin del partido correspondiente",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": true
+   },
+   {
+    "feature": "d_off_rpg_s",
+    "source_table": "batter_game_logs",
+    "available_at": "fin del partido correspondiente",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": true
+   },
+   {
+    "feature": "d_def_rpg_s",
+    "source_table": "games (carreras recibidas)",
+    "available_at": "fin del partido correspondiente",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": true
+   },
+   {
+    "feature": "d_off_games_s",
+    "source_table": "batter_game_logs",
+    "available_at": "fin del partido correspondiente",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": true
+   },
+   {
+    "feature": "d_off_obp_d30",
+    "source_table": "batter_game_logs",
+    "available_at": "fin del partido correspondiente",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": true
+   },
+   {
+    "feature": "d_off_slg_d30",
+    "source_table": "batter_game_logs",
+    "available_at": "fin del partido correspondiente",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": true
+   },
+   {
+    "feature": "d_off_iso_d30",
+    "source_table": "batter_game_logs",
+    "available_at": "fin del partido correspondiente",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": true
+   },
+   {
+    "feature": "d_off_k_d30",
+    "source_table": "batter_game_logs",
+    "available_at": "fin del partido correspondiente",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": true
+   },
+   {
+    "feature": "d_off_bb_d30",
+    "source_table": "batter_game_logs",
+    "available_at": "fin del partido correspondiente",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": true
+   },
+   {
+    "feature": "d_off_hr_d30",
+    "source_table": "batter_game_logs",
+    "available_at": "fin del partido correspondiente",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": true
+   },
+   {
+    "feature": "d_off_rpg_d30",
+    "source_table": "batter_game_logs",
+    "available_at": "fin del partido correspondiente",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": true
+   },
+   {
+    "feature": "d_def_rpg_d30",
+    "source_table": "games (carreras recibidas)",
+    "available_at": "fin del partido correspondiente",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": true
+   },
+   {
+    "feature": "d_off_games_d30",
+    "source_table": "batter_game_logs",
+    "available_at": "fin del partido correspondiente",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": true
+   },
+   {
+    "feature": "d_off_obp_d14",
+    "source_table": "batter_game_logs",
+    "available_at": "fin del partido correspondiente",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": true
+   },
+   {
+    "feature": "d_off_slg_d14",
+    "source_table": "batter_game_logs",
+    "available_at": "fin del partido correspondiente",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": true
+   },
+   {
+    "feature": "d_off_iso_d14",
+    "source_table": "batter_game_logs",
+    "available_at": "fin del partido correspondiente",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": true
+   },
+   {
+    "feature": "d_off_k_d14",
+    "source_table": "batter_game_logs",
+    "available_at": "fin del partido correspondiente",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": true
+   },
+   {
+    "feature": "d_off_bb_d14",
+    "source_table": "batter_game_logs",
+    "available_at": "fin del partido correspondiente",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": true
+   },
+   {
+    "feature": "d_off_hr_d14",
+    "source_table": "batter_game_logs",
+    "available_at": "fin del partido correspondiente",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": true
+   },
+   {
+    "feature": "d_off_rpg_d14",
+    "source_table": "batter_game_logs",
+    "available_at": "fin del partido correspondiente",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": true
+   },
+   {
+    "feature": "d_def_rpg_d14",
+    "source_table": "games (carreras recibidas)",
+    "available_at": "fin del partido correspondiente",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": true
+   },
+   {
+    "feature": "d_off_games_d14",
+    "source_table": "batter_game_logs",
+    "available_at": "fin del partido correspondiente",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": true
+   },
+   {
+    "feature": "d_off_obp_d7",
+    "source_table": "batter_game_logs",
+    "available_at": "fin del partido correspondiente",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": true
+   },
+   {
+    "feature": "d_off_slg_d7",
+    "source_table": "batter_game_logs",
+    "available_at": "fin del partido correspondiente",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": true
+   },
+   {
+    "feature": "d_off_iso_d7",
+    "source_table": "batter_game_logs",
+    "available_at": "fin del partido correspondiente",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": true
+   },
+   {
+    "feature": "d_off_k_d7",
+    "source_table": "batter_game_logs",
+    "available_at": "fin del partido correspondiente",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": true
+   },
+   {
+    "feature": "d_off_bb_d7",
+    "source_table": "batter_game_logs",
+    "available_at": "fin del partido correspondiente",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": true
+   },
+   {
+    "feature": "d_off_hr_d7",
+    "source_table": "batter_game_logs",
+    "available_at": "fin del partido correspondiente",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": true
+   },
+   {
+    "feature": "d_off_rpg_d7",
+    "source_table": "batter_game_logs",
+    "available_at": "fin del partido correspondiente",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": true
+   },
+   {
+    "feature": "d_def_rpg_d7",
+    "source_table": "games (carreras recibidas)",
+    "available_at": "fin del partido correspondiente",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": true
+   },
+   {
+    "feature": "d_off_games_d7",
+    "source_table": "batter_game_logs",
+    "available_at": "fin del partido correspondiente",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": true
+   },
+   {
+    "feature": "d_stf_era_s",
+    "source_table": "pitcher_game_logs (staff completo)",
+    "available_at": "fin del partido",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": true
+   },
+   {
+    "feature": "d_stf_whip_s",
+    "source_table": "pitcher_game_logs (staff completo)",
+    "available_at": "fin del partido",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": true
+   },
+   {
+    "feature": "d_stf_k_s",
+    "source_table": "pitcher_game_logs (staff completo)",
+    "available_at": "fin del partido",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": true
+   },
+   {
+    "feature": "d_stf_bb_s",
+    "source_table": "pitcher_game_logs (staff completo)",
+    "available_at": "fin del partido",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": true
+   },
+   {
+    "feature": "d_stf_hr9_s",
+    "source_table": "pitcher_game_logs (staff completo)",
+    "available_at": "fin del partido",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": true
+   },
+   {
+    "feature": "d_stf_gb_s",
+    "source_table": "pitcher_game_logs (staff completo)",
+    "available_at": "fin del partido",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": true
+   },
+   {
+    "feature": "d_stf_era_d30",
+    "source_table": "pitcher_game_logs (staff completo)",
+    "available_at": "fin del partido",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": true
+   },
+   {
+    "feature": "d_stf_whip_d30",
+    "source_table": "pitcher_game_logs (staff completo)",
+    "available_at": "fin del partido",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": true
+   },
+   {
+    "feature": "d_stf_k_d30",
+    "source_table": "pitcher_game_logs (staff completo)",
+    "available_at": "fin del partido",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": true
+   },
+   {
+    "feature": "d_stf_bb_d30",
+    "source_table": "pitcher_game_logs (staff completo)",
+    "available_at": "fin del partido",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": true
+   },
+   {
+    "feature": "d_stf_hr9_d30",
+    "source_table": "pitcher_game_logs (staff completo)",
+    "available_at": "fin del partido",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": true
+   },
+   {
+    "feature": "d_stf_gb_d30",
+    "source_table": "pitcher_game_logs (staff completo)",
+    "available_at": "fin del partido",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": true
+   },
+   {
+    "feature": "d_stf_era_d14",
+    "source_table": "pitcher_game_logs (staff completo)",
+    "available_at": "fin del partido",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": true
+   },
+   {
+    "feature": "d_stf_whip_d14",
+    "source_table": "pitcher_game_logs (staff completo)",
+    "available_at": "fin del partido",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": true
+   },
+   {
+    "feature": "d_stf_k_d14",
+    "source_table": "pitcher_game_logs (staff completo)",
+    "available_at": "fin del partido",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": true
+   },
+   {
+    "feature": "d_stf_bb_d14",
+    "source_table": "pitcher_game_logs (staff completo)",
+    "available_at": "fin del partido",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": true
+   },
+   {
+    "feature": "d_stf_hr9_d14",
+    "source_table": "pitcher_game_logs (staff completo)",
+    "available_at": "fin del partido",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": true
+   },
+   {
+    "feature": "d_stf_gb_d14",
+    "source_table": "pitcher_game_logs (staff completo)",
+    "available_at": "fin del partido",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": true
+   },
+   {
+    "feature": "d_stf_era_d7",
+    "source_table": "pitcher_game_logs (staff completo)",
+    "available_at": "fin del partido",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": true
+   },
+   {
+    "feature": "d_stf_whip_d7",
+    "source_table": "pitcher_game_logs (staff completo)",
+    "available_at": "fin del partido",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": true
+   },
+   {
+    "feature": "d_stf_k_d7",
+    "source_table": "pitcher_game_logs (staff completo)",
+    "available_at": "fin del partido",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": true
+   },
+   {
+    "feature": "d_stf_bb_d7",
+    "source_table": "pitcher_game_logs (staff completo)",
+    "available_at": "fin del partido",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": true
+   },
+   {
+    "feature": "d_stf_hr9_d7",
+    "source_table": "pitcher_game_logs (staff completo)",
+    "available_at": "fin del partido",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": true
+   },
+   {
+    "feature": "d_stf_gb_d7",
+    "source_table": "pitcher_game_logs (staff completo)",
+    "available_at": "fin del partido",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": true
+   },
+   {
+    "feature": "d_bp_outs_d1",
+    "source_table": "bullpen_usage (derivado de boxscores)",
+    "available_at": "fin del partido",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": true
+   },
+   {
+    "feature": "d_bp_pitches_d1",
+    "source_table": "bullpen_usage (derivado de boxscores)",
+    "available_at": "fin del partido",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": true
+   },
+   {
+    "feature": "d_bp_outs_d2",
+    "source_table": "bullpen_usage (derivado de boxscores)",
+    "available_at": "fin del partido",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": true
+   },
+   {
+    "feature": "d_bp_pitches_d2",
+    "source_table": "bullpen_usage (derivado de boxscores)",
+    "available_at": "fin del partido",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": true
+   },
+   {
+    "feature": "d_bp_outs_d3",
+    "source_table": "bullpen_usage (derivado de boxscores)",
+    "available_at": "fin del partido",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": true
+   },
+   {
+    "feature": "d_bp_pitches_d3",
+    "source_table": "bullpen_usage (derivado de boxscores)",
+    "available_at": "fin del partido",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": true
+   },
+   {
+    "feature": "d_bp_outs_d5",
+    "source_table": "bullpen_usage (derivado de boxscores)",
+    "available_at": "fin del partido",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": true
+   },
+   {
+    "feature": "d_bp_pitches_d5",
+    "source_table": "bullpen_usage (derivado de boxscores)",
+    "available_at": "fin del partido",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": true
+   },
+   {
+    "feature": "d_bp_outs_s",
+    "source_table": "bullpen_usage (derivado de boxscores)",
+    "available_at": "fin del partido",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": true
+   },
+   {
+    "feature": "d_bp_pitches_s",
+    "source_table": "bullpen_usage (derivado de boxscores)",
+    "available_at": "fin del partido",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": true
+   },
+   {
+    "feature": "d_bp_relievers_d1",
+    "source_table": "bullpen_usage (derivado de boxscores)",
+    "available_at": "fin del partido",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": true
+   },
+   {
+    "feature": "d_bp_b2b_d1",
+    "source_table": "bullpen_usage (derivado de boxscores)",
+    "available_at": "fin del partido",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": true
+   },
+   {
+    "feature": "d_bp_relievers_d2",
+    "source_table": "bullpen_usage (derivado de boxscores)",
+    "available_at": "fin del partido",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": true
+   },
+   {
+    "feature": "d_bp_b2b_d2",
+    "source_table": "bullpen_usage (derivado de boxscores)",
+    "available_at": "fin del partido",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": true
+   },
+   {
+    "feature": "d_bp_relievers_d3",
+    "source_table": "bullpen_usage (derivado de boxscores)",
+    "available_at": "fin del partido",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": true
+   },
+   {
+    "feature": "d_bp_b2b_d3",
+    "source_table": "bullpen_usage (derivado de boxscores)",
+    "available_at": "fin del partido",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": true
+   },
+   {
+    "feature": "d_bp_relievers_d5",
+    "source_table": "bullpen_usage (derivado de boxscores)",
+    "available_at": "fin del partido",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": true
+   },
+   {
+    "feature": "d_bp_b2b_d5",
+    "source_table": "bullpen_usage (derivado de boxscores)",
+    "available_at": "fin del partido",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": true
+   },
+   {
+    "feature": "d_bp_pitches_per_game_s",
+    "source_table": "bullpen_usage (derivado de boxscores)",
+    "available_at": "fin del partido",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": true
+   },
+   {
+    "feature": "d_sp_player_id",
+    "source_table": "probable_pitchers + pitcher_game_logs",
+    "available_at": "aperturas anteriores del abridor; fin de partido = inicio + 3h15",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "d_sp_source",
+    "source_table": "probable_pitchers + pitcher_game_logs",
+    "available_at": "aperturas anteriores del abridor; fin de partido = inicio + 3h15",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": false
+   },
+   {
+    "feature": "d_sp_starts_s",
+    "source_table": "probable_pitchers + pitcher_game_logs",
+    "available_at": "aperturas anteriores del abridor; fin de partido = inicio + 3h15",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": true
+   },
+   {
+    "feature": "d_sp_era_s",
+    "source_table": "probable_pitchers + pitcher_game_logs",
+    "available_at": "aperturas anteriores del abridor; fin de partido = inicio + 3h15",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": true
+   },
+   {
+    "feature": "d_sp_whip_s",
+    "source_table": "probable_pitchers + pitcher_game_logs",
+    "available_at": "aperturas anteriores del abridor; fin de partido = inicio + 3h15",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": true
+   },
+   {
+    "feature": "d_sp_k_s",
+    "source_table": "probable_pitchers + pitcher_game_logs",
+    "available_at": "aperturas anteriores del abridor; fin de partido = inicio + 3h15",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": true
+   },
+   {
+    "feature": "d_sp_bb_s",
+    "source_table": "probable_pitchers + pitcher_game_logs",
+    "available_at": "aperturas anteriores del abridor; fin de partido = inicio + 3h15",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": true
+   },
+   {
+    "feature": "d_sp_kbb_s",
+    "source_table": "probable_pitchers + pitcher_game_logs",
+    "available_at": "aperturas anteriores del abridor; fin de partido = inicio + 3h15",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": true
+   },
+   {
+    "feature": "d_sp_hr9_s",
+    "source_table": "probable_pitchers + pitcher_game_logs",
+    "available_at": "aperturas anteriores del abridor; fin de partido = inicio + 3h15",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": true
+   },
+   {
+    "feature": "d_sp_ip_start_s",
+    "source_table": "probable_pitchers + pitcher_game_logs",
+    "available_at": "aperturas anteriores del abridor; fin de partido = inicio + 3h15",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": true
+   },
+   {
+    "feature": "d_sp_pitches_start_s",
+    "source_table": "probable_pitchers + pitcher_game_logs",
+    "available_at": "aperturas anteriores del abridor; fin de partido = inicio + 3h15",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": true
+   },
+   {
+    "feature": "d_sp_fip_s",
+    "source_table": "probable_pitchers + pitcher_game_logs",
+    "available_at": "aperturas anteriores del abridor; fin de partido = inicio + 3h15",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": true
+   },
+   {
+    "feature": "d_sp_starts_d45",
+    "source_table": "probable_pitchers + pitcher_game_logs",
+    "available_at": "aperturas anteriores del abridor; fin de partido = inicio + 3h15",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": true
+   },
+   {
+    "feature": "d_sp_era_d45",
+    "source_table": "probable_pitchers + pitcher_game_logs",
+    "available_at": "aperturas anteriores del abridor; fin de partido = inicio + 3h15",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": true
+   },
+   {
+    "feature": "d_sp_whip_d45",
+    "source_table": "probable_pitchers + pitcher_game_logs",
+    "available_at": "aperturas anteriores del abridor; fin de partido = inicio + 3h15",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": true
+   },
+   {
+    "feature": "d_sp_k_d45",
+    "source_table": "probable_pitchers + pitcher_game_logs",
+    "available_at": "aperturas anteriores del abridor; fin de partido = inicio + 3h15",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": true
+   },
+   {
+    "feature": "d_sp_bb_d45",
+    "source_table": "probable_pitchers + pitcher_game_logs",
+    "available_at": "aperturas anteriores del abridor; fin de partido = inicio + 3h15",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": true
+   },
+   {
+    "feature": "d_sp_kbb_d45",
+    "source_table": "probable_pitchers + pitcher_game_logs",
+    "available_at": "aperturas anteriores del abridor; fin de partido = inicio + 3h15",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": true
+   },
+   {
+    "feature": "d_sp_hr9_d45",
+    "source_table": "probable_pitchers + pitcher_game_logs",
+    "available_at": "aperturas anteriores del abridor; fin de partido = inicio + 3h15",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": true
+   },
+   {
+    "feature": "d_sp_ip_start_d45",
+    "source_table": "probable_pitchers + pitcher_game_logs",
+    "available_at": "aperturas anteriores del abridor; fin de partido = inicio + 3h15",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": true
+   },
+   {
+    "feature": "d_sp_pitches_start_d45",
+    "source_table": "probable_pitchers + pitcher_game_logs",
+    "available_at": "aperturas anteriores del abridor; fin de partido = inicio + 3h15",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": true
+   },
+   {
+    "feature": "d_sp_fip_d45",
+    "source_table": "probable_pitchers + pitcher_game_logs",
+    "available_at": "aperturas anteriores del abridor; fin de partido = inicio + 3h15",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": true
+   },
+   {
+    "feature": "d_sp_xwoba_s",
+    "source_table": "probable_pitchers + pitcher_game_logs",
+    "available_at": "aperturas anteriores del abridor; fin de partido = inicio + 3h15",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": true
+   },
+   {
+    "feature": "d_sp_ev_s",
+    "source_table": "probable_pitchers + pitcher_game_logs",
+    "available_at": "aperturas anteriores del abridor; fin de partido = inicio + 3h15",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": true
+   },
+   {
+    "feature": "d_sp_hard_s",
+    "source_table": "probable_pitchers + pitcher_game_logs",
+    "available_at": "aperturas anteriores del abridor; fin de partido = inicio + 3h15",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": true
+   },
+   {
+    "feature": "d_sp_barrel_s",
+    "source_table": "probable_pitchers + pitcher_game_logs",
+    "available_at": "aperturas anteriores del abridor; fin de partido = inicio + 3h15",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": true
+   },
+   {
+    "feature": "d_sp_velo_s",
+    "source_table": "probable_pitchers + pitcher_game_logs",
+    "available_at": "aperturas anteriores del abridor; fin de partido = inicio + 3h15",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": true
+   },
+   {
+    "feature": "d_sp_spin_s",
+    "source_table": "probable_pitchers + pitcher_game_logs",
+    "available_at": "aperturas anteriores del abridor; fin de partido = inicio + 3h15",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": true
+   },
+   {
+    "feature": "d_sp_csw_s",
+    "source_table": "probable_pitchers + pitcher_game_logs",
+    "available_at": "aperturas anteriores del abridor; fin de partido = inicio + 3h15",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": true
+   },
+   {
+    "feature": "d_sp_swstr_s",
+    "source_table": "probable_pitchers + pitcher_game_logs",
+    "available_at": "aperturas anteriores del abridor; fin de partido = inicio + 3h15",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": true
+   },
+   {
+    "feature": "d_sp_xwoba_d45",
+    "source_table": "probable_pitchers + pitcher_game_logs",
+    "available_at": "aperturas anteriores del abridor; fin de partido = inicio + 3h15",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": true
+   },
+   {
+    "feature": "d_sp_ev_d45",
+    "source_table": "probable_pitchers + pitcher_game_logs",
+    "available_at": "aperturas anteriores del abridor; fin de partido = inicio + 3h15",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": true
+   },
+   {
+    "feature": "d_sp_hard_d45",
+    "source_table": "probable_pitchers + pitcher_game_logs",
+    "available_at": "aperturas anteriores del abridor; fin de partido = inicio + 3h15",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": true
+   },
+   {
+    "feature": "d_sp_barrel_d45",
+    "source_table": "probable_pitchers + pitcher_game_logs",
+    "available_at": "aperturas anteriores del abridor; fin de partido = inicio + 3h15",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": true
+   },
+   {
+    "feature": "d_sp_velo_d45",
+    "source_table": "probable_pitchers + pitcher_game_logs",
+    "available_at": "aperturas anteriores del abridor; fin de partido = inicio + 3h15",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": true
+   },
+   {
+    "feature": "d_sp_spin_d45",
+    "source_table": "probable_pitchers + pitcher_game_logs",
+    "available_at": "aperturas anteriores del abridor; fin de partido = inicio + 3h15",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": true
+   },
+   {
+    "feature": "d_sp_csw_d45",
+    "source_table": "probable_pitchers + pitcher_game_logs",
+    "available_at": "aperturas anteriores del abridor; fin de partido = inicio + 3h15",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": true
+   },
+   {
+    "feature": "d_sp_swstr_d45",
+    "source_table": "probable_pitchers + pitcher_game_logs",
+    "available_at": "aperturas anteriores del abridor; fin de partido = inicio + 3h15",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": true
+   },
+   {
+    "feature": "d_sp_rest_days",
+    "source_table": "probable_pitchers + pitcher_game_logs",
+    "available_at": "aperturas anteriores del abridor; fin de partido = inicio + 3h15",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": true
+   },
+   {
+    "feature": "d_sp_known",
+    "source_table": "probable_pitchers + pitcher_game_logs",
+    "available_at": "aperturas anteriores del abridor; fin de partido = inicio + 3h15",
+    "used_before_game": true,
+    "leakage_risk": "BAJO",
+    "fed_to_model": true
+   },
+   {
+    "feature": "is_doubleheader",
+    "source_table": "games.doubleHeader",
+    "available_at": "calendario",
+    "used_before_game": true,
+    "leakage_risk": "NULO",
+    "fed_to_model": true
+   },
+   {
+    "feature": "month",
+    "source_table": "games.game_date",
+    "available_at": "calendario",
+    "used_before_game": true,
+    "leakage_risk": "NULO",
+    "fed_to_model": true
+   },
+   {
+    "feature": "h_rest_days",
+    "source_table": "games.start_utc",
+    "available_at": "calendario, publicado con antelacion",
+    "used_before_game": true,
+    "leakage_risk": "NULO",
+    "fed_to_model": true
+   },
+   {
+    "feature": "a_rest_days",
+    "source_table": "games.start_utc",
+    "available_at": "calendario, publicado con antelacion",
+    "used_before_game": true,
+    "leakage_risk": "NULO",
+    "fed_to_model": true
+   },
+   {
+    "feature": "d_rest_days",
+    "source_table": "games.start_utc",
+    "available_at": "calendario, publicado con antelacion",
+    "used_before_game": true,
+    "leakage_risk": "NULO",
+    "fed_to_model": true
+   },
+   {
+    "feature": "park_runs_factor",
+    "source_table": "games de temporadas ANTERIORES",
+    "available_at": "desplazado una temporada: el factor de 2023 solo se usa en 2024",
+    "used_before_game": true,
+    "leakage_risk": "NULO",
+    "fed_to_model": true
+   }
+  ]
+ },
+ "correlaciones": {
+  "umbral": 0.5,
+  "sospechosas": [],
+  "correlacion_maxima": {
+   "feature": "d_stf_whip_s",
+   "corr": -0.113
+  }
+ },
+ "limite_temporada": {
+  "primeros_partidos": 202,
+  "con_historia_previa": 0,
+  "ok": true
+ }
+}

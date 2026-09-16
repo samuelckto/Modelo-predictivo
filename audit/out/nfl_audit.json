@@ -1,0 +1,2852 @@
+{
+ "backup": {
+  "status": "ok",
+  "origen": "/sessions/magical-upbeat-euler/work/nfl-prediction-app/database/nflpred.sqlite3",
+  "copia": "/sessions/magical-upbeat-euler/work/nfl-prediction-app/database/backups/nflpred_20260907T212342.sqlite3",
+  "bytes": 71786496,
+  "sha256_32": "924834bfe0664cc7ef9f61b89ec9561f"
+ },
+ "auditoria": {
+  "disponible": true,
+  "solo_lectura": "ok: sqlite rechazo la escritura (attempt to write a readonly database)",
+  "tablas": {
+   "alerts": 33,
+   "backtest_game_results": 59806,
+   "backtest_runs": 6,
+   "data_sources_log": 48,
+   "depth_charts": 229343,
+   "games": 3300,
+   "injuries": 60788,
+   "model_versions": 4,
+   "odds_snapshots": 3142,
+   "pipeline_runs": 11,
+   "predictions": 144,
+   "scheduler_heartbeat": 3,
+   "team_game_stats": 6056,
+   "weekly_reports": 0
+  },
+  "modelo_produccion": {
+   "name": "nflpred",
+   "version": "v4",
+   "algorithm": "ensemble",
+   "created_at": "2026-09-06 18:19:57.333546",
+   "train_seasons": "2016,2017,2018,2019,2020,2021,2022,2023,2024,2025",
+   "metrics": {
+    "logreg": {
+     "n": 2751,
+     "accuracy": 0.6408578698655034,
+     "log_loss": 0.6348452032927991,
+     "brier": 0.2219008718160668,
+     "roc_auc": 0.6895485840054933,
+     "ece": 0.026876612256474534
+    },
+    "rf": {
+     "n": 2751,
+     "accuracy": 0.6474009451108688,
+     "log_loss": 0.6291719142937019,
+     "brier": 0.21971239481433652,
+     "roc_auc": 0.6941523415516083,
+     "ece": 0.015720109582995984
+    },
+    "xgb": {
+     "n": 2751,
+     "accuracy": 0.6477644492911668,
+     "log_loss": 0.6303543412375907,
+     "brier": 0.2202486513422138,
+     "roc_auc": 0.6934133482271102,
+     "ece": 0.02162470880708107
+    },
+    "lgbm": {
+     "n": 2751,
+     "accuracy": 0.6459469283896765,
+     "log_loss": 0.630730670711434,
+     "brier": 0.22055078450462748,
+     "roc_auc": 0.6910885094013408,
+     "ece": 0.019072872989721167
+    },
+    "ensemble": {
+     "n": 2751,
+     "accuracy": 0.648854961832061,
+     "log_loss": 0.6270681196467311,
+     "brier": 0.21890833273044158,
+     "roc_auc": 0.6965732922259398,
+     "ece": 0.014158399565843128,
+     "calibration": [
+      {
+       "bin_lo": 0.0,
+       "bin_hi": 0.1,
+       "n": 0,
+       "pred_mean": null,
+       "obs_rate": null
+      },
+      {
+       "bin_lo": 0.1,
+       "bin_hi": 0.2,
+       "n": 18,
+       "pred_mean": 0.18978357027946272,
+       "obs_rate": 0.2777777777777778
+      },
+      {
+       "bin_lo": 0.2,
+       "bin_hi": 0.30000000000000004,
+       "n": 203,
+       "pred_mean": 0.26247921892380527,
+       "obs_rate": 0.2660098522167488
+      },
+      {
+       "bin_lo": 0.30000000000000004,
+       "bin_hi": 0.4,
+       "n": 419,
+       "pred_mean": 0.3514856639836422,
+       "obs_rate": 0.3627684964200477
+      },
+      {
+       "bin_lo": 0.4,
+       "bin_hi": 0.5,
+       "n": 447,
+       "pred_mean": 0.4516103805869317,
+       "obs_rate": 0.4407158836689038
+      },
+      {
+       "bin_lo": 0.5,
+       "bin_hi": 0.6000000000000001,
+       "n": 529,
+       "pred_mean": 0.5516815306093693,
+       "obs_rate": 0.55765595463138
+      },
+      {
+       "bin_lo": 0.6000000000000001,
+       "bin_hi": 0.7000000000000001,
+       "n": 489,
+       "pred_mean": 0.6500656051113796,
+       "obs_rate": 0.6319018404907976
+      },
+      {
+       "bin_lo": 0.7000000000000001,
+       "bin_hi": 0.8,
+       "n": 461,
+       "pred_mean": 0.7477705244055383,
+       "obs_rate": 0.735357917570499
+      },
+      {
+       "bin_lo": 0.8,
+       "bin_hi": 0.9,
+       "n": 185,
+       "pred_mean": 0.8308809024814945,
+       "obs_rate": 0.8810810810810811
+      },
+      {
+       "bin_lo": 0.9,
+       "bin_hi": 1.0,
+       "n": 0,
+       "pred_mean": null,
+       "obs_rate": null
+      }
+     ]
+    }
+   },
+   "blend_policy": {
+    "kind": "fixed_weight",
+    "market_weight": 0.9,
+    "coef": null,
+    "intercept": 0.0,
+    "use_elo": false,
+    "fitted_on": {
+     "n": 1610,
+     "seasons": [
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+     ],
+     "validation_season": 2025,
+     "n_validation": 271
+    },
+    "selection": [
+     {
+      "policy": "mezcla logit fija: 90% mercado / 10% modelo",
+      "kind": "fixed_weight",
+      "market_weight": 0.9,
+      "n": 271,
+      "log_loss": 0.6103039273495188,
+      "brier": 0.21243909403046093,
+      "accuracy": 0.6568265682656826
+     },
+     {
+      "policy": "stacking log\u00edstico coef=[0.164, 1.105, -0.162] (modelo, mercado, elo), intercepto -0.065",
+      "kind": "stacking",
+      "market_weight": null,
+      "n": 271,
+      "log_loss": 0.6104836375059098,
+      "brier": 0.21274290107828744,
+      "accuracy": 0.6457564575645757
+     },
+     {
+      "policy": "stacking log\u00edstico coef=[0.062, 1.054] (modelo, mercado), intercepto -0.078",
+      "kind": "stacking_no_elo",
+      "market_weight": null,
+      "n": 271,
+      "log_loss": 0.6109861179706562,
+      "brier": 0.21294793335924667,
+      "accuracy": 0.6494464944649446
+     },
+     {
+      "policy": "mezcla logit fija: 80% mercado / 20% modelo",
+      "kind": "fixed_weight",
+      "market_weight": 0.8,
+      "n": 271,
+      "log_loss": 0.6115792795271483,
+      "brier": 0.21290104491731932,
+      "accuracy": 0.6568265682656826
+     },
+     {
+      "policy": "mezcla logit fija: 70% mercado / 30% modelo",
+      "kind": "fixed_weight",
+      "market_weight": 0.7,
+      "n": 271,
+      "log_loss": 0.6132185537964734,
+      "brier": 0.21353301007042083,
+      "accuracy": 0.6568265682656826
+     },
+     {
+      "policy": "mezcla logit fija: 60% mercado / 40% modelo",
+      "kind": "fixed_weight",
+      "market_weight": 0.6,
+      "n": 271,
+      "log_loss": 0.6152305746039081,
+      "brier": 0.2143424287876609,
+      "accuracy": 0.6420664206642066
+     },
+     {
+      "policy": "mezcla logit fija: 50% mercado / 50% modelo",
+      "kind": "fixed_weight",
+      "market_weight": 0.5,
+      "n": 271,
+      "log_loss": 0.6176235007485846,
+      "brier": 0.21533551679706225,
+      "accuracy": 0.6420664206642066
+     },
+     {
+      "policy": "mezcla logit fija: 40% mercado / 60% modelo",
+      "kind": "fixed_weight",
+      "market_weight": 0.4,
+      "n": 271,
+      "log_loss": 0.620404596936467,
+      "brier": 0.21651672344228864,
+      "accuracy": 0.6383763837638377
+     },
+     {
+      "policy": "mezcla logit fija: 30% mercado / 70% modelo",
+      "kind": "fixed_weight",
+      "market_weight": 0.3,
+      "n": 271,
+      "log_loss": 0.6235800078056566,
+      "brier": 0.21788819807915805,
+      "accuracy": 0.6309963099630996
+     },
+     {
+      "policy": "mezcla logit fija: 20% mercado / 80% modelo",
+      "kind": "fixed_weight",
+      "market_weight": 0.2,
+      "n": 271,
+      "log_loss": 0.6271545563483353,
+      "brier": 0.21944937076366763,
+      "accuracy": 0.6383763837638377
+     },
+     {
+      "policy": "mezcla logit fija: 10% mercado / 90% modelo",
+      "kind": "fixed_weight",
+      "market_weight": 0.1,
+      "n": 271,
+      "log_loss": 0.6311315884552035,
+      "brier": 0.22119674931245892,
+      "accuracy": 0.6236162361623616
+     },
+     {
+      "policy": "solo modelo (el mercado no participa en la probabilidad final)",
+      "kind": "model_only",
+      "market_weight": null,
+      "n": 271,
+      "log_loss": 0.6355128805012004,
+      "brier": 0.22312399492294965,
+      "accuracy": 0.6309963099630996
+     },
+     {
+      "policy": "mezcla logit fija: 0% mercado / 100% modelo",
+      "kind": "fixed_weight",
+      "market_weight": 0.0,
+      "n": 271,
+      "log_loss": 0.6355128805012004,
+      "brier": 0.22312399492294965,
+      "accuracy": 0.6309963099630996
+     }
+    ],
+    "rationale": "elegida por menor log_loss en la temporada 2025 (0.6103, n=271), ajustada con 6 temporadas previas; la temporada evaluada nunca particip\u00f3 en la elecci\u00f3n; restricci\u00f3n declarada: el modelo conserva \u226510% del peso (el mercado nunca decide solo)",
+    "description": "mezcla logit fija: 90% mercado / 10% modelo"
+   }
+  },
+  "backtest": {
+   "id": 6,
+   "label": "walkforward_blend_validado",
+   "created_at": "2026-09-06 18:19:33.541829",
+   "seasons": "2020-2025",
+   "summary": {
+    "strategies": {
+     "blend_50_50": {
+      "n": 1610,
+      "accuracy": 0.6668730650154798,
+      "log_loss": 0.614281240744702,
+      "brier": 0.212899952400519,
+      "roc_auc": 0.722246511627907,
+      "ece": 0.026522952076609877,
+      "games": 1615,
+      "correct": 1077,
+      "points": 9356,
+      "possible": 13053,
+      "points_pct": 0.7167700911667816,
+      "avg_points_week": 87.4392523364486,
+      "best_week": [
+       2024,
+       6
+      ],
+      "best_week_pct": 0.9809523809523809,
+      "worst_week": [
+       2025,
+       5
+      ],
+      "worst_week_pct": 0.3238095238095238
+     },
+     "blend_80_market": {
+      "n": 1610,
+      "accuracy": 0.6668730650154798,
+      "log_loss": 0.6089782260721722,
+      "brier": 0.2106617784452113,
+      "roc_auc": 0.7282077519379845,
+      "ece": 0.026599265630785924,
+      "games": 1615,
+      "correct": 1077,
+      "points": 9433,
+      "possible": 13053,
+      "points_pct": 0.722669118210373,
+      "avg_points_week": 88.1588785046729,
+      "best_week": [
+       2024,
+       6
+      ],
+      "best_week_pct": 0.9809523809523809,
+      "worst_week": [
+       2025,
+       5
+      ],
+      "worst_week_pct": 0.3619047619047619
+     },
+     "elo": {
+      "n": 1610,
+      "accuracy": 0.6328173374613003,
+      "log_loss": 0.637703525811395,
+      "brier": 0.2230907894522273,
+      "roc_auc": 0.6941736434108527,
+      "ece": 0.03917543139646634,
+      "games": 1615,
+      "correct": 1022,
+      "points": 8886,
+      "possible": 13053,
+      "points_pct": 0.6807630429786256,
+      "avg_points_week": 83.04672897196262,
+      "best_week": [
+       2024,
+       13
+      ],
+      "best_week_pct": 0.9411764705882353,
+      "worst_week": [
+       2025,
+       5
+      ],
+      "worst_week_pct": 0.2571428571428571
+     },
+     "favorite": {
+      "n": 1610,
+      "accuracy": 0.6346749226006192,
+      "log_loss": 0.6522048812510831,
+      "brier": 0.22993213825094364,
+      "roc_auc": 0.6835317829457365,
+      "ece": 0.06681109422555227,
+      "games": 1615,
+      "correct": 1025,
+      "points": 8863,
+      "possible": 13053,
+      "points_pct": 0.6790009959396307,
+      "avg_points_week": 82.83177570093459,
+      "best_week": [
+       2024,
+       13
+      ],
+      "best_week_pct": 0.9632352941176471,
+      "worst_week": [
+       2024,
+       3
+      ],
+      "worst_week_pct": 0.3382352941176471
+     },
+     "market": {
+      "n": 1610,
+      "accuracy": 0.6650154798761609,
+      "log_loss": 0.6075681464178434,
+      "brier": 0.21016001430052195,
+      "roc_auc": 0.7286968992248062,
+      "ece": 0.0254207998872742,
+      "games": 1615,
+      "correct": 1074,
+      "points": 9448,
+      "possible": 13053,
+      "points_pct": 0.7238182793227611,
+      "avg_points_week": 88.29906542056075,
+      "best_week": [
+       2020,
+       17
+      ],
+      "best_week_pct": 0.9632352941176471,
+      "worst_week": [
+       2025,
+       5
+      ],
+      "worst_week_pct": 0.3523809523809524
+     },
+     "model": {
+      "n": 1610,
+      "accuracy": 0.6687306501547987,
+      "log_loss": 0.6119321194859224,
+      "brier": 0.2119475385834491,
+      "roc_auc": 0.7237302325581396,
+      "ece": 0.029564289588329,
+      "games": 1615,
+      "correct": 1080,
+      "points": 9370,
+      "possible": 13053,
+      "points_pct": 0.7178426415383437,
+      "avg_points_week": 87.57009345794393,
+      "best_week": [
+       2020,
+       17
+      ],
+      "best_week_pct": 0.9632352941176471,
+      "worst_week": [
+       2025,
+       5
+      ],
+      "worst_week_pct": 0.3523809523809524
+     },
+     "model_pure": {
+      "n": 1610,
+      "accuracy": 0.648297213622291,
+      "log_loss": 0.6320128019133631,
+      "brier": 0.2208864746380095,
+      "roc_auc": 0.6950728682170542,
+      "ece": 0.02387157004212193,
+      "games": 1615,
+      "correct": 1047,
+      "points": 9025,
+      "possible": 13053,
+      "points_pct": 0.6914119359534207,
+      "avg_points_week": 84.34579439252336,
+      "best_week": [
+       2024,
+       6
+      ],
+      "best_week_pct": 0.9333333333333333,
+      "worst_week": [
+       2023,
+       7
+      ],
+      "worst_week_pct": 0.34065934065934067
+     },
+     "random": {
+      "n": 1610,
+      "accuracy": 0.5021671826625387,
+      "log_loss": 0.9961927460390606,
+      "brier": 0.3349952449728555,
+      "roc_auc": 0.4955705426356589,
+      "ece": 0.24629457272675728,
+      "games": 1615,
+      "correct": 811,
+      "points": 6496,
+      "possible": 13053,
+      "points_pct": 0.4976633724048112,
+      "avg_points_week": 60.71028037383178,
+      "best_week": [
+       2020,
+       5
+      ],
+      "best_week_pct": 0.9142857142857143,
+      "worst_week": [
+       2025,
+       8
+      ],
+      "worst_week_pct": 0.08791208791208792
+     }
+    },
+    "weekly": [
+     {
+      "season": 2020,
+      "week": 1,
+      "n": 16,
+      "correct": 10,
+      "accuracy": 0.625,
+      "points": 96,
+      "possible": 136,
+      "pct": 0.7058823529411765,
+      "log_loss": 0.6293114246716571,
+      "brier": 0.21990794892949886
+     },
+     {
+      "season": 2020,
+      "week": 2,
+      "n": 16,
+      "correct": 15,
+      "accuracy": 0.9375,
+      "points": 129,
+      "possible": 136,
+      "pct": 0.9485294117647058,
+      "log_loss": 0.46422867957364267,
+      "brier": 0.14114525206588424
+     },
+     {
+      "season": 2020,
+      "week": 3,
+      "n": 16,
+      "correct": 9,
+      "accuracy": 0.5625,
+      "points": 78,
+      "possible": 136,
+      "pct": 0.5735294117647058,
+      "log_loss": 0.6744845725646775,
+      "brier": 0.24132790667728773
+     },
+     {
+      "season": 2020,
+      "week": 4,
+      "n": 15,
+      "correct": 10,
+      "accuracy": 0.6666666666666666,
+      "points": 87,
+      "possible": 120,
+      "pct": 0.725,
+      "log_loss": 0.6030436637620671,
+      "brier": 0.20817670080640502
+     },
+     {
+      "season": 2020,
+      "week": 5,
+      "n": 14,
+      "correct": 9,
+      "accuracy": 0.6428571428571429,
+      "points": 74,
+      "possible": 105,
+      "pct": 0.7047619047619048,
+      "log_loss": 0.6100924329591336,
+      "brier": 0.20956910850805882
+     },
+     {
+      "season": 2020,
+      "week": 6,
+      "n": 14,
+      "correct": 8,
+      "accuracy": 0.5714285714285714,
+      "points": 72,
+      "possible": 105,
+      "pct": 0.6857142857142857,
+      "log_loss": 0.6285106825551635,
+      "brier": 0.22065967353800725
+     },
+     {
+      "season": 2020,
+      "week": 7,
+      "n": 14,
+      "correct": 9,
+      "accuracy": 0.6428571428571429,
+      "points": 85,
+      "possible": 105,
+      "pct": 0.8095238095238095,
+      "log_loss": 0.5611996110179782,
+      "brier": 0.18824353898743326
+     },
+     {
+      "season": 2020,
+      "week": 8,
+      "n": 14,
+      "correct": 7,
+      "accuracy": 0.5,
+      "points": 61,
+      "possible": 105,
+      "pct": 0.580952380952381,
+      "log_loss": 0.6855663214376578,
+      "brier": 0.24903155720819267
+     },
+     {
+      "season": 2020,
+      "week": 9,
+      "n": 14,
+      "correct": 8,
+      "accuracy": 0.5714285714285714,
+      "points": 80,
+      "possible": 105,
+      "pct": 0.7619047619047619,
+      "log_loss": 0.5853065586915259,
+      "brier": 0.2002094573327968
+     },
+     {
+      "season": 2020,
+      "week": 10,
+      "n": 14,
+      "correct": 11,
+      "accuracy": 0.7857142857142857,
+      "points": 89,
+      "possible": 105,
+      "pct": 0.8476190476190476,
+      "log_loss": 0.5374557272096145,
+      "brier": 0.17738346095379365
+     },
+     {
+      "season": 2020,
+      "week": 11,
+      "n": 14,
+      "correct": 8,
+      "accuracy": 0.5714285714285714,
+      "points": 64,
+      "possible": 105,
+      "pct": 0.6095238095238096,
+      "log_loss": 0.6760965696653287,
+      "brier": 0.24210188161233331
+     },
+     {
+      "season": 2020,
+      "week": 12,
+      "n": 16,
+      "correct": 12,
+      "accuracy": 0.75,
+      "points": 116,
+      "possible": 136,
+      "pct": 0.8529411764705882,
+      "log_loss": 0.5352954127365224,
+      "brier": 0.17635468697784842
+     },
+     {
+      "season": 2020,
+      "week": 13,
+      "n": 15,
+      "correct": 9,
+      "accuracy": 0.6,
+      "points": 80,
+      "possible": 120,
+      "pct": 0.6666666666666666,
+      "log_loss": 0.6526427721260964,
+      "brier": 0.23336562648639053
+     },
+     {
+      "season": 2020,
+      "week": 14,
+      "n": 16,
+      "correct": 12,
+      "accuracy": 0.75,
+      "points": 103,
+      "possible": 136,
+      "pct": 0.7573529411764706,
+      "log_loss": 0.5934820910949793,
+      "brier": 0.20320531220238247
+     },
+     {
+      "season": 2020,
+      "week": 15,
+      "n": 16,
+      "correct": 11,
+      "accuracy": 0.6875,
+      "points": 94,
+      "possible": 136,
+      "pct": 0.6911764705882353,
+      "log_loss": 0.6703008433998664,
+      "brier": 0.22928025857119883
+     },
+     {
+      "season": 2020,
+      "week": 16,
+      "n": 16,
+      "correct": 11,
+      "accuracy": 0.6875,
+      "points": 98,
+      "possible": 136,
+      "pct": 0.7205882352941176,
+      "log_loss": 0.6186257857439488,
+      "brier": 0.21570884241871385
+     },
+     {
+      "season": 2020,
+      "week": 17,
+      "n": 16,
+      "correct": 14,
+      "accuracy": 0.875,
+      "points": 131,
+      "possible": 136,
+      "pct": 0.9632352941176471,
+      "log_loss": 0.4624479547018616,
+      "brier": 0.14109852003303122
+     },
+     {
+      "season": 2021,
+      "week": 1,
+      "n": 16,
+      "correct": 8,
+      "accuracy": 0.5,
+      "points": 71,
+      "possible": 136,
+      "pct": 0.5220588235294118,
+      "log_loss": 0.7155614951877138,
+      "brier": 0.2621275868468757
+     },
+     {
+      "season": 2021,
+      "week": 2,
+      "n": 16,
+      "correct": 11,
+      "accuracy": 0.6875,
+      "points": 97,
+      "possible": 136,
+      "pct": 0.7132352941176471,
+      "log_loss": 0.6071376058121021,
+      "brier": 0.21126749439732326
+     },
+     {
+      "season": 2021,
+      "week": 3,
+      "n": 16,
+      "correct": 11,
+      "accuracy": 0.6875,
+      "points": 101,
+      "possible": 136,
+      "pct": 0.7426470588235294,
+      "log_loss": 0.6133400703360493,
+      "brier": 0.21307116414168842
+     },
+     {
+      "season": 2021,
+      "week": 4,
+      "n": 16,
+      "correct": 10,
+      "accuracy": 0.625,
+      "points": 87,
+      "possible": 136,
+      "pct": 0.6397058823529411,
+      "log_loss": 0.6579496204326158,
+      "brier": 0.2341979269685587
+     },
+     {
+      "season": 2021,
+      "week": 5,
+      "n": 16,
+      "correct": 13,
+      "accuracy": 0.8125,
+      "points": 119,
+      "possible": 136,
+      "pct": 0.875,
+      "log_loss": 0.5147172149443138,
+      "brier": 0.16568290710460332
+     },
+     {
+      "season": 2021,
+      "week": 6,
+      "n": 14,
+      "correct": 10,
+      "accuracy": 0.7142857142857143,
+      "points": 82,
+      "possible": 105,
+      "pct": 0.780952380952381,
+      "log_loss": 0.5745024106567139,
+      "brier": 0.19377387372356727
+     },
+     {
+      "season": 2021,
+      "week": 7,
+      "n": 13,
+      "correct": 10,
+      "accuracy": 0.7692307692307693,
+      "points": 70,
+      "possible": 91,
+      "pct": 0.7692307692307693,
+      "log_loss": 0.5283994534875139,
+      "brier": 0.1798625101598947
+     },
+     {
+      "season": 2021,
+      "week": 8,
+      "n": 15,
+      "correct": 7,
+      "accuracy": 0.4666666666666667,
+      "points": 68,
+      "possible": 120,
+      "pct": 0.5666666666666667,
+      "log_loss": 0.7064837656351581,
+      "brier": 0.2584913480586682
+     },
+     {
+      "season": 2021,
+      "week": 9,
+      "n": 14,
+      "correct": 6,
+      "accuracy": 0.42857142857142855,
+      "points": 47,
+      "possible": 105,
+      "pct": 0.44761904761904764,
+      "log_loss": 0.8187395551419062,
+      "brier": 0.3016851160091238
+     },
+     {
+      "season": 2021,
+      "week": 10,
+      "n": 14,
+      "correct": 7,
+      "accuracy": 0.5,
+      "points": 48,
+      "possible": 105,
+      "pct": 0.45714285714285713,
+      "log_loss": 0.7707829715950949,
+      "brier": 0.2826381477913515
+     },
+     {
+      "season": 2021,
+      "week": 11,
+      "n": 15,
+      "correct": 9,
+      "accuracy": 0.6,
+      "points": 81,
+      "possible": 120,
+      "pct": 0.675,
+      "log_loss": 0.6652122935726641,
+      "brier": 0.23275534574167864
+     },
+     {
+      "season": 2021,
+      "week": 12,
+      "n": 15,
+      "correct": 9,
+      "accuracy": 0.6,
+      "points": 71,
+      "possible": 120,
+      "pct": 0.5916666666666667,
+      "log_loss": 0.6750103219206967,
+      "brier": 0.24122947810773973
+     },
+     {
+      "season": 2021,
+      "week": 13,
+      "n": 14,
+      "correct": 8,
+      "accuracy": 0.5714285714285714,
+      "points": 78,
+      "possible": 105,
+      "pct": 0.7428571428571429,
+      "log_loss": 0.5969331200048499,
+      "brier": 0.20729660772947353
+     },
+     {
+      "season": 2021,
+      "week": 14,
+      "n": 14,
+      "correct": 12,
+      "accuracy": 0.8571428571428571,
+      "points": 96,
+      "possible": 105,
+      "pct": 0.9142857142857143,
+      "log_loss": 0.46617186898844454,
+      "brier": 0.14551246262618392
+     },
+     {
+      "season": 2021,
+      "week": 15,
+      "n": 16,
+      "correct": 11,
+      "accuracy": 0.6875,
+      "points": 96,
+      "possible": 136,
+      "pct": 0.7058823529411765,
+      "log_loss": 0.6391735398538068,
+      "brier": 0.22035457831430233
+     },
+     {
+      "season": 2021,
+      "week": 16,
+      "n": 16,
+      "correct": 11,
+      "accuracy": 0.6875,
+      "points": 96,
+      "possible": 136,
+      "pct": 0.7058823529411765,
+      "log_loss": 0.6228944700681431,
+      "brier": 0.2152153333537521
+     },
+     {
+      "season": 2021,
+      "week": 17,
+      "n": 16,
+      "correct": 12,
+      "accuracy": 0.75,
+      "points": 119,
+      "possible": 136,
+      "pct": 0.875,
+      "log_loss": 0.4868966508571798,
+      "brier": 0.15725061534129336
+     },
+     {
+      "season": 2021,
+      "week": 18,
+      "n": 16,
+      "correct": 9,
+      "accuracy": 0.5625,
+      "points": 80,
+      "possible": 136,
+      "pct": 0.5882352941176471,
+      "log_loss": 0.7122487911278369,
+      "brier": 0.2578472774707342
+     },
+     {
+      "season": 2022,
+      "week": 1,
+      "n": 16,
+      "correct": 10,
+      "accuracy": 0.625,
+      "points": 69,
+      "possible": 136,
+      "pct": 0.5073529411764706,
+      "log_loss": 0.6934954554984578,
+      "brier": 0.24837460422317456
+     },
+     {
+      "season": 2022,
+      "week": 2,
+      "n": 16,
+      "correct": 9,
+      "accuracy": 0.5625,
+      "points": 90,
+      "possible": 136,
+      "pct": 0.6617647058823529,
+      "log_loss": 0.6341638600614172,
+      "brier": 0.22459823643384833
+     },
+     {
+      "season": 2022,
+      "week": 3,
+      "n": 16,
+      "correct": 7,
+      "accuracy": 0.4375,
+      "points": 76,
+      "possible": 136,
+      "pct": 0.5588235294117647,
+      "log_loss": 0.6841580036137386,
+      "brier": 0.24560430068005085
+     },
+     {
+      "season": 2022,
+      "week": 4,
+      "n": 16,
+      "correct": 10,
+      "accuracy": 0.625,
+      "points": 100,
+      "possible": 136,
+      "pct": 0.7352941176470589,
+      "log_loss": 0.6128797318477097,
+      "brier": 0.21199153451491237
+     },
+     {
+      "season": 2022,
+      "week": 5,
+      "n": 16,
+      "correct": 11,
+      "accuracy": 0.6875,
+      "points": 93,
+      "possible": 136,
+      "pct": 0.6838235294117647,
+      "log_loss": 0.647689903923135,
+      "brier": 0.2286111596973423
+     },
+     {
+      "season": 2022,
+      "week": 6,
+      "n": 14,
+      "correct": 8,
+      "accuracy": 0.5714285714285714,
+      "points": 55,
+      "possible": 105,
+      "pct": 0.5238095238095238,
+      "log_loss": 0.7470015586175617,
+      "brier": 0.27249532614201477
+     },
+     {
+      "season": 2022,
+      "week": 7,
+      "n": 14,
+      "correct": 9,
+      "accuracy": 0.6428571428571429,
+      "points": 60,
+      "possible": 105,
+      "pct": 0.5714285714285714,
+      "log_loss": 0.7511430769166585,
+      "brier": 0.2701496212482514
+     },
+     {
+      "season": 2022,
+      "week": 8,
+      "n": 15,
+      "correct": 9,
+      "accuracy": 0.6,
+      "points": 94,
+      "possible": 120,
+      "pct": 0.7833333333333333,
+      "log_loss": 0.5682638322738363,
+      "brier": 0.19283481797676022
+     },
+     {
+      "season": 2022,
+      "week": 9,
+      "n": 13,
+      "correct": 9,
+      "accuracy": 0.6923076923076923,
+      "points": 67,
+      "possible": 91,
+      "pct": 0.7362637362637363,
+      "log_loss": 0.6098184802195393,
+      "brier": 0.20985354167522663
+     },
+     {
+      "season": 2022,
+      "week": 10,
+      "n": 14,
+      "correct": 7,
+      "accuracy": 0.5,
+      "points": 50,
+      "possible": 105,
+      "pct": 0.47619047619047616,
+      "log_loss": 0.7702212287186041,
+      "brier": 0.2841086692194275
+     },
+     {
+      "season": 2022,
+      "week": 11,
+      "n": 14,
+      "correct": 11,
+      "accuracy": 0.7857142857142857,
+      "points": 88,
+      "possible": 105,
+      "pct": 0.8380952380952381,
+      "log_loss": 0.5272141342367004,
+      "brier": 0.1731914561248653
+     },
+     {
+      "season": 2022,
+      "week": 12,
+      "n": 16,
+      "correct": 11,
+      "accuracy": 0.6875,
+      "points": 109,
+      "possible": 136,
+      "pct": 0.8014705882352942,
+      "log_loss": 0.5229346169647346,
+      "brier": 0.17569646257235716
+     },
+     {
+      "season": 2022,
+      "week": 13,
+      "n": 15,
+      "correct": 13,
+      "accuracy": 0.8666666666666667,
+      "points": 112,
+      "possible": 120,
+      "pct": 0.9333333333333333,
+      "log_loss": 0.4704758852749576,
+      "brier": 0.14458699258085378
+     },
+     {
+      "season": 2022,
+      "week": 14,
+      "n": 13,
+      "correct": 8,
+      "accuracy": 0.6153846153846154,
+      "points": 64,
+      "possible": 91,
+      "pct": 0.7032967032967034,
+      "log_loss": 0.6109038518546214,
+      "brier": 0.21519978887662017
+     },
+     {
+      "season": 2022,
+      "week": 15,
+      "n": 16,
+      "correct": 12,
+      "accuracy": 0.75,
+      "points": 110,
+      "possible": 136,
+      "pct": 0.8088235294117647,
+      "log_loss": 0.5554325561431164,
+      "brier": 0.18646219377705417
+     },
+     {
+      "season": 2022,
+      "week": 16,
+      "n": 16,
+      "correct": 10,
+      "accuracy": 0.625,
+      "points": 107,
+      "possible": 136,
+      "pct": 0.7867647058823529,
+      "log_loss": 0.5873442874488268,
+      "brier": 0.20160590860674404
+     },
+     {
+      "season": 2022,
+      "week": 17,
+      "n": 15,
+      "correct": 11,
+      "accuracy": 0.7333333333333333,
+      "points": 105,
+      "possible": 120,
+      "pct": 0.875,
+      "log_loss": 0.4862748493530574,
+      "brier": 0.15476949280058314
+     },
+     {
+      "season": 2022,
+      "week": 18,
+      "n": 16,
+      "correct": 12,
+      "accuracy": 0.75,
+      "points": 113,
+      "possible": 136,
+      "pct": 0.8308823529411765,
+      "log_loss": 0.5162463628589877,
+      "brier": 0.170986278223771
+     },
+     {
+      "season": 2023,
+      "week": 1,
+      "n": 16,
+      "correct": 9,
+      "accuracy": 0.5625,
+      "points": 80,
+      "possible": 136,
+      "pct": 0.5882352941176471,
+      "log_loss": 0.6720055924726144,
+      "brier": 0.24102951227604436
+     },
+     {
+      "season": 2023,
+      "week": 2,
+      "n": 16,
+      "correct": 10,
+      "accuracy": 0.625,
+      "points": 96,
+      "possible": 136,
+      "pct": 0.7058823529411765,
+      "log_loss": 0.6126542669428436,
+      "brier": 0.21252795851294773
+     },
+     {
+      "season": 2023,
+      "week": 3,
+      "n": 16,
+      "correct": 10,
+      "accuracy": 0.625,
+      "points": 89,
+      "possible": 136,
+      "pct": 0.6544117647058824,
+      "log_loss": 0.6770000876374773,
+      "brier": 0.2372081716324304
+     },
+     {
+      "season": 2023,
+      "week": 4,
+      "n": 16,
+      "correct": 13,
+      "accuracy": 0.8125,
+      "points": 113,
+      "possible": 136,
+      "pct": 0.8308823529411765,
+      "log_loss": 0.5317901091190574,
+      "brier": 0.17625268579228487
+     },
+     {
+      "season": 2023,
+      "week": 5,
+      "n": 14,
+      "correct": 8,
+      "accuracy": 0.5714285714285714,
+      "points": 63,
+      "possible": 105,
+      "pct": 0.6,
+      "log_loss": 0.6761954627568235,
+      "brier": 0.2435602842135351
+     },
+     {
+      "season": 2023,
+      "week": 6,
+      "n": 15,
+      "correct": 11,
+      "accuracy": 0.7333333333333333,
+      "points": 95,
+      "possible": 120,
+      "pct": 0.7916666666666666,
+      "log_loss": 0.5790528530832681,
+      "brier": 0.197655234814367
+     },
+     {
+      "season": 2023,
+      "week": 7,
+      "n": 13,
+      "correct": 6,
+      "accuracy": 0.46153846153846156,
+      "points": 41,
+      "possible": 91,
+      "pct": 0.45054945054945056,
+      "log_loss": 0.7671802138283018,
+      "brier": 0.2842269461879044
+     },
+     {
+      "season": 2023,
+      "week": 8,
+      "n": 16,
+      "correct": 12,
+      "accuracy": 0.75,
+      "points": 109,
+      "possible": 136,
+      "pct": 0.8014705882352942,
+      "log_loss": 0.5510950029410546,
+      "brier": 0.18457081491749236
+     },
+     {
+      "season": 2023,
+      "week": 9,
+      "n": 14,
+      "correct": 12,
+      "accuracy": 0.8571428571428571,
+      "points": 91,
+      "possible": 105,
+      "pct": 0.8666666666666667,
+      "log_loss": 0.5459144613565731,
+      "brier": 0.18111540660309325
+     },
+     {
+      "season": 2023,
+      "week": 10,
+      "n": 14,
+      "correct": 9,
+      "accuracy": 0.6428571428571429,
+      "points": 62,
+      "possible": 105,
+      "pct": 0.5904761904761905,
+      "log_loss": 0.704581045507924,
+      "brier": 0.25595161245320447
+     },
+     {
+      "season": 2023,
+      "week": 11,
+      "n": 14,
+      "correct": 11,
+      "accuracy": 0.7857142857142857,
+      "points": 87,
+      "possible": 105,
+      "pct": 0.8285714285714286,
+      "log_loss": 0.5099678669517109,
+      "brier": 0.16789253033698134
+     },
+     {
+      "season": 2023,
+      "week": 12,
+      "n": 16,
+      "correct": 12,
+      "accuracy": 0.75,
+      "points": 99,
+      "possible": 136,
+      "pct": 0.7279411764705882,
+      "log_loss": 0.6135305980656628,
+      "brier": 0.21325628237909164
+     },
+     {
+      "season": 2023,
+      "week": 13,
+      "n": 13,
+      "correct": 10,
+      "accuracy": 0.7692307692307693,
+      "points": 60,
+      "possible": 91,
+      "pct": 0.6593406593406593,
+      "log_loss": 0.6658312943285523,
+      "brier": 0.2331810291696457
+     },
+     {
+      "season": 2023,
+      "week": 14,
+      "n": 15,
+      "correct": 7,
+      "accuracy": 0.4666666666666667,
+      "points": 59,
+      "possible": 120,
+      "pct": 0.49166666666666664,
+      "log_loss": 0.7785592459796665,
+      "brier": 0.2843576014563379
+     },
+     {
+      "season": 2023,
+      "week": 15,
+      "n": 16,
+      "correct": 12,
+      "accuracy": 0.75,
+      "points": 106,
+      "possible": 136,
+      "pct": 0.7794117647058824,
+      "log_loss": 0.5645996878935147,
+      "brier": 0.19103545979740194
+     },
+     {
+      "season": 2023,
+      "week": 16,
+      "n": 16,
+      "correct": 11,
+      "accuracy": 0.6875,
+      "points": 90,
+      "possible": 136,
+      "pct": 0.6617647058823529,
+      "log_loss": 0.6884823612160947,
+      "brier": 0.24419430955874658
+     },
+     {
+      "season": 2023,
+      "week": 17,
+      "n": 16,
+      "correct": 12,
+      "accuracy": 0.75,
+      "points": 111,
+      "possible": 136,
+      "pct": 0.8161764705882353,
+      "log_loss": 0.5596023327761211,
+      "brier": 0.18449709348570711
+     },
+     {
+      "season": 2023,
+      "week": 18,
+      "n": 16,
+      "correct": 11,
+      "accuracy": 0.6875,
+      "points": 90,
+      "possible": 136,
+      "pct": 0.6617647058823529,
+      "log_loss": 0.6356364546832155,
+      "brier": 0.22362000166094192
+     },
+     {
+      "season": 2024,
+      "week": 1,
+      "n": 16,
+      "correct": 13,
+      "accuracy": 0.8125,
+      "points": 104,
+      "possible": 136,
+      "pct": 0.7647058823529411,
+      "log_loss": 0.6108734773639322,
+      "brier": 0.20829271922168707
+     },
+     {
+      "season": 2024,
+      "week": 2,
+      "n": 16,
+      "correct": 7,
+      "accuracy": 0.4375,
+      "points": 57,
+      "possible": 136,
+      "pct": 0.41911764705882354,
+      "log_loss": 0.8172317237659419,
+      "brier": 0.3047121573327235
+     },
+     {
+      "season": 2024,
+      "week": 3,
+      "n": 16,
+      "correct": 8,
+      "accuracy": 0.5,
+      "points": 52,
+      "possible": 136,
+      "pct": 0.38235294117647056,
+      "log_loss": 0.7990430548161223,
+      "brier": 0.2990633372109442
+     },
+     {
+      "season": 2024,
+      "week": 4,
+      "n": 16,
+      "correct": 9,
+      "accuracy": 0.5625,
+      "points": 96,
+      "possible": 136,
+      "pct": 0.7058823529411765,
+      "log_loss": 0.6368125895466785,
+      "brier": 0.2214705381647959
+     },
+     {
+      "season": 2024,
+      "week": 5,
+      "n": 14,
+      "correct": 11,
+      "accuracy": 0.7857142857142857,
+      "points": 76,
+      "possible": 105,
+      "pct": 0.7238095238095238,
+      "log_loss": 0.6605007931424663,
+      "brier": 0.23176692146602243
+     },
+     {
+      "season": 2024,
+      "week": 6,
+      "n": 14,
+      "correct": 12,
+      "accuracy": 0.8571428571428571,
+      "points": 100,
+      "possible": 105,
+      "pct": 0.9523809523809523,
+      "log_loss": 0.4680679366300624,
+      "brier": 0.14300258386468942
+     },
+     {
+      "season": 2024,
+      "week": 7,
+      "n": 15,
+      "correct": 10,
+      "accuracy": 0.6666666666666666,
+      "points": 99,
+      "possible": 120,
+      "pct": 0.825,
+      "log_loss": 0.5425156135062014,
+      "brier": 0.1805458385201364
+     },
+     {
+      "season": 2024,
+      "week": 8,
+      "n": 16,
+      "correct": 11,
+      "accuracy": 0.6875,
+      "points": 99,
+      "possible": 136,
+      "pct": 0.7279411764705882,
+      "log_loss": 0.6111089361418414,
+      "brier": 0.21193818252697183
+     },
+     {
+      "season": 2024,
+      "week": 9,
+      "n": 15,
+      "correct": 14,
+      "accuracy": 0.9333333333333333,
+      "points": 107,
+      "possible": 120,
+      "pct": 0.8916666666666667,
+      "log_loss": 0.5013396944940753,
+      "brier": 0.1576167809853351
+     },
+     {
+      "season": 2024,
+      "week": 10,
+      "n": 14,
+      "correct": 8,
+      "accuracy": 0.5714285714285714,
+      "points": 77,
+      "possible": 105,
+      "pct": 0.7333333333333333,
+      "log_loss": 0.6196474891625972,
+      "brier": 0.21590558802077534
+     },
+     {
+      "season": 2024,
+      "week": 11,
+      "n": 14,
+      "correct": 9,
+      "accuracy": 0.6428571428571429,
+      "points": 79,
+      "possible": 105,
+      "pct": 0.7523809523809524,
+      "log_loss": 0.5776336022346361,
+      "brier": 0.199118472698477
+     },
+     {
+      "season": 2024,
+      "week": 12,
+      "n": 13,
+      "correct": 9,
+      "accuracy": 0.6923076923076923,
+      "points": 64,
+      "possible": 91,
+      "pct": 0.7032967032967034,
+      "log_loss": 0.6283478438195241,
+      "brier": 0.21353305399419442
+     },
+     {
+      "season": 2024,
+      "week": 13,
+      "n": 16,
+      "correct": 13,
+      "accuracy": 0.8125,
+      "points": 120,
+      "possible": 136,
+      "pct": 0.8823529411764706,
+      "log_loss": 0.5093246320684681,
+      "brier": 0.16387498372240294
+     },
+     {
+      "season": 2024,
+      "week": 14,
+      "n": 13,
+      "correct": 10,
+      "accuracy": 0.7692307692307693,
+      "points": 79,
+      "possible": 91,
+      "pct": 0.8681318681318682,
+      "log_loss": 0.5281625654321593,
+      "brier": 0.17352913190096847
+     },
+     {
+      "season": 2024,
+      "week": 15,
+      "n": 16,
+      "correct": 12,
+      "accuracy": 0.75,
+      "points": 124,
+      "possible": 136,
+      "pct": 0.9117647058823529,
+      "log_loss": 0.4818402572790315,
+      "brier": 0.1537654572698996
+     },
+     {
+      "season": 2024,
+      "week": 16,
+      "n": 16,
+      "correct": 12,
+      "accuracy": 0.75,
+      "points": 108,
+      "possible": 136,
+      "pct": 0.7941176470588235,
+      "log_loss": 0.5452119564223517,
+      "brier": 0.18507343676861718
+     },
+     {
+      "season": 2024,
+      "week": 17,
+      "n": 16,
+      "correct": 13,
+      "accuracy": 0.8125,
+      "points": 117,
+      "possible": 136,
+      "pct": 0.8602941176470589,
+      "log_loss": 0.5202888026500881,
+      "brier": 0.1654443793701773
+     },
+     {
+      "season": 2024,
+      "week": 18,
+      "n": 16,
+      "correct": 11,
+      "accuracy": 0.6875,
+      "points": 107,
+      "possible": 136,
+      "pct": 0.7867647058823529,
+      "log_loss": 0.5538009727874038,
+      "brier": 0.19033167305519855
+     },
+     {
+      "season": 2025,
+      "week": 1,
+      "n": 16,
+      "correct": 11,
+      "accuracy": 0.6875,
+      "points": 108,
+      "possible": 136,
+      "pct": 0.7941176470588235,
+      "log_loss": 0.5635606610622117,
+      "brier": 0.18953102103663816
+     },
+     {
+      "season": 2025,
+      "week": 2,
+      "n": 16,
+      "correct": 12,
+      "accuracy": 0.75,
+      "points": 118,
+      "possible": 136,
+      "pct": 0.8676470588235294,
+      "log_loss": 0.5194729064232446,
+      "brier": 0.16939856288172275
+     },
+     {
+      "season": 2025,
+      "week": 3,
+      "n": 16,
+      "correct": 10,
+      "accuracy": 0.625,
+      "points": 92,
+      "possible": 136,
+      "pct": 0.6764705882352942,
+      "log_loss": 0.6374410840675546,
+      "brier": 0.2233969136256116
+     },
+     {
+      "season": 2025,
+      "week": 4,
+      "n": 16,
+      "correct": 10,
+      "accuracy": 0.625,
+      "points": 93,
+      "possible": 136,
+      "pct": 0.6838235294117647,
+      "log_loss": 0.5741441450382839,
+      "brier": 0.19740889816319232
+     },
+     {
+      "season": 2025,
+      "week": 5,
+      "n": 14,
+      "correct": 6,
+      "accuracy": 0.42857142857142855,
+      "points": 37,
+      "possible": 105,
+      "pct": 0.3523809523809524,
+      "log_loss": 0.85566753570077,
+      "brier": 0.32210519095866336
+     },
+     {
+      "season": 2025,
+      "week": 6,
+      "n": 15,
+      "correct": 11,
+      "accuracy": 0.7333333333333333,
+      "points": 83,
+      "possible": 120,
+      "pct": 0.6916666666666667,
+      "log_loss": 0.6233501215407448,
+      "brier": 0.21716058093535928
+     },
+     {
+      "season": 2025,
+      "week": 7,
+      "n": 15,
+      "correct": 13,
+      "accuracy": 0.8666666666666667,
+      "points": 106,
+      "possible": 120,
+      "pct": 0.8833333333333333,
+      "log_loss": 0.5133069905655318,
+      "brier": 0.16670048634646586
+     },
+     {
+      "season": 2025,
+      "week": 8,
+      "n": 13,
+      "correct": 11,
+      "accuracy": 0.8461538461538461,
+      "points": 76,
+      "possible": 91,
+      "pct": 0.8351648351648352,
+      "log_loss": 0.5043204752805122,
+      "brier": 0.16408917377464877
+     },
+     {
+      "season": 2025,
+      "week": 9,
+      "n": 14,
+      "correct": 9,
+      "accuracy": 0.6428571428571429,
+      "points": 63,
+      "possible": 105,
+      "pct": 0.6,
+      "log_loss": 0.7308380094527235,
+      "brier": 0.258687328763087
+     },
+     {
+      "season": 2025,
+      "week": 10,
+      "n": 14,
+      "correct": 10,
+      "accuracy": 0.7142857142857143,
+      "points": 76,
+      "possible": 105,
+      "pct": 0.7238095238095238,
+      "log_loss": 0.6027269484704761,
+      "brier": 0.20667456090501357
+     },
+     {
+      "season": 2025,
+      "week": 11,
+      "n": 15,
+      "correct": 11,
+      "accuracy": 0.7333333333333333,
+      "points": 99,
+      "possible": 120,
+      "pct": 0.825,
+      "log_loss": 0.5459243526750869,
+      "brier": 0.18232965701764792
+     },
+     {
+      "season": 2025,
+      "week": 12,
+      "n": 14,
+      "correct": 10,
+      "accuracy": 0.7142857142857143,
+      "points": 88,
+      "possible": 105,
+      "pct": 0.8380952380952381,
+      "log_loss": 0.4917838647757007,
+      "brier": 0.16129026021789508
+     },
+     {
+      "season": 2025,
+      "week": 13,
+      "n": 16,
+      "correct": 9,
+      "accuracy": 0.5625,
+      "points": 86,
+      "possible": 136,
+      "pct": 0.6323529411764706,
+      "log_loss": 0.6946908702928188,
+      "brier": 0.2495681786143878
+     },
+     {
+      "season": 2025,
+      "week": 14,
+      "n": 14,
+      "correct": 7,
+      "accuracy": 0.5,
+      "points": 66,
+      "possible": 105,
+      "pct": 0.6285714285714286,
+      "log_loss": 0.6885420667920709,
+      "brier": 0.24791288902491174
+     },
+     {
+      "season": 2025,
+      "week": 15,
+      "n": 16,
+      "correct": 10,
+      "accuracy": 0.625,
+      "points": 101,
+      "possible": 136,
+      "pct": 0.7426470588235294,
+      "log_loss": 0.5630400583047064,
+      "brier": 0.1955577200362681
+     },
+     {
+      "season": 2025,
+      "week": 16,
+      "n": 16,
+      "correct": 9,
+      "accuracy": 0.5625,
+      "points": 80,
+      "possible": 136,
+      "pct": 0.5882352941176471,
+      "log_loss": 0.6685900927068237,
+      "brier": 0.240876717262733
+     },
+     {
+      "season": 2025,
+      "week": 17,
+      "n": 16,
+      "correct": 9,
+      "accuracy": 0.5625,
+      "points": 87,
+      "possible": 136,
+      "pct": 0.6397058823529411,
+      "log_loss": 0.6732370534563124,
+      "brier": 0.24245722212848103
+     },
+     {
+      "season": 2025,
+      "week": 18,
+      "n": 16,
+      "correct": 10,
+      "accuracy": 0.625,
+      "points": 99,
+      "possible": 136,
+      "pct": 0.7279411764705882,
+      "log_loss": 0.592552261199986,
+      "brier": 0.20964547159538527
+     }
+    ],
+    "by_season": {
+     "blend_50_50": {
+      "2020": {
+       "points": 1537,
+       "possible": 2063,
+       "correct": 173,
+       "n": 256,
+       "pct": 0.7450315075133301,
+       "accuracy": 0.67578125
+      },
+      "2021": {
+       "points": 1507,
+       "possible": 2200,
+       "correct": 174,
+       "n": 272,
+       "pct": 0.685,
+       "accuracy": 0.6397058823529411
+      },
+      "2022": {
+       "points": 1545,
+       "possible": 2186,
+       "correct": 178,
+       "n": 271,
+       "pct": 0.7067703568161025,
+       "accuracy": 0.6568265682656826
+      },
+      "2023": {
+       "points": 1525,
+       "possible": 2202,
+       "correct": 179,
+       "n": 272,
+       "pct": 0.6925522252497729,
+       "accuracy": 0.6580882352941176
+      },
+      "2024": {
+       "points": 1688,
+       "possible": 2202,
+       "correct": 199,
+       "n": 272,
+       "pct": 0.7665758401453224,
+       "accuracy": 0.7316176470588235
+      },
+      "2025": {
+       "points": 1554,
+       "possible": 2200,
+       "correct": 174,
+       "n": 272,
+       "pct": 0.7063636363636364,
+       "accuracy": 0.6397058823529411
+      }
+     },
+     "blend_80_market": {
+      "2020": {
+       "points": 1548,
+       "possible": 2063,
+       "correct": 171,
+       "n": 256,
+       "pct": 0.7503635482307319,
+       "accuracy": 0.66796875
+      },
+      "2021": {
+       "points": 1531,
+       "possible": 2200,
+       "correct": 169,
+       "n": 272,
+       "pct": 0.6959090909090909,
+       "accuracy": 0.6213235294117647
+      },
+      "2022": {
+       "points": 1561,
+       "possible": 2186,
+       "correct": 180,
+       "n": 271,
+       "pct": 0.7140896614821592,
+       "accuracy": 0.6642066420664207
+      },
+      "2023": {
+       "points": 1544,
+       "possible": 2202,
+       "correct": 184,
+       "n": 272,
+       "pct": 0.701180744777475,
+       "accuracy": 0.6764705882352942
+      },
+      "2024": {
+       "points": 1681,
+       "possible": 2202,
+       "correct": 195,
+       "n": 272,
+       "pct": 0.7633969118982743,
+       "accuracy": 0.7169117647058824
+      },
+      "2025": {
+       "points": 1568,
+       "possible": 2200,
+       "correct": 178,
+       "n": 272,
+       "pct": 0.7127272727272728,
+       "accuracy": 0.6544117647058824
+      }
+     },
+     "elo": {
+      "2020": {
+       "points": 1453,
+       "possible": 2063,
+       "correct": 167,
+       "n": 256,
+       "pct": 0.7043141056713524,
+       "accuracy": 0.65234375
+      },
+      "2021": {
+       "points": 1444,
+       "possible": 2200,
+       "correct": 164,
+       "n": 272,
+       "pct": 0.6563636363636364,
+       "accuracy": 0.6029411764705882
+      },
+      "2022": {
+       "points": 1460,
+       "possible": 2186,
+       "correct": 170,
+       "n": 271,
+       "pct": 0.6678865507776761,
+       "accuracy": 0.6273062730627307
+      },
+      "2023": {
+       "points": 1428,
+       "possible": 2202,
+       "correct": 164,
+       "n": 272,
+       "pct": 0.6485013623978202,
+       "accuracy": 0.6029411764705882
+      },
+      "2024": {
+       "points": 1601,
+       "possible": 2202,
+       "correct": 183,
+       "n": 272,
+       "pct": 0.7270663033605813,
+       "accuracy": 0.6727941176470589
+      },
+      "2025": {
+       "points": 1500,
+       "possible": 2200,
+       "correct": 174,
+       "n": 272,
+       "pct": 0.6818181818181818,
+       "accuracy": 0.6397058823529411
+      }
+     },
+     "favorite": {
+      "2020": {
+       "points": 1453,
+       "possible": 2063,
+       "correct": 172,
+       "n": 256,
+       "pct": 0.7043141056713524,
+       "accuracy": 0.671875
+      },
+      "2021": {
+       "points": 1480,
+       "possible": 2200,
+       "correct": 166,
+       "n": 272,
+       "pct": 0.6727272727272727,
+       "accuracy": 0.6102941176470589
+      },
+      "2022": {
+       "points": 1437,
+       "possible": 2186,
+       "correct": 170,
+       "n": 271,
+       "pct": 0.6573650503202195,
+       "accuracy": 0.6273062730627307
+      },
+      "2023": {
+       "points": 1459,
+       "possible": 2202,
+       "correct": 167,
+       "n": 272,
+       "pct": 0.6625794732061762,
+       "accuracy": 0.6139705882352942
+      },
+      "2024": {
+       "points": 1553,
+       "possible": 2202,
+       "correct": 183,
+       "n": 272,
+       "pct": 0.7052679382379655,
+       "accuracy": 0.6727941176470589
+      },
+      "2025": {
+       "points": 1481,
+       "possible": 2200,
+       "correct": 167,
+       "n": 272,
+       "pct": 0.6731818181818182,
+       "accuracy": 0.6139705882352942
+      }
+     },
+     "market": {
+      "2020": {
+       "points": 1545,
+       "possible": 2063,
+       "correct": 173,
+       "n": 256,
+       "pct": 0.7489093553078041,
+       "accuracy": 0.67578125
+      },
+      "2021": {
+       "points": 1547,
+       "possible": 2200,
+       "correct": 169,
+       "n": 272,
+       "pct": 0.7031818181818181,
+       "accuracy": 0.6213235294117647
+      },
+      "2022": {
+       "points": 1562,
+       "possible": 2186,
+       "correct": 176,
+       "n": 271,
+       "pct": 0.7145471180237878,
+       "accuracy": 0.6494464944649446
+      },
+      "2023": {
+       "points": 1542,
+       "possible": 2202,
+       "correct": 184,
+       "n": 272,
+       "pct": 0.7002724795640327,
+       "accuracy": 0.6764705882352942
+      },
+      "2024": {
+       "points": 1678,
+       "possible": 2202,
+       "correct": 195,
+       "n": 272,
+       "pct": 0.7620345140781108,
+       "accuracy": 0.7169117647058824
+      },
+      "2025": {
+       "points": 1574,
+       "possible": 2200,
+       "correct": 177,
+       "n": 272,
+       "pct": 0.7154545454545455,
+       "accuracy": 0.6507352941176471
+      }
+     },
+     "model": {
+      "2020": {
+       "points": 1537,
+       "possible": 2063,
+       "correct": 173,
+       "n": 256,
+       "pct": 0.7450315075133301,
+       "accuracy": 0.67578125
+      },
+      "2021": {
+       "points": 1507,
+       "possible": 2200,
+       "correct": 174,
+       "n": 272,
+       "pct": 0.685,
+       "accuracy": 0.6397058823529411
+      },
+      "2022": {
+       "points": 1562,
+       "possible": 2186,
+       "correct": 177,
+       "n": 271,
+       "pct": 0.7145471180237878,
+       "accuracy": 0.6531365313653137
+      },
+      "2023": {
+       "points": 1541,
+       "possible": 2202,
+       "correct": 186,
+       "n": 272,
+       "pct": 0.6998183469573115,
+       "accuracy": 0.6838235294117647
+      },
+      "2024": {
+       "points": 1665,
+       "possible": 2202,
+       "correct": 192,
+       "n": 272,
+       "pct": 0.7561307901907357,
+       "accuracy": 0.7058823529411765
+      },
+      "2025": {
+       "points": 1558,
+       "possible": 2200,
+       "correct": 178,
+       "n": 272,
+       "pct": 0.7081818181818181,
+       "accuracy": 0.6544117647058824
+      }
+     },
+     "model_pure": {
+      "2020": {
+       "points": 1470,
+       "possible": 2063,
+       "correct": 166,
+       "n": 256,
+       "pct": 0.7125545322346097,
+       "accuracy": 0.6484375
+      },
+      "2021": {
+       "points": 1438,
+       "possible": 2200,
+       "correct": 171,
+       "n": 272,
+       "pct": 0.6536363636363637,
+       "accuracy": 0.6286764705882353
+      },
+      "2022": {
+       "points": 1501,
+       "possible": 2186,
+       "correct": 178,
+       "n": 271,
+       "pct": 0.6866422689844465,
+       "accuracy": 0.6568265682656826
+      },
+      "2023": {
+       "points": 1464,
+       "possible": 2202,
+       "correct": 172,
+       "n": 272,
+       "pct": 0.6648501362397821,
+       "accuracy": 0.6323529411764706
+      },
+      "2024": {
+       "points": 1654,
+       "possible": 2202,
+       "correct": 189,
+       "n": 272,
+       "pct": 0.7511353315168029,
+       "accuracy": 0.6948529411764706
+      },
+      "2025": {
+       "points": 1498,
+       "possible": 2200,
+       "correct": 171,
+       "n": 272,
+       "pct": 0.6809090909090909,
+       "accuracy": 0.6286764705882353
+      }
+     },
+     "random": {
+      "2020": {
+       "points": 1133,
+       "possible": 2063,
+       "correct": 144,
+       "n": 256,
+       "pct": 0.5492001938923897,
+       "accuracy": 0.5625
+      },
+      "2021": {
+       "points": 962,
+       "possible": 2200,
+       "correct": 122,
+       "n": 272,
+       "pct": 0.43727272727272726,
+       "accuracy": 0.4485294117647059
+      },
+      "2022": {
+       "points": 1006,
+       "possible": 2186,
+       "correct": 137,
+       "n": 271,
+       "pct": 0.4602012808783166,
+       "accuracy": 0.5055350553505535
+      },
+      "2023": {
+       "points": 1201,
+       "possible": 2202,
+       "correct": 145,
+       "n": 272,
+       "pct": 0.5454132606721163,
+       "accuracy": 0.5330882352941176
+      },
+      "2024": {
+       "points": 1109,
+       "possible": 2202,
+       "correct": 133,
+       "n": 272,
+       "pct": 0.5036330608537694,
+       "accuracy": 0.4889705882352941
+      },
+      "2025": {
+       "points": 1085,
+       "possible": 2200,
+       "correct": 130,
+       "n": 272,
+       "pct": 0.49318181818181817,
+       "accuracy": 0.47794117647058826
+      }
+     }
+    },
+    "calibration": {
+     "elo": [
+      {
+       "bin_lo": 0.0,
+       "bin_hi": 0.1,
+       "n": 0,
+       "pred_mean": null,
+       "obs_rate": null
+      },
+      {
+       "bin_lo": 0.1,
+       "bin_hi": 0.2,
+       "n": 27,
+       "pred_mean": 0.15594910431762993,
+       "obs_rate": 0.3333333333333333
+      },
+      {
+       "bin_lo": 0.2,
+       "bin_hi": 0.30000000000000004,
+       "n": 102,
+       "pred_mean": 0.2618768663969957,
+       "obs_rate": 0.30392156862745096
+      },
+      {
+       "bin_lo": 0.30000000000000004,
+       "bin_hi": 0.4,
+       "n": 167,
+       "pred_mean": 0.3575627518320536,
+       "obs_rate": 0.3413173652694611
+      },
+      {
+       "bin_lo": 0.4,
+       "bin_hi": 0.5,
+       "n": 288,
+       "pred_mean": 0.45080560941404063,
+       "obs_rate": 0.3958333333333333
+      },
+      {
+       "bin_lo": 0.5,
+       "bin_hi": 0.6000000000000001,
+       "n": 330,
+       "pred_mean": 0.5513937431367739,
+       "obs_rate": 0.4727272727272727
+      },
+      {
+       "bin_lo": 0.6000000000000001,
+       "bin_hi": 0.7000000000000001,
+       "n": 315,
+       "pred_mean": 0.6492332745236015,
+       "obs_rate": 0.6349206349206349
+      },
+      {
+       "bin_lo": 0.7000000000000001,
+       "bin_hi": 0.8,
+       "n": 248,
+       "pred_mean": 0.7468700825953216,
+       "obs_rate": 0.7298387096774194
+      },
+      {
+       "bin_lo": 0.8,
+       "bin_hi": 0.9,
+       "n": 118,
+       "pred_mean": 0.838313300599422,
+       "obs_rate": 0.8389830508474576
+      },
+      {
+       "bin_lo": 0.9,
+       "bin_hi": 1.0,
+       "n": 15,
+       "pred_mean": 0.9118858631470589,
+       "obs_rate": 0.8666666666666667
+      }
+     ],
+     "market": [
+      {
+       "bin_lo": 0.0,
+       "bin_hi": 0.1,
+       "n": 2,
+       "pred_mean": 0.09201245229904281,
+       "obs_rate": 0.0
+      },
+      {
+       "bin_lo": 0.1,
+       "bin_hi": 0.2,
+       "n": 44,
+       "pred_mean": 0.16194022452197637,
+       "obs_rate": 0.22727272727272727
+      },
+      {
+       "bin_lo": 0.2,
+       "bin_hi": 0.30000000000000004,
+       "n": 134,
+       "pred_mean": 0.2543281904124016,
+       "obs_rate": 0.208955223880597
+      },
+      {
+       "bin_lo": 0.30000000000000004,
+       "bin_hi": 0.4,
+       "n": 222,
+       "pred_mean": 0.35304801518956314,
+       "obs_rate": 0.35135135135135137
+      },
+      {
+       "bin_lo": 0.4,
+       "bin_hi": 0.5,
+       "n": 242,
+       "pred_mean": 0.4452435266419978,
+       "obs_rate": 0.4090909090909091
+      },
+      {
+       "bin_lo": 0.5,
+       "bin_hi": 0.6000000000000001,
+       "n": 289,
+       "pred_mean": 0.5568729737189015,
+       "obs_rate": 0.5467128027681661
+      },
+      {
+       "bin_lo": 0.6000000000000001,
+       "bin_hi": 0.7000000000000001,
+       "n": 287,
+       "pred_mean": 0.6450096586581677,
+       "obs_rate": 0.6062717770034843
+      },
+      {
+       "bin_lo": 0.7000000000000001,
+       "bin_hi": 0.8,
+       "n": 271,
+       "pred_mean": 0.7488359966505055,
+       "obs_rate": 0.7601476014760148
+      },
+      {
+       "bin_lo": 0.8,
+       "bin_hi": 0.9,
+       "n": 108,
+       "pred_mean": 0.8471400670598116,
+       "obs_rate": 0.8981481481481481
+      },
+      {
+       "bin_lo": 0.9,
+       "bin_hi": 1.0,
+       "n": 11,
+       "pred_mean": 0.9122621230238193,
+       "obs_rate": 0.9090909090909091
+      }
+     ],
+     "model": [
+      {
+       "bin_lo": 0.0,
+       "bin_hi": 0.1,
+       "n": 1,
+       "pred_mean": 0.07608413737212594,
+       "obs_rate": 0.0
+      },
+      {
+       "bin_lo": 0.1,
+       "bin_hi": 0.2,
+       "n": 29,
+       "pred_mean": 0.1732558060084456,
+       "obs_rate": 0.27586206896551724
+      },
+      {
+       "bin_lo": 0.2,
+       "bin_hi": 0.30000000000000004,
+       "n": 140,
+       "pred_mean": 0.25727212028365515,
+       "obs_rate": 0.2357142857142857
+      },
+      {
+       "bin_lo": 0.30000000000000004,
+       "bin_hi": 0.4,
+       "n": 219,
+       "pred_mean": 0.3562123748995853,
+       "obs_rate": 0.3150684931506849
+      },
+      {
+       "bin_lo": 0.4,
+       "bin_hi": 0.5,
+       "n": 251,
+       "pred_mean": 0.44629320666613137,
+       "obs_rate": 0.398406374501992
+      },
+      {
+       "bin_lo": 0.5,
+       "bin_hi": 0.6000000000000001,
+       "n": 300,
+       "pred_mean": 0.5546405591691603,
+       "obs_rate": 0.5666666666666667
+      },
+      {
+       "bin_lo": 0.6000000000000001,
+       "bin_hi": 0.7000000000000001,
+       "n": 319,
+       "pred_mean": 0.6462285209518087,
+       "obs_rate": 0.6206896551724138
+      },
+      {
+       "bin_lo": 0.7000000000000001,
+       "bin_hi": 0.8,
+       "n": 240,
+       "pred_mean": 0.7475124430414456,
+       "obs_rate": 0.7583333333333333
+      },
+      {
+       "bin_lo": 0.8,
+       "bin_hi": 0.9,
+       "n": 108,
+       "pred_mean": 0.8436685023163643,
+       "obs_rate": 0.8981481481481481
+      },
+      {
+       "bin_lo": 0.9,
+       "bin_hi": 1.0,
+       "n": 3,
+       "pred_mean": 0.9123023982006574,
+       "obs_rate": 1.0
+      }
+     ]
+    },
+    "confidence": {
+     "ALTA": {
+      "n": 307,
+      "accuracy": 0.8175895765472313,
+      "points_pct": 0.8251781472684085
+     },
+     "BAJA": {
+      "n": 423,
+      "accuracy": 0.5626477541371159,
+      "points_pct": 0.5786324786324787
+     },
+     "MEDIA": {
+      "n": 428,
+      "accuracy": 0.6425233644859814,
+      "points_pct": 0.6487617718869899
+     },
+     "MEDIA-ALTA": {
+      "n": 452,
+      "accuracy": 0.6991150442477876,
+      "points_pct": 0.7067115505996213
+     }
+    },
+    "prob_bins": {
+     "50-60": {
+      "n": 551,
+      "accuracy": 0.5825771324863884,
+      "mean_prob": 0.5542151957850256
+     },
+     "60-70": {
+      "n": 538,
+      "accuracy": 0.6468401486988847,
+      "mean_prob": 0.6452349220829325
+     },
+     "70-80": {
+      "n": 380,
+      "accuracy": 0.7605263157894737,
+      "mean_prob": 0.7457497091848294
+     },
+     "80-90": {
+      "n": 137,
+      "accuracy": 0.8613138686131386,
+      "mean_prob": 0.8400859844957841
+     },
+     "90-100": {
+      "n": 4,
+      "accuracy": 1.0,
+      "mean_prob": 0.9152057643074616
+     }
+    },
+    "upsets": {
+     "alerts": 273,
+     "alert_hits": 108,
+     "alert_hit_rate": 0.3956043956043956,
+     "actual_upsets": 530,
+     "upsets_flagged_rate": 0.2037735849056604,
+     "non_alert_accuracy": 0.6843679880329095
+    },
+    "home_away": {
+     "home_picks": {
+      "n": 970,
+      "accuracy": 0.6701030927835051
+     },
+     "away_picks": {
+      "n": 640,
+      "accuracy": 0.671875
+     }
+    },
+    "config": {
+     "first_season": 2020,
+     "last_season": 2025,
+     "select_blend": true
+    },
+    "disagreement": {
+     "buckets": {
+      "10-20pp": {
+       "n": 237,
+       "model": {
+        "accuracy": 0.7383966244725738,
+        "log_loss": 0.5460838013465189,
+        "brier": 0.18168141644354235,
+        "points": 1795,
+        "points_possible": 2257,
+        "points_pct_of_assigned": 0.795303500221533
+       },
+       "model_pure": {
+        "accuracy": 0.7468354430379747,
+        "log_loss": 0.5953302679780034,
+        "brier": 0.20315566955287306,
+        "points": 1476,
+        "points_possible": 1965,
+        "points_pct_of_assigned": 0.751145038167939
+       },
+       "market": {
+        "accuracy": 0.7468354430379747,
+        "log_loss": 0.5270672296216925,
+        "brier": 0.17378198522576274,
+        "points": 1863,
+        "points_possible": 2296,
+        "points_pct_of_assigned": 0.811411149825784
+       },
+       "elo": {
+        "accuracy": 0.7088607594936709,
+        "log_loss": 0.5814036331237782,
+        "brier": 0.1974284670579357,
+        "points": 1595,
+        "points_possible": 2115,
+        "points_pct_of_assigned": 0.7541371158392435
+       },
+       "favorite": {
+        "accuracy": 0.6877637130801688,
+        "log_loss": 0.6248593997601178,
+        "brier": 0.21659571241368122,
+        "points": 1570,
+        "points_possible": 2096,
+        "points_pct_of_assigned": 0.7490458015267175
+       },
+       "blend_50_50": {
+        "accuracy": 0.7468354430379747,
+        "log_loss": 0.5494777509837249,
+        "brier": 0.18279455219982274,
+        "points": 1808,
+        "points_possible": 2289,
+        "points_pct_of_assigned": 0.7898645696810834
+       },
+       "blend_80_market": {
+        "accuracy": 0.7468354430379747,
+        "log_loss": 0.5333585686842962,
+        "brier": 0.17613969294761644,
+        "points": 1865,
+        "points_possible": 2326,
+        "points_pct_of_assigned": 0.8018056749785039
+       }
+      },
+      "5-10pp": {
+       "n": 421,
+       "model": {
+        "accuracy": 0.6555819477434679,
+        "log_loss": 0.6236606705656462,
+        "brier": 0.2172129901205113,
+        "points": 2541,
+        "points_possible": 3684,
+        "points_pct_of_assigned": 0.6897394136807817
+       },
+       "model_pure": {
+        "accuracy": 0.6555819477434679,
+        "log_loss": 0.6430634641575856,
+        "brier": 0.22542388451543682,
+        "points": 2512,
+        "points_possible": 3749,
+        "points_pct_of_assigned": 0.6700453454254468
+       },
+       "market": {
+        "accuracy": 0.6555819477434679,
+        "log_loss": 0.6190825854212969,
+        "brier": 0.21497711941592718,
+        "points": 2552,
+        "points_possible": 3629,
+        "points_pct_of_assigned": 0.7032240286580325
+       },
+       "elo": {
+        "accuracy": 0.6532066508313539,
+        "log_loss": 0.6545808478906981,
+        "brier": 0.22936575666018263,
+        "points": 2417,
+        "points_possible": 3646,
+        "points_pct_of_assigned": 0.6629182665935272
+       },
+       "favorite": {
+        "accuracy": 0.6413301662707839,
+        "log_loss": 0.6552773163951799,
+        "brier": 0.23133595808190877,
+        "points": 2356,
+        "points_possible": 3501,
+        "points_pct_of_assigned": 0.6729505855469866
+       },
+       "blend_50_50": {
+        "accuracy": 0.6555819477434679,
+        "log_loss": 0.6277894507528067,
+        "brier": 0.21886376641022837,
+        "points": 2592,
+        "points_possible": 3787,
+        "points_pct_of_assigned": 0.6844467916556641
+       },
+       "blend_80_market": {
+        "accuracy": 0.6555819477434679,
+        "log_loss": 0.6217916348127088,
+        "brier": 0.21622022030347052,
+        "points": 2564,
+        "points_possible": 3704,
+        "points_pct_of_assigned": 0.6922246220302376
+       }
+      },
+      "<5pp": {
+       "n": 691,
+       "model": {
+        "accuracy": 0.683068017366136,
+        "log_loss": 0.6064912331717089,
+        "brier": 0.20942381018107692,
+        "points": 4357,
+        "points_possible": 5994,
+        "points_pct_of_assigned": 0.7268935602268936
+       },
+       "model_pure": {
+        "accuracy": 0.6845151953690304,
+        "log_loss": 0.6060654434752276,
+        "brier": 0.2091480012309196,
+        "points": 4446,
+        "points_possible": 6090,
+        "points_pct_of_assigned": 0.7300492610837438
+       },
+       "market": {
+        "accuracy": 0.6845151953690304,
+        "log_loss": 0.6067677521612548,
+        "brier": 0.2096144254077781,
+        "points": 4225,
+        "points_possible": 5795,
+        "points_pct_of_assigned": 0.729076790336497
+       },
+       "elo": {
+        "accuracy": 0.6410998552821997,
+        "log_loss": 0.6203079189141799,
+        "brier": 0.21593252596424095,
+        "points": 4110,
+        "points_possible": 5879,
+        "points_pct_of_assigned": 0.6990984861370981
+       },
+       "favorite": {
+        "accuracy": 0.6700434153400868,
+        "log_loss": 0.6410909263769493,
+        "brier": 0.22454292163499717,
+        "points": 4181,
+        "points_possible": 5878,
+        "points_pct_of_assigned": 0.7112963593058863
+       },
+       "blend_50_50": {
+        "accuracy": 0.6845151953690304,
+        "log_loss": 0.6059289762413422,
+        "brier": 0.2091741866022496,
+        "points": 4443,
+        "points_possible": 6110,
+        "points_pct_of_assigned": 0.7271685761047463
+       },
+       "blend_80_market": {
+        "accuracy": 0.6845151953690304,
+        "log_loss": 0.6063160097820911,
+        "brier": 0.20938933063947554,
+        "points": 4326,
+        "points_possible": 5940,
+        "points_pct_of_assigned": 0.7282828282828283
+       }
+      },
+      ">20pp": {
+       "n": 18,
+       "model": {
+        "accuracy": 0.7222222222222222,
+        "log_loss": 0.5699407890857615,
+        "brier": 0.19341183688825073,
+        "points": 149,
+        "points_possible": 205,
+        "points_pct_of_assigned": 0.7268292682926829
+       },
+       "model_pure": {
+        "accuracy": 0.7222222222222222,
+        "log_loss": 0.6860439503719284,
+        "brier": 0.23941018455051422,
+        "points": 86,
+        "points_possible": 119,
+        "points_pct_of_assigned": 0.7226890756302521
+       },
+       "market": {
+        "accuracy": 0.7222222222222222,
+        "log_loss": 0.5350124488364272,
+        "brier": 0.18270951108724764,
+        "points": 144,
+        "points_possible": 192,
+        "points_pct_of_assigned": 0.75
+       },
+       "elo": {
+        "accuracy": 0.6666666666666666,
+        "log_loss": 0.6748069931515837,
+        "brier": 0.23425321180731185,
+        "points": 105,
+        "points_possible": 152,
+        "points_pct_of_assigned": 0.6907894736842105
+       },
+       "favorite": {
+        "accuracy": 0.6111111111111112,
+        "log_loss": 0.7080656010402191,
+        "brier": 0.25661809213049813,
+        "points": 97,
+        "points_possible": 167,
+        "points_pct_of_assigned": 0.5808383233532934
+       },
+       "blend_50_50": {
+        "accuracy": 0.7222222222222222,
+        "log_loss": 0.5769849870036321,
+        "brier": 0.1954395229351874,
+        "points": 139,
+        "points_possible": 190,
+        "points_pct_of_assigned": 0.7315789473684211
+       },
+       "blend_80_market": {
+        "accuracy": 0.7222222222222222,
+        "log_loss": 0.5445705823010597,
+        "brier": 0.18488197647725946,
+        "points": 142,
+        "points_possible": 194,
+        "points_pct_of_assigned": 0.7319587628865979
+       }
+      },
+      "desacuerdo_direccional": {
+       "n": 243,
+       "model": {
+        "accuracy": 0.5925925925925926,
+        "log_loss": 0.6744170074892121,
+        "brier": 0.24089344313738947,
+        "points": 528,
+        "points_possible": 860,
+        "points_pct_of_assigned": 0.6139534883720931
+       },
+       "model_pure": {
+        "accuracy": 0.4444444444444444,
+        "log_loss": 0.7184263646555852,
+        "brier": 0.2623260202867933,
+        "points": 505,
+        "points_possible": 1091,
+        "points_pct_of_assigned": 0.462878093492209
+       },
+       "market": {
+        "accuracy": 0.5555555555555556,
+        "log_loss": 0.6737830165742305,
+        "brier": 0.24087895512297966,
+        "points": 664,
+        "points_possible": 1092,
+        "points_pct_of_assigned": 0.608058608058608
+       },
+       "elo": {
+        "accuracy": 0.5102880658436214,
+        "log_loss": 0.7100912785909457,
+        "brier": 0.2567765741464864,
+        "points": 659,
+        "points_possible": 1209,
+        "points_pct_of_assigned": 0.5450785773366419
+       },
+       "favorite": {
+        "accuracy": 0.48559670781893005,
+        "log_loss": 0.7010181889857174,
+        "brier": 0.2538552916928443,
+        "points": 659,
+        "points_possible": 1360,
+        "points_pct_of_assigned": 0.48455882352941176
+       },
+       "blend_50_50": {
+        "accuracy": 0.5679012345679012,
+        "log_loss": 0.6805948950619876,
+        "brier": 0.24381767275631094,
+        "points": 374,
+        "points_possible": 629,
+        "points_pct_of_assigned": 0.5945945945945946
+       },
+       "blend_80_market": {
+        "accuracy": 0.5679012345679012,
+        "log_loss": 0.6728726407449577,
+        "brier": 0.24022938383529127,
+        "points": 536,
+        "points_possible": 840,
+        "points_pct_of_assigned": 0.638095238095238
+       }
+      }
+     },
+     "overall": {
+      "model": {
+       "accuracy": 0.6708074534161491,
+       "log_loss": 0.6119321194859224,
+       "brier": 0.2119475385834491,
+       "ece": 0.029564289588329,
+       "n": 1610
+      },
+      "model_pure": {
+       "accuracy": 0.6503105590062112,
+       "log_loss": 0.6320128019133631,
+       "brier": 0.2208864746380095,
+       "ece": 0.02387157004212193,
+       "n": 1610
+      },
+      "market": {
+       "accuracy": 0.6670807453416149,
+       "log_loss": 0.6075681464178434,
+       "brier": 0.21016001430052195,
+       "ece": 0.0254207998872742,
+       "n": 1610
+      },
+      "elo": {
+       "accuracy": 0.6347826086956522,
+       "log_loss": 0.637703525811395,
+       "brier": 0.2230907894522273,
+       "ece": 0.03917543139646634,
+       "n": 1610
+      },
+      "favorite": {
+       "accuracy": 0.6366459627329193,
+       "log_loss": 0.6522048812510831,
+       "brier": 0.22993213825094364,
+       "ece": 0.06681109422555227,
+       "n": 1610
+      },
+      "blend_50_50": {
+       "accuracy": 0.668944099378882,
+       "log_loss": 0.614281240744702,
+       "brier": 0.212899952400519,
+       "ece": 0.026522952076609877,
+       "n": 1610
+      },
+      "blend_80_market": {
+       "accuracy": 0.668944099378882,
+       "log_loss": 0.6089782260721722,
+       "brier": 0.2106617784452113,
+       "ece": 0.026599265630785924,
+       "n": 1610
+      }
+     }
+    }
+   }
+  },
+  "calibracion_en_vivo": {
+   "n": 0,
+   "nota": "no hay predicciones NFL ya evaluadas"
+  },
+  "leakage_predicciones": {
+   "predicciones": 16,
+   "sin_data_cutoff": 0,
+   "cutoff_posterior_al_kickoff": 0,
+   "prediccion_posterior_al_kickoff": 0,
+   "ok": true
+  },
+  "odds_posteriores_a_la_prediccion": {
+   "snapshots_asociados": 16,
+   "capturados_despues": 0,
+   "nota": "existen snapshots posteriores en la base; lo que importa es que el motor filtre por captured_at < predicted_at al construir features"
+  },
+  "blend_policy": {},
+  "fuentes": [
+   {
+    "source": "the_odds_api",
+    "ultima": "2026-09-06 09:41:24.386194",
+    "descargas": 3,
+    "errores": 3
+   },
+   {
+    "source": "nflverse",
+    "ultima": "2026-09-06 09:41:19.919945",
+    "descargas": 45,
+    "errores": 3
+   }
+  ]
+ }
+}

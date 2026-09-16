@@ -1,0 +1,180 @@
+{
+ "row": {
+  "season": 2024,
+  "market": "moneyline",
+  "n": 2472,
+  "base_rate": 0.5214401294498382,
+  "strategies": {
+   "ensemble": {
+    "n": 2472,
+    "accuracy": 0.5635113268608414,
+    "log_loss": 0.6804662515362825,
+    "brier": 0.24373236823781952,
+    "ece": 0.004470520923441141,
+    "mean_predicted": 0.5255742384185882,
+    "base_rate": 0.5214401294498382
+   },
+   "modelo_forest": {
+    "n": 2472,
+    "accuracy": 0.5614886731391586,
+    "log_loss": 0.6803588704162428,
+    "brier": 0.24367303031555226,
+    "ece": 0.010875974765610223,
+    "mean_predicted": 0.5273177058070365,
+    "base_rate": 0.5214401294498382
+   },
+   "elo": {
+    "n": 2472,
+    "accuracy": 0.5606796116504854,
+    "log_loss": 0.6809011436791889,
+    "brier": 0.24394659560151646,
+    "ece": 0.005510064631813723,
+    "mean_predicted": 0.5169516283933141,
+    "base_rate": 0.5214401294498382
+   },
+   "siempre_local": {
+    "n": 2472,
+    "accuracy": 0.5214401294498382,
+    "log_loss": 0.6931386245080514,
+    "brier": 0.24999572197411002,
+    "ece": 0.02134012944983832,
+    "mean_predicted": 0.5000999999999999,
+    "base_rate": 0.5214401294498382
+   },
+   "aleatorio": {
+    "n": 2472,
+    "accuracy": 0.5060679611650486,
+    "log_loss": 0.9786638210673088,
+    "brier": 0.32881270645236527,
+    "ece": 0.24675934697930377,
+    "mean_predicted": 0.5025655130534248,
+    "base_rate": 0.5214401294498382
+   }
+  },
+  "market_available": false,
+  "market_note": "sin historico gratuito de cuotas MLB: no se compara",
+  "ensemble_calibration": [
+   {
+    "bucket": "0%-10%",
+    "lo": 0.0,
+    "hi": 0.1,
+    "n": 0,
+    "predicted": null,
+    "observed": null
+   },
+   {
+    "bucket": "10%-20%",
+    "lo": 0.1,
+    "hi": 0.2,
+    "n": 0,
+    "predicted": null,
+    "observed": null
+   },
+   {
+    "bucket": "20%-30%",
+    "lo": 0.2,
+    "hi": 0.30000000000000004,
+    "n": 0,
+    "predicted": null,
+    "observed": null
+   },
+   {
+    "bucket": "30%-40%",
+    "lo": 0.30000000000000004,
+    "hi": 0.4,
+    "n": 106,
+    "predicted": 0.3719848905106393,
+    "observed": 0.3584905660377358
+   },
+   {
+    "bucket": "40%-50%",
+    "lo": 0.4,
+    "hi": 0.5,
+    "n": 844,
+    "predicted": 0.459142036360783,
+    "observed": 0.4561611374407583
+   },
+   {
+    "bucket": "50%-60%",
+    "lo": 0.5,
+    "hi": 0.6000000000000001,
+    "n": 1097,
+    "predicted": 0.5457109223206832,
+    "observed": 0.544211485870556
+   },
+   {
+    "bucket": "60%-70%",
+    "lo": 0.6000000000000001,
+    "hi": 0.7000000000000001,
+    "n": 386,
+    "predicted": 0.6362284840000045,
+    "observed": 0.6373056994818653
+   },
+   {
+    "bucket": "70%-80%",
+    "lo": 0.7000000000000001,
+    "hi": 0.8,
+    "n": 39,
+    "predicted": 0.7190811199571826,
+    "observed": 0.5897435897435898
+   },
+   {
+    "bucket": "80%-90%",
+    "lo": 0.8,
+    "hi": 0.9,
+    "n": 0,
+    "predicted": null,
+    "observed": null
+   },
+   {
+    "bucket": "90%-100%",
+    "lo": 0.9,
+    "hi": 1.0,
+    "n": 0,
+    "predicted": null,
+    "observed": null
+   }
+  ],
+  "mean_dispersion": 0.01981729560234617,
+  "oof_train": {
+   "logistic": {
+    "log_loss": 0.6843,
+    "accuracy": 0.5511003105170784
+   },
+   "forest": {
+    "log_loss": 0.6794,
+    "accuracy": 0.5614958822735251
+   },
+   "xgboost": {
+    "log_loss": 0.68575,
+    "accuracy": 0.5450249763737005
+   },
+   "lightgbm": {
+    "log_loss": 0.687,
+    "accuracy": 0.5363845011475631
+   },
+   "ensemble": {
+    "log_loss": 0.68198,
+    "accuracy": 0.5574456595112731
+   }
+  },
+  "weights": {
+   "logistic": 0.23470222583670283,
+   "forest": 0.3831082500928811,
+   "xgboost": 0.20302265759146074,
+   "lightgbm": 0.1791668664789555
+  }
+ },
+ "elo": {
+  "k": 3.0,
+  "home_adv": 12.0,
+  "regress": 0.5,
+  "mov": true,
+  "base": 1500.0,
+  "rationale": "rejilla de 60 combinaciones validada en 2023 (log loss 0.6808); las temporadas de prueba nunca se tocaron",
+  "fitted_on": [
+   2021,
+   2022
+  ]
+ }
+}
