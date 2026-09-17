@@ -15,9 +15,6 @@ import ParlayCalculator from './pages/ParlayCalculator'
 import Chat from './pages/Chat'
 import GameModal from './components/GameModal'
 
-// Trece pestañas en una sola fila obligaban a leerlas todas para encontrar una.
-// Ahora hay CINCO a la vista —las que se usan a diario— y el resto vive en un
-// menú agrupado por para qué sirve cada cosa. No se quitó ninguna pantalla.
 const PRINCIPALES = [
   ['calendar', 'Partidos'],
   ['top', 'Top picks'],
@@ -40,39 +37,22 @@ const DEPORTES = [['all', 'Todos', ''], ['NFL', 'NFL', 'nfl'], ['MLB', 'MLB', 'm
 const RANGES = [['today', 'Hoy'], ['tomorrow', 'Mañana'], ['7d', '7 días'],
                 ['30d', '30 días'], ['custom', 'Fecha']]
 
-// Pantallas que traen sus propios filtros: el selector de deporte solo estorba.
 const SIN_FILTROS = ['chat', 'calc']
 const CON_FECHAS = ['calendar', 'top', 'alerts']
 
-// Contenido del dropdown compartido entre Menu y BottomNav
-function MenuItems({ tab, setTab, onClose }) {
-  return MENU.map(([grupo, items], i) => (
-    <div key={grupo}>
-      {i > 0 && <div className="sep" />}
-      <div className="lbl">{grupo}</div>
-      {items.map(([k, l]) => (
-        <button key={k} className={tab === k ? 'on' : ''}
-          onClick={() => { setTab(k); onClose() }}>{l}</button>
-      ))}
-    </div>
-  ))
-}
+/* =========================================================================
+   DESKTOP: dropdown "Más" con portal (funciona porque no hay backdrop-filter
+   atrapando el menú en desktop)
+   ========================================================================= */
 
-// Dropdown via Portal — se renderiza en document.body para escapar cualquier
-// backdrop-filter o overflow en los padres. backdrop-filter crea un nuevo
-// containing block que atrapa position:fixed, rompiendo el dropdown en móvil.
-function DropdownPortal({ anchorRef, open, onClose, children, fromBottom }) {
-  const [pos, setPos] = useState({ top: 0, right: 16, bottom: 'auto' })
+function DesktopDropdown({ anchorRef, open, onClose, children }) {
+  const [pos, setPos] = useState({ top: 0, right: 16 })
   const menuRef = useRef(null)
 
   useEffect(() => {
     if (open && anchorRef.current) {
       const r = anchorRef.current.getBoundingClientRect()
-      if (fromBottom) {
-        setPos({ bottom: window.innerHeight - r.top + 8, top: 'auto', right: Math.max(8, window.innerWidth - r.right) })
-      } else {
-        setPos({ top: r.bottom + 8, bottom: 'auto', right: Math.max(8, window.innerWidth - r.right) })
-      }
+      setPos({ top: r.bottom + 8, right: Math.max(8, window.innerWidth - r.right) })
     }
   }, [open])
 
@@ -83,26 +63,15 @@ function DropdownPortal({ anchorRef, open, onClose, children, fromBottom }) {
           anchorRef.current && !anchorRef.current.contains(e.target))
         onClose()
     }
-    const t = setTimeout(() => {
-      document.addEventListener('pointerdown', fuera)
-    }, 200)
-    return () => {
-      clearTimeout(t)
-      document.removeEventListener('pointerdown', fuera)
-    }
+    const t = setTimeout(() => document.addEventListener('pointerdown', fuera), 200)
+    return () => { clearTimeout(t); document.removeEventListener('pointerdown', fuera) }
   }, [open])
 
   if (!open) return null
   return createPortal(
     <div ref={menuRef} className="more-menu" style={{
-      position: 'fixed',
-      top: pos.top,
-      bottom: pos.bottom,
-      right: pos.right,
-      left: 'auto',
-      zIndex: 9999,
-      maxWidth: 240,
-      minWidth: 200,
+      position: 'fixed', top: pos.top, right: pos.right,
+      left: 'auto', zIndex: 9999, maxWidth: 240, minWidth: 200,
     }}>
       {children}
     </div>,
@@ -119,21 +88,61 @@ function Menu({ tab, setTab }) {
       <button ref={btnRef} className={dentro ? 'on' : ''} onClick={() => setAbierto(a => !a)}>
         {dentro ? TITULOS[tab] : 'Más'} ▾
       </button>
-      <DropdownPortal anchorRef={btnRef} open={abierto} onClose={() => setAbierto(false)}>
-        <MenuItems tab={tab} setTab={setTab} onClose={() => setAbierto(false)} />
-      </DropdownPortal>
+      <DesktopDropdown anchorRef={btnRef} open={abierto} onClose={() => setAbierto(false)}>
+        {MENU.map(([grupo, items], i) => (
+          <div key={grupo}>
+            {i > 0 && <div className="sep" />}
+            <div className="lbl">{grupo}</div>
+            {items.map(([k, l]) => (
+              <button key={k} className={tab === k ? 'on' : ''}
+                onClick={() => { setTab(k); setAbierto(false) }}>{l}</button>
+            ))}
+          </div>
+        ))}
+      </DesktopDropdown>
     </div>
   )
 }
 
-// Barra de navegación inferior para móvil. Solo muestra los 5 tabs principales
-// + un botón "Más" que abre el mismo menú desplegable.
+/* =========================================================================
+   MÓVIL: bottom sheet — panel que sube desde abajo de la pantalla.
+   Se renderiza directamente en App, NO dentro de BottomNav.
+   No usa portales, no usa position calculations, no se rompe con
+   backdrop-filter ni overflow. Es un div fijo que cubre toda la pantalla.
+   ========================================================================= */
+
+function MasSheet({ tab, setTab, onClose }) {
+  return (
+    <div className="mas-overlay" onClick={onClose}>
+      <div className="mas-sheet" onClick={e => e.stopPropagation()}>
+        <div className="mas-head">
+          <span>Más opciones</span>
+          <button onClick={onClose}>✕</button>
+        </div>
+        {MENU.map(([grupo, items], i) => (
+          <div key={grupo}>
+            {i > 0 && <div className="mas-sep" />}
+            <div className="mas-grupo">{grupo}</div>
+            {items.map(([k, l]) => (
+              <button key={k} className={'mas-item' + (tab === k ? ' on' : '')}
+                onClick={() => { setTab(k); onClose() }}>{l}</button>
+            ))}
+          </div>
+        ))}
+      </div>
+    </div>
+  )
+}
+
+/* =========================================================================
+   MÓVIL: barra inferior — sin dropdown, solo abre el sheet via callback
+   ========================================================================= */
+
 const BNAV_ICONS = {
   calendar: '📅', top: '⭐', chat: '💬', value: '📊', parlay: '🎟️'
 }
-function BottomNav({ tab, setTab }) {
-  const [abierto, setAbierto] = useState(false)
-  const btnRef = useRef(null)
+
+function BottomNav({ tab, setTab, onMas }) {
   const dentro = MENU.some(([, l]) => l.some(([k]) => k === tab))
   return (
     <nav className="bottom-nav">
@@ -144,22 +153,18 @@ function BottomNav({ tab, setTab }) {
           {l}
         </button>
       ))}
-      <button ref={btnRef} className={'bnav-btn' + (dentro ? ' on' : '')}
-        style={{ flex: 1 }}
-        onClick={() => setAbierto(a => !a)}>
+      <button className={'bnav-btn' + (dentro ? ' on' : '')} onClick={onMas}>
         <span className="ic">☰</span>
         {dentro ? TITULOS[tab] : 'Más'}
       </button>
-      <DropdownPortal anchorRef={btnRef} open={abierto} onClose={() => setAbierto(false)} fromBottom>
-        <MenuItems tab={tab} setTab={setTab} onClose={() => setAbierto(false)} />
-      </DropdownPortal>
     </nav>
   )
 }
 
-// El tema se guarda en el navegador: si eliges claro, sigue claro al volver.
-// Se aplica sobre <html> y no sobre un contenedor de React para que el fondo
-// de la pagina cambie tambien fuera del area de la app (rebote del scroll).
+/* =========================================================================
+   TEMA
+   ========================================================================= */
+
 function useTema() {
   const [tema, setTema] = useState(() => {
     try { return localStorage.getItem('spc-tema') || 'oscuro' } catch { return 'oscuro' }
@@ -171,17 +176,19 @@ function useTema() {
   return [tema, setTema]
 }
 
+/* =========================================================================
+   APP
+   ========================================================================= */
+
 export default function App() {
   const [tema, setTema] = useTema()
   const [tab, setTab] = useState('calendar')
   const [sport, setSport] = useState('all')
-  // Se entra viendo HOY, no la semana. Con 7 días por defecto la primera
-  // pantalla eran 200 partidos: nadie empieza el día queriendo revisar 200
-  // partidos, y la semana sigue a un clic.
   const [range, setRange] = useState('today')
   const [start, setStart] = useState('')
   const [end, setEnd] = useState('')
   const [open, setOpen] = useState(null)
+  const [masAbierto, setMasAbierto] = useState(false)
   const s = range === 'custom' ? start : '', e = range === 'custom' ? end : ''
 
   return (
@@ -244,7 +251,8 @@ export default function App() {
         {tab === 'src' && <SourcesPage />}
       </div>
       <GameModal c={open} onClose={() => setOpen(null)} />
-      <BottomNav tab={tab} setTab={setTab} />
+      <BottomNav tab={tab} setTab={setTab} onMas={() => setMasAbierto(true)} />
+      {masAbierto && <MasSheet tab={tab} setTab={setTab} onClose={() => setMasAbierto(false)} />}
     </>
   )
 }

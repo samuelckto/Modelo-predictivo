@@ -537,6 +537,54 @@ td.num, th.num { text-align: right; font-family: ui-monospace, 'JetBrains Mono',
 .bnav-btn.on .ic { filter: drop-shadow(0 0 4px var(--acc-glow)) }
 
 /* ==========================================================================
+   BOTTOM SHEET — menú "Más" en móvil
+   Un overlay de pantalla completa con un panel que sube desde abajo.
+   No usa portales ni cálculos de posición: es un div fijo directo en App.
+   ========================================================================== */
+
+.mas-overlay {
+  position: fixed; inset: 0; z-index: 10000;
+  background: rgba(0,0,0,.55);
+  display: flex; align-items: flex-end; justify-content: center;
+  animation: masIn .15s ease-out;
+}
+.mas-sheet {
+  width: 100%; max-width: 420px;
+  background: var(--panel); border: 1px solid var(--line-2);
+  border-radius: var(--r-xl) var(--r-xl) 0 0;
+  padding: 6px 6px max(env(safe-area-inset-bottom, 8px), 14px);
+  box-shadow: 0 -8px 40px rgba(0,0,0,.4);
+  animation: masUp .2s ease-out;
+}
+.mas-head {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 14px 14px 8px; font-weight: 700; font-size: 15px; color: var(--txt);
+}
+.mas-head button {
+  background: var(--hover); border: 1px solid var(--line); color: var(--dim);
+  width: 32px; height: 32px; border-radius: 50%; font-size: 15px;
+  cursor: pointer; display: grid; place-items: center;
+}
+.mas-head button:hover { color: var(--txt); border-color: var(--line-2) }
+.mas-grupo {
+  font: 700 9.5px inherit; letter-spacing: 1.3px; text-transform: uppercase;
+  color: var(--dim-2); padding: 10px 14px 4px;
+}
+.mas-sep { height: 1px; background: var(--line); margin: 4px 14px }
+.mas-item {
+  display: flex; align-items: center; gap: 9px; width: 100%; text-align: left;
+  background: transparent; border: 0; color: var(--dim); padding: 13px 16px;
+  border-radius: 10px; font: 600 14px inherit; cursor: pointer;
+  transition: background .1s, color .1s;
+}
+.mas-item:hover, .mas-item:active { background: var(--hover); color: var(--txt) }
+.mas-item.on { color: var(--acc) }
+
+@keyframes masIn  { from { opacity: 0 } to { opacity: 1 } }
+@keyframes masUp  { from { transform: translateY(100%) } to { transform: translateY(0) } }
+
+
+/* ==========================================================================
    RESPONSIVIDAD
    ========================================================================== */
 
@@ -704,7 +752,7 @@ td.num, th.num { text-align: right; font-family: ui-monospace, 'JetBrains Mono',
 .composer textarea {
   flex: 1; resize: none; min-height: 42px; max-height: 150px;
   background: var(--panel2); border: 1px solid var(--line); color: var(--txt);
-  border-radius: 14px; padding: 11px 15px; font: 400 14px inherit; line-height: 1.5;
+  border-radius: 14px; padding: 11px 15px; font-family: inherit; font-size: 16px !important; line-height: 1.5;
   transition: border-color .13s;
 }
 .composer textarea:focus { outline: 0; border-color: var(--acc-dim); box-shadow: 0 0 0 3px var(--acc-glow) }
