@@ -103,7 +103,7 @@ function BottomNav({ tab, setTab }) {
           {dentro ? TITULOS[tab] : 'Más'}
         </button>
         {abierto && (
-          <div className="more-menu" style={{ bottom: 'calc(100% + 8px)', top: 'auto', right: 0, left: 'auto' }}>
+          <div className="more-menu" style={{ position: 'fixed', bottom: 72, top: 'auto', right: 8, left: 'auto', maxWidth: 240 }}>
             {MENU.map(([grupo, items], i) => (
               <div key={grupo}>
                 {i > 0 && <div className="sep" />}
