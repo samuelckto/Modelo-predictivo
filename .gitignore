@@ -33,6 +33,7 @@ logs/
 # Node.js
 node_modules/
 dist/
+!dashboard/frontend/dist/
 !dashboard/frontend/dist/**
 
 # Archivos de features sin comprimir y temporales (empaquetados en data_bundle/)
