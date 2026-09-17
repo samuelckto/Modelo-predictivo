@@ -80,6 +80,14 @@ def _card(p: Prediction, g: Game | None) -> dict:
                   "total": (p.upset_explanation or {}).get("total"),
                   "flags": (p.upset_explanation or {}).get("flags", []),
                   "risk_meaning": "probabilidad estimada de que el pick falle"}
+    # Factor contextual: si hay ajuste de clima o lineup, se anade a la tarjeta
+    try:
+        from shared.contextual import get_adjustments
+        adj = get_adjustments(p.game_id, p.market)
+        if adj:
+            c["extra"]["contextual_adjustments"] = adj
+    except Exception:
+        pass
     return c
 
 

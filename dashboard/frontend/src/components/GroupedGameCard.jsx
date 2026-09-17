@@ -193,6 +193,30 @@ function Fila({ k, game, sp, onOpen, markets }) {
           <span className="tag risk-low">Valor est. +{val.ev_pct}%</span>}
       </div>
 
+      {ex.contextual_adjustments?.applied && <div className="ctx-badges">
+        {ex.contextual_adjustments.weather && <span className="ctx-badge ctx-weather"
+          title={ex.contextual_adjustments.weather.reason}>
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+            <path d="M14 4v4h4M14 4l4 4M12 3v1M5.6 5.6l.7.7M3 12h1M5.6 18.4l.7-.7M12 20v1M18.4 18.4l-.7-.7M21 12h-1M18.4 5.6l-.7.7"/>
+          </svg>
+          Clima {ex.contextual_adjustments.weather.delta_pct > 0 ? '+' : ''}{ex.contextual_adjustments.weather.delta_pct}%
+        </span>}
+        {ex.contextual_adjustments.pitcher && <span className="ctx-badge ctx-lineup"
+          title={ex.contextual_adjustments.pitcher.reason}>
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+          </svg>
+          Cambio pitcher
+        </span>}
+        {ex.contextual_adjustments.lineup && <span className="ctx-badge ctx-lineup"
+          title={ex.contextual_adjustments.lineup.reason}>
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+          </svg>
+          Lineup
+        </span>}
+      </div>}
+
       <div className="pickrow">
         <div style={{ minWidth: 0 }}>
           <div className="sel">{c.selection || 'Sin pick'} <Res c={c} /></div>

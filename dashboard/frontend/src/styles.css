@@ -588,6 +588,12 @@ td.num, th.num { text-align: right; font-family: ui-monospace, 'JetBrains Mono',
 @keyframes masUp  { from { transform: translateY(100%) } to { transform: translateY(0) } }
 
 
+/* --- Factor contextual: badges de clima y lineup --- */
+.ctx-badges{display:flex;gap:6px;flex-wrap:wrap;margin:4px 0 2px}
+.ctx-badge{display:inline-flex;align-items:center;gap:3px;font-size:11px;padding:2px 7px;border-radius:10px;font-weight:500}
+.ctx-weather{background:rgba(56,189,248,.12);color:#38bdf8}
+.ctx-lineup{background:rgba(251,146,60,.12);color:#fb923c}
+
 /* ==========================================================================
    RESPONSIVIDAD
    ========================================================================== */

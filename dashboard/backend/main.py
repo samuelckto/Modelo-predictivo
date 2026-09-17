@@ -84,6 +84,12 @@ def _auto_score_loop():
                 AUTO_SCORE["resultado"]["parlays"] = {**gen_parlays(), **score_parlays()}
             except Exception as e:
                 AUTO_SCORE["resultado"]["parlays"] = f"{type(e).__name__}: {e}"
+            # Factor contextual: clima y cambios de lineup/pitcher
+            try:
+                from shared.contextual import refresh_contextual
+                AUTO_SCORE["resultado"]["contextual"] = refresh_contextual()
+            except Exception as e:
+                AUTO_SCORE["resultado"]["contextual"] = f"{type(e).__name__}: {e}"
             AUTO_SCORE["error"] = None
         except Exception as e:  # nunca tumba el servidor
             AUTO_SCORE["error"] = f"{type(e).__name__}: {e}"
@@ -629,7 +635,7 @@ def alerts(sport: str = Query("all"), range: str = Query("7d"),
             "LINE_MOVEMENT": 4, "STALE_DATA": 1, "NO_PICK": 7,
             "COIN_FLIP": 3, "MODEL_DISAGREEMENT": 4, "MODEL_VS_MARKET": 5,
             "MODEL_OVER_MARKET": 6, "MARKET_OVER_MODEL": 6, "ELO_GAP": 7,
-            "DATA_INCOMPLETE": 8}
+            "DATA_INCOMPLETE": 8, "WEATHER_ALERT": 3, "PITCHER_CHANGE": 1}
     out.sort(key=lambda x: (PRIO.get(x["code"], 9), x["date"], x["game"]))
     resumen = {}
     for x in out:
@@ -874,6 +880,15 @@ def chat_secondary(game_id: str, sport: str | None = None):
 def chat_distribution(game_id: str, market: str = Query(...)):
     from CHAT import api as capi
     return capi.get_distribution(game_id, market)
+
+
+@app.get("/api/contextual")
+def contextual_status():
+    """Estado del modulo contextual: que partidos tienen ajustes activos."""
+    from shared.contextual import get_all_adjustments, status as ctx_status
+    s = ctx_status()
+    s["adjustments"] = get_all_adjustments()
+    return s
 
 
 DIST = DASHBOARD_DIR / "frontend" / "dist"
