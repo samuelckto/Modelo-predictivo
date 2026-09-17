@@ -42,6 +42,7 @@ function Graficas({ deportes, todas, parlays }) {
       if (m && m.n) par.push({ nombre: lab, real: m.accuracy * 100, anunciada: (m.prob_media_anunciada || 0) * 100, n: m.n })
     }
   }
+  const tip = { contentStyle: { background: '#0f1520', border: '1px solid #26324a', fontSize: 12 } }
   return (
     <div className="panel">
       <h2>Gráficas</h2>
