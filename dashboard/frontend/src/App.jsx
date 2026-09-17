@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react'
+import { createPortal } from 'react-dom'
 import Calendar from './pages/Calendar'
 import Parlays from './pages/Parlays'
 import TopPicks from './pages/TopPicks'
@@ -43,31 +44,83 @@ const RANGES = [['today', 'Hoy'], ['tomorrow', 'Mañana'], ['7d', '7 días'],
 const SIN_FILTROS = ['chat', 'calc']
 const CON_FECHAS = ['calendar', 'top', 'alerts']
 
+// Contenido del dropdown compartido entre Menu y BottomNav
+function MenuItems({ tab, setTab, onClose }) {
+  return MENU.map(([grupo, items], i) => (
+    <div key={grupo}>
+      {i > 0 && <div className="sep" />}
+      <div className="lbl">{grupo}</div>
+      {items.map(([k, l]) => (
+        <button key={k} className={tab === k ? 'on' : ''}
+          onClick={() => { setTab(k); onClose() }}>{l}</button>
+      ))}
+    </div>
+  ))
+}
+
+// Dropdown via Portal — se renderiza en document.body para escapar cualquier
+// backdrop-filter o overflow en los padres. backdrop-filter crea un nuevo
+// containing block que atrapa position:fixed, rompiendo el dropdown en móvil.
+function DropdownPortal({ anchorRef, open, onClose, children, fromBottom }) {
+  const [pos, setPos] = useState({ top: 0, right: 16, bottom: 'auto' })
+  const menuRef = useRef(null)
+
+  useEffect(() => {
+    if (open && anchorRef.current) {
+      const r = anchorRef.current.getBoundingClientRect()
+      if (fromBottom) {
+        setPos({ bottom: window.innerHeight - r.top + 8, top: 'auto', right: Math.max(8, window.innerWidth - r.right) })
+      } else {
+        setPos({ top: r.bottom + 8, bottom: 'auto', right: Math.max(8, window.innerWidth - r.right) })
+      }
+    }
+  }, [open])
+
+  useEffect(() => {
+    if (!open) return
+    // Delay evita que el mismo tap que abre el menú lo cierre inmediatamente
+    const t = setTimeout(() => {
+      const fuera = e => {
+        if (menuRef.current && !menuRef.current.contains(e.target) &&
+            anchorRef.current && !anchorRef.current.contains(e.target))
+          onClose()
+      }
+      document.addEventListener('pointerdown', fuera)
+      return () => document.removeEventListener('pointerdown', fuera)
+    }, 80)
+    return () => clearTimeout(t)
+  }, [open])
+
+  if (!open) return null
+  return createPortal(
+    <div ref={menuRef} className="more-menu" style={{
+      position: 'fixed',
+      top: pos.top,
+      bottom: pos.bottom,
+      right: pos.right,
+      left: 'auto',
+      zIndex: 9999,
+      maxWidth: 240,
+      minWidth: 200,
+    }}>
+      {children}
+    </div>,
+    document.body
+  )
+}
+
 function Menu({ tab, setTab }) {
   const [abierto, setAbierto] = useState(false)
-  const caja = useRef(null)
-  useEffect(() => {
-    const fuera = e => { if (caja.current && !caja.current.contains(e.target)) setAbierto(false) }
-    document.addEventListener('mousedown', fuera)
-    return () => document.removeEventListener('mousedown', fuera)
-  }, [])
+  const btnRef = useRef(null)
   const dentro = MENU.some(([, l]) => l.some(([k]) => k === tab))
   return (
-    <div className="more" ref={caja}>
-      <button className={dentro ? 'on' : ''} onClick={() => setAbierto(a => !a)}>
+    <div className="more">
+      <button ref={btnRef} className={dentro ? 'on' : ''} onClick={() => setAbierto(a => !a)}>
         {dentro ? TITULOS[tab] : 'Más'} ▾
       </button>
-      {abierto && (
-        <div className="more-menu">
-          {MENU.map(([grupo, items], i) => (
-            <div key={grupo}>
-              {i > 0 && <div className="sep" />}
-              <div className="lbl">{grupo}</div>
-              {items.map(([k, l]) => (
-                <button key={k} className={tab === k ? 'on' : ''}
-                  onClick={() => { setTab(k); setAbierto(false) }}>{l}</button>))}
-            </div>))}
-        </div>)}
+      <DropdownPortal anchorRef={btnRef} open={abierto} onClose={() => setAbierto(false)}>
+        <MenuItems tab={tab} setTab={setTab} onClose={() => setAbierto(false)} />
+      </DropdownPortal>
     </div>
   )
 }
@@ -79,15 +132,10 @@ const BNAV_ICONS = {
 }
 function BottomNav({ tab, setTab }) {
   const [abierto, setAbierto] = useState(false)
-  const caja = useRef(null)
-  useEffect(() => {
-    const fuera = e => { if (caja.current && !caja.current.contains(e.target)) setAbierto(false) }
-    document.addEventListener('mousedown', fuera)
-    return () => document.removeEventListener('mousedown', fuera)
-  }, [])
+  const btnRef = useRef(null)
   const dentro = MENU.some(([, l]) => l.some(([k]) => k === tab))
   return (
-    <nav className="bottom-nav" ref={caja}>
+    <nav className="bottom-nav">
       {PRINCIPALES.map(([k, l]) => (
         <button key={k} className={'bnav-btn' + (tab === k ? ' on' : '')}
           onClick={() => setTab(k)}>
@@ -95,28 +143,15 @@ function BottomNav({ tab, setTab }) {
           {l}
         </button>
       ))}
-      <div style={{ position: 'relative', flex: 1 }}>
-        <button className={'bnav-btn' + (dentro ? ' on' : '')}
-          style={{ width: '100%' }}
-          onClick={() => setAbierto(a => !a)}>
-          <span className="ic">☰</span>
-          {dentro ? TITULOS[tab] : 'Más'}
-        </button>
-        {abierto && (
-          <div className="more-menu" style={{ position: 'fixed', bottom: 72, top: 'auto', right: 8, left: 'auto', maxWidth: 240 }}>
-            {MENU.map(([grupo, items], i) => (
-              <div key={grupo}>
-                {i > 0 && <div className="sep" />}
-                <div className="lbl">{grupo}</div>
-                {items.map(([k, l]) => (
-                  <button key={k} className={tab === k ? 'on' : ''}
-                    onClick={() => { setTab(k); setAbierto(false) }}>{l}</button>
-                ))}
-              </div>
-            ))}
-          </div>
-        )}
-      </div>
+      <button ref={btnRef} className={'bnav-btn' + (dentro ? ' on' : '')}
+        style={{ flex: 1 }}
+        onClick={() => setAbierto(a => !a)}>
+        <span className="ic">☰</span>
+        {dentro ? TITULOS[tab] : 'Más'}
+      </button>
+      <DropdownPortal anchorRef={btnRef} open={abierto} onClose={() => setAbierto(false)} fromBottom>
+        <MenuItems tab={tab} setTab={setTab} onClose={() => setAbierto(false)} />
+      </DropdownPortal>
     </nav>
   )
 }
