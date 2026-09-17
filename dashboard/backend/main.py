@@ -24,7 +24,8 @@ from MLB.engine import provider as mlb
 from dashboard.backend import performance as perf
 from shared.paths import DASHBOARD_DIR, NFL_HOME
 from shared import valor
-from shared.schema import norm_ts, validate_card
+import math
+from shared.schema import norm_ts, validate_card, empty_card, risk_label
 from shared.timeutil import utcnow
 
 app = FastAPI(title="Sports Prediction Center", version="0.1.0")
@@ -122,6 +123,83 @@ def _range(preset: str, start: str | None, end: str | None) -> tuple[str, str]:
     return (start or str(today)), (end or str(today + timedelta(days=7)))
 
 
+def _ensure_nfl_winner(cards: list[dict]) -> list[dict]:
+    """Garantiza que todo partido de NFL tenga una tarjeta de Ganador (moneyline).
+    
+    Si el motor legacy solo tiene total/spread o no genero pick de moneyline,
+    se deduce el ganador a partir del margen proyectado del modelo de spread.
+    """
+    out = list(cards)
+    ml_by_game = {c["game_id"]: c for c in out if c.get("market") == "moneyline" and c.get("selection")}
+    spread_by_game = {c["game_id"]: c for c in out if (c.get("market") or "").lower() == "spread"}
+
+    for gid, sp in spread_by_game.items():
+        if gid in ml_by_game:
+            continue
+        ex = sp.get("extra") or {}
+        margin = ex.get("expected_value")
+        if margin is None:
+            margin = 0.0
+        std = ex.get("expected_std") or 13.5
+        std = float(std) if std and float(std) > 0 else 13.5
+        z = abs(float(margin)) / std
+        prob = 0.5 * (1.0 + math.erf(z / math.sqrt(2)))
+        prob = max(0.51, min(0.95, prob))
+
+        if float(margin) >= 0:
+            winner = sp.get("home")
+            winner_name = sp.get("home_name") or winner
+        else:
+            winner = sp.get("away")
+            winner_name = sp.get("away_name") or winner
+
+        ml_card = empty_card(
+            sport="NFL",
+            game_id=sp.get("game_id"),
+            game_date=sp.get("game_date"),
+            start_utc=sp.get("start_utc"),
+            status=sp.get("status", "scheduled"),
+            home=sp.get("home"),
+            away=sp.get("away"),
+            home_name=sp.get("home_name"),
+            away_name=sp.get("away_name"),
+            venue=sp.get("venue"),
+            market="moneyline",
+            selection=winner,
+            line=None,
+            model_probability=round(prob, 4),
+            ensemble_probability=round(prob, 4),
+            market_probability=sp.get("market_probability"),
+            confidence=("ALTA" if prob >= 0.62 else "MEDIA" if prob >= 0.545 else "BAJA"),
+            upset_risk=round((1.0 - prob) * 100, 1),
+            upset_label=risk_label(round((1.0 - prob) * 100, 1)),
+            model_version="spread-margin v1",
+            result=sp.get("result"),
+            correct=sp.get("correct"),
+        )
+        if sp.get("status") == "final" and sp.get("actual_value") is not None:
+            act_margin = float(sp["actual_value"])
+            real_winner = sp.get("home") if act_margin > 0 else sp.get("away") if act_margin < 0 else "TIE"
+            ml_card["result"] = "win" if winner == real_winner else "loss"
+            ml_card["correct"] = bool(winner == real_winner)
+            ml_card["actual_value"] = act_margin
+
+        ml_card["extra"] = {
+            "season": ex.get("season"),
+            "week": ex.get("week"),
+            "margin_predicted": round(float(margin), 2),
+            "winner_name": winner_name,
+            "publish_pick": True,
+            "mode": "proyeccion",
+            "factors": ex.get("factors", []),
+            "derived_from": "spread_margin",
+        }
+        out.append(ml_card)
+        ml_by_game[gid] = ml_card
+
+    return out
+
+
 def _collect(sport: str, a: str, b: str) -> tuple[list[dict], list[str]]:
     cards, warns = [], []
     for s in ([sport] if sport in SPORTS else SPORTS):
@@ -137,6 +215,7 @@ def _collect(sport: str, a: str, b: str) -> tuple[list[dict], list[str]]:
                 got = list(got) + nflm.games(a, b)
             except Exception as e:
                 warns.append(f"NFL total/spread: no disponible ({type(e).__name__}: {e})")
+            got = _ensure_nfl_winner(got)
         bad = [p for c in got for p in validate_card(c)]
         if bad:
             warns.append(f"{s}: {len(bad)} campos invalidos descartados")

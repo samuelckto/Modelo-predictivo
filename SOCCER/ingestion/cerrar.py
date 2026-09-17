@@ -38,6 +38,48 @@ from SOCCER.ingestion.teams import Resolver
 DIAS_TOLERANCIA = 1
 
 
+import json
+import urllib.request
+
+ESPN_LEAGUES = {
+    "EPL": "eng.1",
+    "LALIGA": "esp.1",
+    "SERIEA": "ita.1",
+    "BUNDESLIGA": "ger.1",
+    "LIGUE1": "fra.1",
+    "UCL": "uefa.champions",
+    "PRIMEIRA": "por.1",
+    "SAUDI": "ksa.1"
+}
+
+
+def _fetch_espn(espn_league: str, dt_str: str) -> list[dict]:
+    url = f"https://site.api.espn.com/apis/site/v2/sports/soccer/{espn_league}/scoreboard?dates={dt_str}"
+    req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
+    try:
+        with urllib.request.urlopen(req, timeout=8) as r:
+            d = json.loads(r.read().decode("utf-8"))
+    except Exception:
+        return []
+    results = []
+    for ev in d.get("events", []):
+        st = ev.get("status", {}).get("type", {})
+        if not st.get("completed"):
+            continue
+        comps = ev.get("competitions", [])[0].get("competitors", [])
+        h = [c for c in comps if c.get("homeAway") == "home"]
+        a = [c for c in comps if c.get("homeAway") == "away"]
+        if not h or not a:
+            continue
+        results.append({
+            "home": h[0].get("team", {}).get("name", ""),
+            "away": a[0].get("team", {}).get("name", ""),
+            "home_score": int(h[0].get("score", 0)),
+            "away_score": int(a[0].get("score", 0))
+        })
+    return results
+
+
 def _clave(res: Resolver, code: str, home: str, away: str):
     h, _ = res.resolver(code, home)
     a, _ = res.resolver(code, away)
@@ -89,11 +131,32 @@ def cerrar(dias_atras: int = 30) -> dict:
                 if m is not None:
                     break
             if m is None:
+                elg = ESPN_LEAGUES.get(f.league_code)
+                if elg:
+                    dt_str = dia.strftime("%Y%m%d")
+                    matches = _fetch_espn(elg, dt_str)
+                    for em in matches:
+                        erh, _ = res.resolver(f.league_code, em["home"])
+                        era, _ = res.resolver(f.league_code, em["away"])
+                        ek = (f.league_code, erh or em["home"].lower(), era or em["away"].lower())
+                        if ek == k or (
+                            ((erh or "").lower() in f.home_team.lower() or f.home_team.lower() in (erh or "").lower())
+                            and ((era or "").lower() in f.away_team.lower() or f.away_team.lower() in (era or "").lower())
+                        ):
+                            f.home_goals = em["home_score"]
+                            f.away_goals = em["away_score"]
+                            f.completed = True
+                            out["cerrados"] += 1
+                            out["por_liga"][f.league_code] = out["por_liga"].get(f.league_code, 0) + 1
+                            m = True
+                            break
+            if m is None:
                 out["sin_marcador"] += 1
                 continue
-            f.home_goals = m.home_goals
-            f.away_goals = m.away_goals
-            f.completed = True
-            out["cerrados"] += 1
-            out["por_liga"][f.league_code] = out["por_liga"].get(f.league_code, 0) + 1
+            if not f.completed:
+                f.home_goals = m.home_goals
+                f.away_goals = m.away_goals
+                f.completed = True
+                out["cerrados"] += 1
+                out["por_liga"][f.league_code] = out["por_liga"].get(f.league_code, 0) + 1
     return out

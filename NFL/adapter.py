@@ -25,6 +25,9 @@ TEAM_NAMES = {
 
 
 def db_path() -> Path:
+    local_db = Path(__file__).resolve().parent / "database" / "nflpred.sqlite3"
+    if local_db.exists():
+        return local_db
     return NFL_HOME / "database" / "nflpred.sqlite3"
 
 

@@ -312,6 +312,69 @@ def tenis_history() -> dict:
     return out
 
 
+def soccer_history() -> dict:
+    """Historico real de futbol (mercados propios de SPC)."""
+    try:
+        from sqlalchemy import select as _sel
+        from SOCCER.db import SoccerPrediction, init_db, session_scope as sss
+        init_db()
+        with sss() as s:
+            rows = s.execute(_sel(SoccerPrediction).where(
+                SoccerPrediction.result.isnot(None),
+                SoccerPrediction.record_status == "active")
+                .order_by(SoccerPrediction.match_date.desc())).scalars().all()
+    except Exception as e:                                   # noqa: BLE001
+        return {"disponible": False, "motivo": f"SOCCER no disponible: {e}"}
+
+    label = {
+        "double_chance": "Doble oportunidad",
+        "total_goals": "Total goles",
+        "btts": "Ambos marcan",
+        "corners": "Córners"
+    }
+    out = {"disponible": True, "por_mercado": {}, "predicciones": [],
+           "nota": "Predicciones REALES de fútbol ya jugadas."}
+    tot_n = tot_h = 0
+
+    for m in ("double_chance", "total_goals", "btts"):
+        sub = [p for p in rows if p.market == m and p.result != "push"]
+        n = len(sub); hits = sum(1 for p in sub if p.correct)
+        ci = _wilson(hits, n)
+        met = summary(np.array([1.0 if p.correct else 0.0 for p in sub]),
+                      np.array([p.probability for p in sub], dtype=float)) if n else {}
+        out["por_mercado"][m] = {
+            "market_label": label.get(m, m), "n": n, "aciertos": hits, "fallos": n - hits,
+            "accuracy": (hits / n) if n else None, "ic95": [round(ci[0], 4), round(ci[1], 4)] if ci else None,
+            "prob_media": float(np.mean([p.probability for p in sub])) if n else None,
+            "log_loss": met.get("log_loss"), "brier": met.get("brier"), "ece": met.get("ece"),
+            "muestra_util": n >= MIN_N_UTIL, "modo": "proyeccion",
+            "pushes": sum(1 for p in rows if p.market == m and p.result == "push"),
+            "aviso": (None if n >= MIN_N_UTIL else (f"solo {n} evaluadas" if n else "todavia sin partidos evaluados"))
+        }
+        tot_n += n; tot_h += hits
+        for p in [p for p in rows if p.market == m]:
+            out["predicciones"].append({
+                "prediction_id": p.id, "game_id": p.event_id, "fecha": str(p.match_date),
+                "inicio": str(p.kickoff_utc) if p.kickoff_utc else None,
+                "home": p.home_team, "away": p.away_team, "market": m, "market_label": label.get(m, m),
+                "selection": p.selection, "line": p.line, "probabilidad": p.probability,
+                "modelo": p.probability, "mercado": p.market_probability,
+                "riesgo": round((1 - (p.probability or .5)) * 100, 1), "resultado": p.result,
+                "acierto": bool(p.correct) if p.correct is not None else None,
+                "modelo_version": p.model_version, "version": p.version,
+                "liga": p.league_code
+            })
+
+    ci = _wilson(tot_h, tot_n)
+    out["total"] = {
+        "n": tot_n, "aciertos": tot_h, "fallos": tot_n - tot_h,
+        "accuracy": (tot_h / tot_n) if tot_n else None,
+        "ic95": [round(ci[0], 4), round(ci[1], 4)] if ci else None,
+        "muestra_util": tot_n >= MIN_N_UTIL
+    }
+    return out
+
+
 def combined(sport: str = "all", date_from: str | None = None,
              date_to: str | None = None) -> dict:
     """Historico por deporte. Cada deporte responde por si mismo; si uno no tiene
@@ -325,6 +388,8 @@ def combined(sport: str = "all", date_from: str | None = None,
         out["deportes"]["NBA"] = nba_history()
     if sport.upper() in ("ALL", "TENIS"):
         out["deportes"]["TENIS"] = tenis_history()
+    if sport.upper() in ("ALL", "SOCCER", "FUTBOL", "FÚTBOL"):
+        out["deportes"]["SOCCER"] = soccer_history()
     tot_n = tot_h = 0
     for d in out["deportes"].values():
         if d.get("disponible") is False:

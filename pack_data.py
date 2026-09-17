@@ -19,6 +19,7 @@ TARGETS = [
     ("TENIS/database/tenis_markets.sqlite3", "tenis_markets.sqlite3"),
     ("SOCCER/database/soccer_markets.sqlite3", "soccer_markets.sqlite3"),
     ("NFL/database/nfl_markets.sqlite3", "nfl_markets.sqlite3"),
+    ("NFL/database/nflpred.sqlite3", "nflpred.sqlite3"),
     ("PARLAY/database/parlays.sqlite3", "parlays.sqlite3"),
     ("TENIS/markets/out/features.parquet", "tenis_features.parquet"),
 ]

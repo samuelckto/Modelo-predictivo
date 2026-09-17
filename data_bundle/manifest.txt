@@ -3,5 +3,6 @@ NBA/database/nba_markets.sqlite3|nba_markets.sqlite3|single|1
 TENIS/database/tenis_markets.sqlite3|tenis_markets.sqlite3|single|1
 SOCCER/database/soccer_markets.sqlite3|soccer_markets.sqlite3|single|1
 NFL/database/nfl_markets.sqlite3|nfl_markets.sqlite3|single|1
+NFL/database/nflpred.sqlite3|nflpred.sqlite3|single|1
 PARLAY/database/parlays.sqlite3|parlays.sqlite3|single|1
 TENIS/markets/out/features.parquet|tenis_features.parquet|split|4

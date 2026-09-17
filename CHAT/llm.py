@@ -341,7 +341,10 @@ def _llamar_openai(clave, pregunta, paquete, historial, base_url=None,
                      f"PREGUNTA: {pregunta}"})
     cuerpo = json.dumps({"model": modelo or _modelo(), "messages": mensajes,
                          "max_tokens": 900}).encode()
-    cabeceras = {"content-type": "application/json"}
+    cabeceras = {
+        "content-type": "application/json",
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+    }
     if clave:                       # un servidor local no la necesita
         cabeceras["authorization"] = f"Bearer {clave}"
     url = (base_url or BASES["OPENAI_API_KEY"]) + "/chat/completions"

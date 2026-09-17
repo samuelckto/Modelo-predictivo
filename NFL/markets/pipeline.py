@@ -36,5 +36,12 @@ def run(days_ahead: int = 10, with_odds: bool = True, reason: str = "nfl-cycle")
 def refresh_results() -> dict:
     """Solo califica (rapido). Lo usa el auto-scoring del servidor."""
     init_db()
+    out = {}
+    try:
+        from NFL.espn_scorer import score_nfl
+        out["espn"] = score_nfl()
+    except Exception as e:
+        out["espn_error"] = str(e)
     with session_scope() as s:
-        return score(s)
+        out["markets"] = score(s)
+    return out

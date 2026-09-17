@@ -123,7 +123,8 @@ function Graficas({ deportes, todas, parlays }) {
 }
 
 const CHIP = { moneyline: 'Moneyline', total: 'Total / Over-Under', run_line: 'Run line', spread: 'Spread',
-               winner: 'Ganador', total_games: 'Total juegos', handicap_games: 'Hándicap juegos' }
+               winner: 'Ganador', total_games: 'Total juegos', handicap_games: 'Hándicap juegos',
+               total_goals: 'Total goles', btts: 'Ambos marcan', double_chance: 'Doble oportunidad', corners: 'Córners' }
 
 function Tarjeta({ m }) {
   const acc = m.accuracy
