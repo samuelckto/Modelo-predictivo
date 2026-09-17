@@ -133,7 +133,6 @@ function Tarjeta({ m }) {
       <h4>{m.market_label}</h4>
       <div className="mono" style={{ fontSize: 30, color: 'var(--dim)', margin: '6px 0' }}>—</div>
       <div style={{ fontSize: 12, color: 'var(--dim)' }}>{m.aviso || 'todavía sin partidos evaluados'}</div>
-      {m.modo === 'proyeccion' && <div style={{ fontSize: 11, color: 'var(--warn)', marginTop: 6 }}>PROYECCIÓN (no pick)</div>}
     </div>)
   const color = acc == null ? 'var(--dim)' : acc >= 0.55 ? 'var(--ok)' : acc >= 0.5 ? 'var(--warn)' : 'var(--bad)'
   return (
@@ -151,7 +150,6 @@ function Tarjeta({ m }) {
       <div className="statrow"><span style={{ color: 'var(--dim)' }}>Brier</span><b>{num(m.brier, 4)}</b></div>
       <div className="statrow"><span style={{ color: 'var(--dim)' }}>Log loss</span><b>{num(m.log_loss, 4)}</b></div>
       {m.aviso && <div style={{ marginTop: 6, fontSize: 11, color: 'var(--dim)' }}>muestra pequeña</div>}
-      {m.modo === 'proyeccion' && <div style={{ fontSize: 11, color: 'var(--warn)', marginTop: 4 }}>PROYECCIÓN (no pick)</div>}
     </div>
   )
 }

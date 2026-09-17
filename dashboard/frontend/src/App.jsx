@@ -72,6 +72,55 @@ function Menu({ tab, setTab }) {
   )
 }
 
+// Barra de navegación inferior para móvil. Solo muestra los 5 tabs principales
+// + un botón "Más" que abre el mismo menú desplegable.
+const BNAV_ICONS = {
+  calendar: '📅', top: '⭐', chat: '💬', value: '📊', parlay: '🎟️'
+}
+function BottomNav({ tab, setTab }) {
+  const [abierto, setAbierto] = useState(false)
+  const caja = useRef(null)
+  useEffect(() => {
+    const fuera = e => { if (caja.current && !caja.current.contains(e.target)) setAbierto(false) }
+    document.addEventListener('mousedown', fuera)
+    return () => document.removeEventListener('mousedown', fuera)
+  }, [])
+  const dentro = MENU.some(([, l]) => l.some(([k]) => k === tab))
+  return (
+    <nav className="bottom-nav" ref={caja}>
+      {PRINCIPALES.map(([k, l]) => (
+        <button key={k} className={'bnav-btn' + (tab === k ? ' on' : '')}
+          onClick={() => setTab(k)}>
+          <span className="ic">{BNAV_ICONS[k]}</span>
+          {l}
+        </button>
+      ))}
+      <div style={{ position: 'relative', flex: 1 }}>
+        <button className={'bnav-btn' + (dentro ? ' on' : '')}
+          style={{ width: '100%' }}
+          onClick={() => setAbierto(a => !a)}>
+          <span className="ic">☰</span>
+          {dentro ? TITULOS[tab] : 'Más'}
+        </button>
+        {abierto && (
+          <div className="more-menu" style={{ bottom: 'calc(100% + 8px)', top: 'auto', right: 0, left: 'auto' }}>
+            {MENU.map(([grupo, items], i) => (
+              <div key={grupo}>
+                {i > 0 && <div className="sep" />}
+                <div className="lbl">{grupo}</div>
+                {items.map(([k, l]) => (
+                  <button key={k} className={tab === k ? 'on' : ''}
+                    onClick={() => { setTab(k); setAbierto(false) }}>{l}</button>
+                ))}
+              </div>
+            ))}
+          </div>
+        )}
+      </div>
+    </nav>
+  )
+}
+
 // El tema se guarda en el navegador: si eliges claro, sigue claro al volver.
 // Se aplica sobre <html> y no sobre un contenedor de React para que el fondo
 // de la pagina cambie tambien fuera del area de la app (rebote del scroll).
@@ -159,6 +208,7 @@ export default function App() {
         {tab === 'src' && <SourcesPage />}
       </div>
       <GameModal c={open} onClose={() => setOpen(null)} />
+      <BottomNav tab={tab} setTab={setTab} />
     </>
   )
 }
