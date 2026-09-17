@@ -42,11 +42,10 @@ function Graficas({ deportes, todas, parlays }) {
       if (m && m.n) par.push({ nombre: lab, real: m.accuracy * 100, anunciada: (m.prob_media_anunciada || 0) * 100, n: m.n })
     }
   }
-  const tip = { contentStyle: { background: '#0f1520', border: '1px solid #26324a', fontSize: 12 } }
   return (
     <div className="panel">
       <h2>Gráficas</h2>
-      <div className="dual" style={{ gridTemplateColumns: 'repeat(auto-fit,minmax(360px,1fr))', gap: 18, marginTop: 10 }}>
+      <div className="dual graficas-grid" style={{ gap: 18, marginTop: 10 }}>
         <div>
           <div style={{ font: '600 11px Inter', color: 'var(--dim)', letterSpacing: 1, marginBottom: 6 }}>ACIERTO POR MERCADO (%)</div>
           <ResponsiveContainer width="100%" height={220}>
@@ -105,7 +104,7 @@ function Graficas({ deportes, todas, parlays }) {
           <div style={{ fontSize: 11, color: 'var(--dim)' }}>Si las barras verdes se parecen a las azules, la probabilidad dice la verdad. Con pocas predicciones las barras saltan mucho.</div>
         </div>
         {par.length > 0 && <div>
-          <div style={{ font: '600 11px Inter', color: 'var(--dim)', letterSpacing: 1, marginBottom: 6 }}>🎟️ COMBINADAS · ACIERTO REAL VS ANUNCIADO</div>
+          <div style={{ font: '600 11px Inter', color: 'var(--dim)', letterSpacing: 1, marginBottom: 6 }}>COMBINADAS · ACIERTO REAL VS ANUNCIADO</div>
           <ResponsiveContainer width="100%" height={220}>
             <BarChart data={par} margin={{ left: -10, right: 10 }}>
               <CartesianGrid stroke="#1d2739" vertical={false} />
@@ -216,7 +215,7 @@ export default function History({ sport = 'all', onOpenGame }) {
 
       <Graficas deportes={deportes} todas={todas} parlays={par} />
       {par && par.total.n > 0 && <div className="panel">
-        <h2>🎟️ Combinadas · efectividad</h2>
+        <h2>Combinadas · efectividad</h2>
         <div className="dual" style={{ gridTemplateColumns: 'repeat(auto-fit,minmax(240px,1fr))', marginTop: 10 }}>
           {[['Todas', par.total], ...[2, 3].map(s => [`${s} patas`, par.por_tamano[s]])]
             .filter(([, m]) => m && m.n > 0).map(([lab, m]) => (
