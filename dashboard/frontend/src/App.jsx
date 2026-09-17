@@ -78,17 +78,18 @@ function DropdownPortal({ anchorRef, open, onClose, children, fromBottom }) {
 
   useEffect(() => {
     if (!open) return
-    // Delay evita que el mismo tap que abre el menú lo cierre inmediatamente
+    const fuera = e => {
+      if (menuRef.current && !menuRef.current.contains(e.target) &&
+          anchorRef.current && !anchorRef.current.contains(e.target))
+        onClose()
+    }
     const t = setTimeout(() => {
-      const fuera = e => {
-        if (menuRef.current && !menuRef.current.contains(e.target) &&
-            anchorRef.current && !anchorRef.current.contains(e.target))
-          onClose()
-      }
       document.addEventListener('pointerdown', fuera)
-      return () => document.removeEventListener('pointerdown', fuera)
-    }, 80)
-    return () => clearTimeout(t)
+    }, 200)
+    return () => {
+      clearTimeout(t)
+      document.removeEventListener('pointerdown', fuera)
+    }
   }, [open])
 
   if (!open) return null

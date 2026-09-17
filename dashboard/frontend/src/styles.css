@@ -203,7 +203,7 @@ nav.tabs button.on::after {
 /* Menú desplegable "Más" */
 .more { position: relative }
 .more-menu {
-  position: absolute; right: 0; top: calc(100% + 8px); min-width: 220px; z-index: 40;
+  min-width: 220px;
   background: var(--panel); border: 1px solid var(--line-2); border-radius: var(--r);
   padding: 6px; box-shadow: var(--sh-lg);
 }
@@ -552,15 +552,6 @@ td.num, th.num { text-align: right; font-family: ui-monospace, 'JetBrains Mono',
   nav.tabs { width: 100%; margin-left: 0; overflow-x: auto; padding-bottom: 2px }
   .wrap { padding: 0 14px 80px }
 
-  /* nav.tabs tiene overflow-x:auto que recorta el dropdown absoluto.
-     Con fixed escapa del contenedor y aparece siempre visible en pantalla. */
-  .more-menu {
-    position: fixed;
-    top: 70px;
-    right: 8px;
-    left: auto;
-    max-width: 240px;
-  }
 
   /* iOS/Android hacen zoom automático cuando font-size < 16px en inputs.
      Sube a 16px solo en móvil para evitar el zoom al tocar el chat. */
